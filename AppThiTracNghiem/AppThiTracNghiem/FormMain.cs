@@ -1,4 +1,4 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,16 +11,23 @@ using System.Windows.Forms;
 
 namespace AppThiTracNghiem
 {
-    public partial class FormDangNhap : DevExpress.XtraEditors.XtraForm
+    public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public FormDangNhap()
+        public FormMain()
         {
             InitializeComponent();
         }
 
-        private void FormDangNhap_Load(object sender, EventArgs e)
+        private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }
+
+        private void barbtnDangNhap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+       
     }
 }
