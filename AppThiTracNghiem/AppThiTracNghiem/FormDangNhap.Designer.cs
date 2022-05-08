@@ -42,6 +42,15 @@ namespace AppThiTracNghiem
             tENCSLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // tENCSLabel
+            // 
+            tENCSLabel.AutoSize = true;
+            tENCSLabel.Location = new System.Drawing.Point(136, 72);
+            tENCSLabel.Name = "tENCSLabel";
+            tENCSLabel.Size = new System.Drawing.Size(73, 17);
+            tENCSLabel.TabIndex = 16;
+            tENCSLabel.Text = "Tên cơ sở:";
+            // 
             // rdSinhvien
             // 
             this.rdSinhvien.AutoSize = true;
@@ -65,15 +74,6 @@ namespace AppThiTracNghiem
             this.rdGiangvien.TabStop = true;
             this.rdGiangvien.Text = "Giảng viên";
             this.rdGiangvien.UseVisualStyleBackColor = true;
-            // 
-            // tENCSLabel
-            // 
-            tENCSLabel.AutoSize = true;
-            tENCSLabel.Location = new System.Drawing.Point(136, 72);
-            tENCSLabel.Name = "tENCSLabel";
-            tENCSLabel.Size = new System.Drawing.Size(73, 17);
-            tENCSLabel.TabIndex = 16;
-            tENCSLabel.Text = "Tên cơ sở:";
             // 
             // tENCSComboBox
             // 
@@ -104,6 +104,7 @@ namespace AppThiTracNghiem
             this.button1.TabIndex = 15;
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPass
             // 
