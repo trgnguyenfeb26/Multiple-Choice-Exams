@@ -29,6 +29,7 @@ namespace AppThiTracNghiem
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
@@ -67,7 +68,14 @@ namespace AppThiTracNghiem
             this.btnXemBD = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSDK = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.MaGVSV = new System.Windows.Forms.ToolStripStatusLabel();
+            this.HoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.nhom = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -100,7 +108,7 @@ namespace AppThiTracNghiem
             this.ribDanhMuc,
             this.ribThi,
             this.ribReport});
-            this.ribbon.Size = new System.Drawing.Size(1017, 193);
+            this.ribbon.Size = new System.Drawing.Size(1023, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnDangNhap
@@ -109,7 +117,7 @@ namespace AppThiTracNghiem
             this.btnDangNhap.Id = 1;
             this.btnDangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangNhap.ImageOptions.SvgImage")));
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnDangNhap_ItemClick);
+            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -178,11 +186,11 @@ namespace AppThiTracNghiem
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 449);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 466);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(6);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1017, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1023, 30);
             // 
             // btnLogin
             // 
@@ -345,19 +353,60 @@ namespace AppThiTracNghiem
             this.btnDSDK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
             this.btnDSDK.Name = "btnDSDK";
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MaGVSV,
+            this.HoTen,
+            this.nhom});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 440);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1023, 26);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // MaGVSV
+            // 
+            this.MaGVSV.Name = "MaGVSV";
+            this.MaGVSV.Size = new System.Drawing.Size(162, 20);
+            this.MaGVSV.Text = "Mã giáo viên/ sinh viên";
+            this.MaGVSV.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
+            // HoTen
+            // 
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Size = new System.Drawing.Size(58, 20);
+            this.HoTen.Text = "Họ tên ";
+            // 
+            // nhom
+            // 
+            this.nhom.Name = "nhom";
+            this.nhom.Size = new System.Drawing.Size(50, 20);
+            this.nhom.Text = "Nhóm";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 479);
+            this.ClientSize = new System.Drawing.Size(1023, 496);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "FormMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "THI TRẮC NGHIỆM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,5 +451,10 @@ namespace AppThiTracNghiem
         private DevExpress.XtraBars.Ribbon.RibbonPage ribReport;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel MaGVSV;
+        private System.Windows.Forms.ToolStripStatusLabel HoTen;
+        private System.Windows.Forms.ToolStripStatusLabel nhom;
     }
 }
