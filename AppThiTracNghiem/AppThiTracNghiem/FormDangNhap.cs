@@ -15,7 +15,7 @@ namespace AppThiTracNghiem
     {
         public FormDangNhap()
         {
-           
+           //Nguyên
             InitializeComponent();
         }
 
