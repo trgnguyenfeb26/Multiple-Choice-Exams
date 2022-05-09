@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,14 +34,62 @@ namespace AppThiTracNghiem
         public static String remotePassword = "123";
         public static String loginDN = "";
         public static String passwordDN = "";
-        public static String mGroup;
-        public static String mHoten;
+        public static String mGroup="";
+        public static String mHoten="";
         public static int mCoso = 0;
         public static String mMaCS = "";
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static FormMain frmChinh;
+        public static int KetNoi()
+        {
+            if (conn != null && conn.State == ConnectionState.Open)
+                conn.Close();
+            try
+            {
+                connstr = "Data Source=" + servername + ";Initial Catalog=" + database +
+                    ";User ID=" + mlogin + ";password=" + password;
+                conn.ConnectionString = connstr;
+                conn.Open();
+                return 1;
+            }
+            catch (Exception e)
+            {
+                XtraMessageBox.Show("Lỗi kết nối CSDL.\nBạn xem lại tài khoản và mật khẩu.\n" + e.Message, "", MessageBoxButtons.OK);
+                return 0;
+            }
+        }
+        public static SqlDataReader ExecSqlDataReader(String strLenh)
+        {
+            SqlDataReader myreader;
+            SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandTimeout = 600;
+            if (Program.conn.State == ConnectionState.Closed)
+                Program.conn.Open();
+            try
+            {
+                myreader = sqlcmd.ExecuteReader();
+                return myreader;
+            }
+            catch (SqlException ex)
+            {
+                Program.conn.Close();
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
 
+        public static DataTable ExecSqlDataTable(String cmd, String connectionString)
+        {
+            DataTable dt = new DataTable();
+            if (Program.conn.State == ConnectionState.Closed)
+                Program.conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd, conn);
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
         [STAThread]
         static void Main()
         {
