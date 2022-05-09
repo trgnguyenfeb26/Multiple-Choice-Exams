@@ -143,6 +143,7 @@ namespace AppThiTracNghiem
                 Program.conn.Close();
             }
               Program.frmChinh.hienThiMenu();
+            this.Visible = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

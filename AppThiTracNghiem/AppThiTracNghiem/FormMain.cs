@@ -43,9 +43,12 @@ namespace AppThiTracNghiem
         }
         private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
-            MessageBox.Show("Đăng xuất thành công!", "Thông báo", MessageBoxButtons.OK);
-            return;
+
+            if (MessageBox.Show("Bạn có thật sự muốn đăng xuất khỏi tài khoản '"
+                + Program.loginDN + "' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Application.Restart();
+            }
         }
     
         private Form CheckExists(Type ftype)
@@ -75,6 +78,11 @@ namespace AppThiTracNghiem
         }
 
         private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
         {
 
         }
