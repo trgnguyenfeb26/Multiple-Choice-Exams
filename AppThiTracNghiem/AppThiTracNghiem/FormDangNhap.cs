@@ -1,13 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppThiTracNghiem
@@ -18,7 +12,7 @@ namespace AppThiTracNghiem
         private const String accountStudent = "SV";
         private const String passwordStudent = "123";
         private void LayDSPM(string cmd)
-        {    
+        {
             DataTable dt = new DataTable();
             if (connPublisher.State == ConnectionState.Closed) connPublisher.Open();
             SqlDataAdapter da = new SqlDataAdapter(cmd, connPublisher);
@@ -56,12 +50,12 @@ namespace AppThiTracNghiem
         {
             if (KetNoiCSDLGoc() == 0) return;
             LayDSPM("SELECT * FROM Get_Subscribes");
-            
+
             cbbTenCS.SelectedIndex = 1;
             cbbTenCS.SelectedIndex = 0;
         }
 
-       
+
 
         private void cbbTenCS_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -78,12 +72,12 @@ namespace AppThiTracNghiem
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if ((txtLogin.Text.Trim() == "" || txtPassword.Text.Trim() == "") )
+            if ((txtLogin.Text.Trim() == "" || txtPassword.Text.Trim() == ""))
             {
                 MessageBox.Show("Login name và mật mã không được trống", "", MessageBoxButtons.OK);
                 return;
             }
-            
+
             if (rdbSV.Checked)
             {
                 Program.mlogin = accountStudent;
@@ -94,7 +88,7 @@ namespace AppThiTracNghiem
 
                 Program.loginDN = txtLogin.Text.ToString();
                 Program.passwordDN = txtPassword.Text.ToString();
-                string strLenh = "EXEC SP_LayThongTinSinhVien '" + Program.loginDN + "','"+ Program.passwordDN +"'";
+                string strLenh = "EXEC SP_LayThongTinSinhVien '" + Program.loginDN + "','" + Program.passwordDN + "'";
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null) return;
                 Program.myReader.Read();
@@ -107,7 +101,7 @@ namespace AppThiTracNghiem
                 }
                 Program.mHoten = Program.myReader.GetString(1);
                 Program.mGroup = Program.myReader.GetString(2);
-               
+
                 Program.myReader.Close();
                 Program.conn.Close();
             }
@@ -132,7 +126,7 @@ namespace AppThiTracNghiem
                     MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
                     return;
                 }
-                
+
                 Program.mGroup = Program.myReader.GetString(2);
 
                 if (Convert.IsDBNull(Program.username))
@@ -144,7 +138,7 @@ namespace AppThiTracNghiem
                 Program.myReader.Close();
                 Program.conn.Close();
             }
-              Program.frmChinh.hienThiMenu();
+            Program.frmChinh.hienThiMenu();
             this.Visible = false;
         }
 
