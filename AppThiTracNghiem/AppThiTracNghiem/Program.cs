@@ -17,14 +17,14 @@ namespace AppThiTracNghiem
         /// 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstrPublisher = "Data Source=DESKTOP-O30665V;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+        public static String connstrPublisher = "Data Source=MSI;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
         //public static SqlDataAdapter da;
         public static SqlDataReader myReader;
         public static String servername = "";
-        public static String servername1 = "DESKTOP-O30665V\\MSSQLSERVER1";
-        public static String servername2 = "DESKTOP-O30665V\\MSSQLSERVER2";
-        public static String servername3 = "DESKTOP-O30665V\\MSSQLSERVER3";
+        public static String servername1 = "MSI\\MSSQLSERVER1";
+        public static String servername2 = "MSI\\MSSQLSERVER2";
+        public static String servername3 = "MSI\\MSSQLSERVER3";
         public static String username;
         public static String password;
         public static String mlogin;

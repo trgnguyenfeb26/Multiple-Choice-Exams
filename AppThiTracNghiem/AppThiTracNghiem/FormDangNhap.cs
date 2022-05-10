@@ -56,7 +56,9 @@ namespace AppThiTracNghiem
         {
             if (KetNoiCSDLGoc() == 0) return;
             LayDSPM("SELECT * FROM Get_Subscribes");
-            cbbTenCS.SelectedIndex = 1;cbbTenCS.SelectedIndex = 0;
+            
+            cbbTenCS.SelectedIndex = 1;
+            cbbTenCS.SelectedIndex = 0;
         }
 
        

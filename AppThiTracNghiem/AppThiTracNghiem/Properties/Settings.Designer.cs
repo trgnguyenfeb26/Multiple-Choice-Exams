@@ -33,5 +33,15 @@ namespace AppThiTracNghiem.Properties {
                 return ((string)(this["TN_CSDLPTConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\SERVER1;Initial Catalog=TN_CSDLPT;User ID=TR123")]
+        public string TN_CSDLPTConnectionString1 {
+            get {
+                return ((string)(this["TN_CSDLPTConnectionString1"]));
+            }
+        }
     }
 }
