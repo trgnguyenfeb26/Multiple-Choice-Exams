@@ -91,19 +91,6 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSinhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSinhVien.Designer.cs">
-      <DependentUpon>FormSinhVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FromLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FromLop.Designer.cs">
-      <DependentUpon>FromLop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PersistentClasses1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TN_CSDLPTDataSet.Designer.cs">
@@ -111,17 +98,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TN_CSDLPTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSV.Designer.cs">
+      <DependentUpon>FormSV.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSinhVien.resx">
-      <DependentUpon>FormSinhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FromLop.resx">
-      <DependentUpon>FromLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -133,6 +120,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormSV.resx">
+      <DependentUpon>FormSV.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

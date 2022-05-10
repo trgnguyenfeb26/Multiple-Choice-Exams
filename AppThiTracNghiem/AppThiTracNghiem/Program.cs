@@ -22,9 +22,6 @@ namespace AppThiTracNghiem
         //public static SqlDataAdapter da;
         public static SqlDataReader myReader;
         public static String servername = "";
-        public static String servername1 = "DESKTOP-O30665V\\MSSQLSERVER1";
-        public static String servername2 = "DESKTOP-O30665V\\MSSQLSERVER2";
-        public static String servername3 = "DESKTOP-O30665V\\MSSQLSERVER3";
         public static String username;
         public static String password;
         public static String mlogin;

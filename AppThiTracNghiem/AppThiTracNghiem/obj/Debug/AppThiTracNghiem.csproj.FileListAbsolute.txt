@@ -186,3 +186,11 @@ F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThi
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.csproj.CopyComplete
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.exe
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.pdb
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\DevExpress.Dialogs.v19.2.Core.dll
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\DevExpress.XtraDialogs.v19.2.dll
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\DevExpress.XtraDialogs.v19.2.xml
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\de\DevExpress.Dialogs.v19.2.Core.resources.dll
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\es\DevExpress.Dialogs.v19.2.Core.resources.dll
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\ja\DevExpress.Dialogs.v19.2.Core.resources.dll
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\ru\DevExpress.Dialogs.v19.2.Core.resources.dll
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormSV.resources
