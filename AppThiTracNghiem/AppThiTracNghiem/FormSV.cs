@@ -28,7 +28,7 @@ namespace AppThiTracNghiem
         private void FormSV_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.tN.SINHVIEN);
+         
 
 
 
@@ -43,7 +43,7 @@ namespace AppThiTracNghiem
         {
             this.Validate();
            
-            this.tableAdapterManager.UpdateAll(this.tN);
+        
 
         }
 
@@ -51,7 +51,7 @@ namespace AppThiTracNghiem
         {
             this.Validate();
             this.sINHVIENBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.tN);
+        
 
         }
 
@@ -75,8 +75,7 @@ namespace AppThiTracNghiem
             else
             {
 
-                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.sINHVIENTableAdapter.Fill(this.tN.SINHVIEN);
+             
 
                 cmbMaLop.DataSource = dt;
                 cmbMaLop.DisplayMember = "TENLOP";
