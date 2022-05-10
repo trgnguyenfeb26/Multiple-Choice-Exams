@@ -29,7 +29,6 @@ namespace AppThiTracNghiem
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mALOPLabel1;
             System.Windows.Forms.Label mACSLabel;
             System.Windows.Forms.Label dIACHILabel;
@@ -38,7 +37,7 @@ namespace AppThiTracNghiem
             System.Windows.Forms.Label hOLabel;
             System.Windows.Forms.Label mASVLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSV));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
