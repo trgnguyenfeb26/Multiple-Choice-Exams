@@ -86,5 +86,17 @@ namespace AppThiTracNghiem
         {
 
         }
+
+        private void btnSinhVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormSV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormSV f = new FormSV();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

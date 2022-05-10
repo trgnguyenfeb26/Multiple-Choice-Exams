@@ -93,7 +93,7 @@ namespace AppThiTracNghiem
             this.btnXemBD,
             this.btnDSDK});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -134,6 +134,7 @@ namespace AppThiTracNghiem
             this.btnSinhVien.Id = 8;
             this.btnSinhVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSinhVien.ImageOptions.SvgImage")));
             this.btnSinhVien.Name = "btnSinhVien";
+            this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSinhVien_ItemClick);
             // 
             // btnKhoaLop
             // 
@@ -190,7 +191,6 @@ namespace AppThiTracNghiem
             this.btnXemBD.Id = 17;
             this.btnXemBD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXemBD.ImageOptions.SvgImage")));
             this.btnXemBD.Name = "btnXemBD";
-           
             // 
             // btnDSDK
             // 
@@ -245,7 +245,7 @@ namespace AppThiTracNghiem
             // 
             this.btnLapLichThi.Caption = "Lập lịch thi";
             this.btnLapLichThi.Id = 13;
-            this.btnLapLichThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.btnLapLichThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLapLichThi.ImageOptions.SvgImage")));
             this.btnLapLichThi.Name = "btnLapLichThi";
             // 
             // ribThi
@@ -290,7 +290,7 @@ namespace AppThiTracNghiem
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 466);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1023, 30);
