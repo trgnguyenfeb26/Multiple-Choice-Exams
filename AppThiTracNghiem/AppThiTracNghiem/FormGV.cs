@@ -20,7 +20,7 @@ namespace AppThiTracNghiem
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+             
         }
     }
 }
