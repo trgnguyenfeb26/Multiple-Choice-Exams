@@ -105,15 +105,6 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSinhVien.cs" />
-    <Compile Include="FormSinhVien.Designer.cs">
-      <DependentUpon>FormSinhVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FromLop.cs" />
-    <Compile Include="FromLop.Designer.cs">
-      <DependentUpon>FromLop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PersistentClasses1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDangNhap.resx">
@@ -124,12 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSinhVien.resx">
-      <DependentUpon>FormSinhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FromLop.resx">
-      <DependentUpon>FromLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
