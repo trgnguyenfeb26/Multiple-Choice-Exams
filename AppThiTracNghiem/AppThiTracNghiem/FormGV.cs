@@ -1,4 +1,4 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +16,6 @@ namespace AppThiTracNghiem
         public FormGV()
         {
             InitializeComponent();
-        }
-
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-             
         }
     }
 }
