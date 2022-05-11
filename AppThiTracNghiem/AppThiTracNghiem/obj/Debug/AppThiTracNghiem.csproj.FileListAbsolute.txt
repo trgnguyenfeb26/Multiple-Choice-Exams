@@ -194,7 +194,6 @@ F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThi
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\ja\DevExpress.Dialogs.v19.2.Core.resources.dll
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\ru\DevExpress.Dialogs.v19.2.Core.resources.dll
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormSV.resources
-F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormGV.resources
 D:\CSDL-PTAN\THI2\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\AppThiTracNghiem.exe.config
 D:\CSDL-PTAN\THI2\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\AppThiTracNghiem.exe
 D:\CSDL-PTAN\THI2\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\bin\Debug\AppThiTracNghiem.pdb

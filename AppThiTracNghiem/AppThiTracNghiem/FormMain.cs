@@ -22,24 +22,56 @@ namespace AppThiTracNghiem
             MaGVSV.Text = "Mã: " + Program.username;
             HoTen.Text = "Tên: " + Program.mHoten;
             Nhom.Text = "Nhóm: " + Program.mGroup;
-            btnTaoTK.Enabled = true;
-            if (Program.mGroup == "Sinhvien")
+
+            
+            
+            if (Program.mGroup == "SinhVien")
             {
+                btnDangNhap.Enabled = false;
                 ribThi.Visible = true;
                 ribDanhMuc.Visible = false;
-                btnTaoTK.Enabled = false;
+                ribReport.Visible = true;
+                btnTaoTaiKhoan.Enabled = false ;
                 btnXemBD.Enabled = false;
                 btnDSDK.Enabled = false;
+                btnDangXuat.Enabled = true;
             }
             else
-            {
-                if (Program.mGroup == "Giangvien")
-                    btnTaoTK.Enabled = false;
-                ribThi.Visible = true;
+            if (Program.mGroup == "GIANGVIEN")
+                {
+                btnDangNhap.Enabled = false;
+                ribThi.Visible = false;
                 ribDanhMuc.Visible = true;
-                btnXemBD.Enabled = true;
-                btnDSDK.Enabled = true;
+                ribReport.Visible = true;
+                btnTaoTaiKhoan.Enabled = false;
+                btnDangXuat.Enabled = true;
+                btnXemKQ.Enabled = false;
             }
+            else
+            if (Program.mGroup == "TRUONG")
+            {
+                btnDangNhap.Enabled = false;
+                ribThi.Visible = false;
+                ribDanhMuc.Visible = true;
+                ribReport.Visible = true;
+                btnDangXuat.Enabled = true;
+                btnTaoTaiKhoan.Enabled = true;
+                btnLapLichThi.Enabled=false;
+                btnXemKQ.Enabled = false;
+
+            }
+            if (Program.mGroup == "COSO")
+            {
+                btnDangNhap.Enabled = false;
+                ribThi.Visible = false;
+                ribDanhMuc.Visible = true;
+                ribReport.Visible = true;
+                btnDangXuat.Enabled = true;
+                btnTaoTaiKhoan.Enabled = true;
+                btnXemKQ.Enabled = false;
+            }
+
+
         }
         private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -79,7 +111,9 @@ namespace AppThiTracNghiem
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            ribHeThong.Visible = true;
+            btnTaoTaiKhoan.Enabled = false;
+            btnDangXuat.Enabled = false;
         }
 
         private void ribbon_Click(object sender, EventArgs e)

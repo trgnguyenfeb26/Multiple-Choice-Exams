@@ -60,7 +60,7 @@ namespace AppThiTracNghiem
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTaoTK = new DevExpress.XtraBars.BarButtonItem();
+          
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -103,7 +103,7 @@ namespace AppThiTracNghiem
             this.ribReport});
             this.ribbon.Size = new System.Drawing.Size(1023, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
-            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
+            
             // 
             // btnDangNhap
             // 
@@ -301,13 +301,7 @@ namespace AppThiTracNghiem
             this.btnLogin.Id = 1;
             this.btnLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogin.ImageOptions.SvgImage")));
             this.btnLogin.Name = "btnLogin";
-            // 
-            // btnTaoTK
-            // 
-            this.btnTaoTK.Caption = "Tạo tài khoản";
-            this.btnTaoTK.Id = 12;
-            this.btnTaoTK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTaoTK.ImageOptions.SvgImage")));
-            this.btnTaoTK.Name = "btnTaoTK";
+            
             // 
             // ribbonPageGroup4
             // 
@@ -385,7 +379,7 @@ namespace AppThiTracNghiem
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnLogin;
         private DevExpress.XtraBars.BarButtonItem btnTaoTaiKhoan;
-        private DevExpress.XtraBars.BarButtonItem btnTaoTK;
+     
         private DevExpress.XtraBars.Ribbon.RibbonPage ribDanhMuc;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnSinhVien;
