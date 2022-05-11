@@ -467,6 +467,6 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbMaLop;
         private System.Windows.Forms.ComboBox cmbCoSo;
-        private System.Windows.Forms.BindingSource sINHVIENBindingSource;
+     
     }
 }

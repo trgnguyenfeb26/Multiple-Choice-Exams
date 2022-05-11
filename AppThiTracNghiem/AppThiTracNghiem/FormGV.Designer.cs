@@ -268,7 +268,6 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.barDockControl1);
             this.Name = "FormGV";
             this.Text = "FormGV";
-            this.Load += new System.EventHandler(this.FormGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             this.ResumeLayout(false);

@@ -50,7 +50,7 @@ namespace AppThiTracNghiem
         private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.sINHVIENBindingSource.EndEdit();
+          
         
 
         }

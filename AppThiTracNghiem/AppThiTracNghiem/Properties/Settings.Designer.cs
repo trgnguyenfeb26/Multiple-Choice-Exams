@@ -43,5 +43,16 @@ namespace AppThiTracNghiem.Properties {
                 return ((string)(this["TN_CSDLPTConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O30665V\\SERVER1;Initial Catalog=TN_CSDLPT;Persist Security In" +
+            "fo=True;User ID=sa;Password=123")]
+        public string TN_CSDLPTConnectionString2 {
+            get {
+                return ((string)(this["TN_CSDLPTConnectionString2"]));
+            }
+        }
     }
 }
