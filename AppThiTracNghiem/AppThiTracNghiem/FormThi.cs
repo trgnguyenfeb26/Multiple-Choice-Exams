@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AppThiTracNghiem
 {
-    public partial class Form2 : Form
+    public partial class FormThi : DevExpress.XtraEditors.XtraForm
     {
-        public Form2()
+        public FormThi()
         {
             InitializeComponent();
         }
