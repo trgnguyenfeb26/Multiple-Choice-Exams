@@ -14,11 +14,10 @@ namespace AppThiTracNghiem
 {
     public partial class FormSV : DevExpress.XtraEditors.XtraForm
     {
-        
-   
-        Stack undolist = new Stack();
+
+        private Stack<string> UndoStack = new Stack<string>();
         private int vitri;
-        string Btn="";
+        Boolean dangThem;
         private BindingSource bds = new BindingSource();
         private DataTable dt = new DataTable();
       
@@ -60,11 +59,12 @@ namespace AppThiTracNghiem
             if (Program.mGroup == "COSO")
             {
                 cmbCoSo.Enabled = false;
-                btnRefresh.Enabled = btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled  = btnPhucHoi.Enabled = true;
-                btnGhi.Enabled=btnHuy.Enabled = false;
+                btnRefresh.Enabled = btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled  =  true;
+                btnPhucHoi.Enabled = btnGhi.Enabled=btnHuy.Enabled = false;
                 pnSV.Enabled = false;
                 gcSV.Enabled = gcLop.Enabled = true;
                 if (bdsSV.Count == 0) btnXoa.Enabled = btnSua.Enabled = false;
+               
             }
 
         }
@@ -97,10 +97,12 @@ namespace AppThiTracNghiem
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Btn = "Thêm";
+            
+            
+
             vitri = bdsSV.Position;
             bdsSV.AddNew();
-
+           
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnHuy.Enabled = true;
             pnSV.Enabled = true;
@@ -110,31 +112,37 @@ namespace AppThiTracNghiem
             gcLop.Enabled = false;
             dNgaySinh.EditValue = "";
             txtMaSv.Enabled = true;
-            
+            txtMaLop.Text = ((DataRowView)bdsLop[bdsLop.Position])["MALOP"].ToString();
+            dangThem = true;
         }
 
         private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Btn = "Sửa";
+           
+
             vitri = bdsSV.Position;
+            UndoStack.Push("exec[dbo].[SP_UndoSuaSV] '" + txtMaSv.Text + "', N'"
+                + txtHo.Text + "', N'" + txtTen.Text + "', '" + dNgaySinh.Text.ToString() + "', N'"
+                + txtDiaChi.Text + "', '" + txtMaLop.Text + "'");
             pnSV.Enabled = true;
             gcLop.Enabled = false;
             gcSV.Enabled = false;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = btnRefresh.Enabled= false;
             btnGhi.Enabled = btnHuy.Enabled = true;
             txtMaSv.Enabled = false;
+            dangThem = false;
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
         {
-            bdsSV.CancelEdit();
-            if (Btn == "Thêm") bdsSV.RemoveCurrent(); 
+            //bdsSV.CancelEdit();
+            if (dangThem) bdsSV.RemoveCurrent(); else bdsSV.CancelEdit();
             bdsSV.Position = vitri;
-            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled =btnRefresh.Enabled = btnThoat.Enabled= true;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnRefresh.Enabled = btnThoat.Enabled= true;
             
             pnSV.Enabled = false;
             gcSV.Enabled = gcLop.Enabled = true;
-            
+            if (UndoStack.Count > 0) { UndoStack.Pop(); btnPhucHoi.Enabled = true; }
 
             if ((btnThem.Enabled == false) || (btnSua.Enabled == false))
             {
@@ -172,28 +180,30 @@ namespace AppThiTracNghiem
            
             try
             {
-                string sql;
-                int ketQua;
-               
-                if (Btn=="Thêm"){
-                    sql = "exec [dbo].[SP_CheckMaSV] '" + txtMaSv.Text + "'";
-                    ketQua = Program.ExecSqlNonQuery(sql);
-                    //nếu như chạy sp ko thành công
-                    if (ketQua == 1)
+
+                if (dangThem){
+                   
+                    if (Program.ExecSqlNonQuery("exec [dbo].[SP_CheckMaSV] '" + txtMaSv.Text + "'") == 1)
                     {
-                        
                         txtMaSv.Focus();
                         return;
                     }
                 }
-
             
                 bdsSV.EndEdit();
                 bdsSV.ResetCurrentItem();
                 this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
-
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = btnRefresh.Enabled = btnThoat.Enabled = true;
-
+                if (dangThem)
+                {
+                    MessageBox.Show("Đã thêm Sinh viên thành công", "", MessageBoxButtons.OK);
+                    UndoStack.Push("exec [dbo].[SP_UndoThemSV] '" + txtMaSv.Text + "'");
+                }
+                else
+                {
+                    MessageBox.Show("Đã sửa Sinh viên thành công", "", MessageBoxButtons.OK);
+                }
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled  = btnRefresh.Enabled = btnThoat.Enabled = true;
+                btnPhucHoi.Enabled = true;
                 pnSV.Enabled = false;
                 gcSV.Enabled = gcLop.Enabled = true;
             }
@@ -233,19 +243,19 @@ namespace AppThiTracNghiem
             {
                 try
                 {
-                    // undolist.Push(txtMaSv.Text + "#" + txtHo.Text + "#" + txtTen.Text + "#" + date_NgaySinh.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "#" + txtDiaChi.Text);
-                    // undolist.Push("DELETE");
+                    
                     vitri = bdsSV.Position;
+                    UndoStack.Push("exec[dbo].[SP_UndoXoaSV] '" + txtMaSv.Text + "', N'"
+                        + txtHo.Text + "', N'" + txtTen.Text + "', '" + dNgaySinh.Text.ToString() + "', N'"
+                        + txtDiaChi.Text + "', '" + txtMaLop.Text + "'");
                     bdsSV.RemoveCurrent();
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
-                    btnPhucHoi.Enabled = true;
+                    
                 }
                 catch (Exception ex)
                 {
-                    // undolist.Pop();
-                    //   undolist.Pop();
-                    //    MessageBox.Show("Lỗi xóa Lớp\n" + ex.Message, "", MessageBoxButtons.OK);
+                    UndoStack.Pop();
                     MessageBox.Show("Lỗi xóa Sinh viên \n"+ ex.Message, "", MessageBoxButtons.OK);
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
@@ -275,7 +285,21 @@ namespace AppThiTracNghiem
             
         }
 
-       
+        private void btnPhucHoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+         
+           // Program.ExecSqlNonQuery(UndoStack.Pop());
+           if (UndoStack.Count == 0) btnPhucHoi.Enabled = false;
+            else
+            {
+                if (Program.ExecSqlNonQuery(UndoStack.Pop()) == 0)
+                {
+                    this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
+                }
+
+            }
+        }
+            
 
         private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
