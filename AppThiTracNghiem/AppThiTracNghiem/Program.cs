@@ -87,14 +87,34 @@ namespace AppThiTracNghiem
             conn.Close();
             return dt;
         }
+        public static int ExecSqlNonQuery(String strlenh)
+        {
+            SqlCommand Sqlcmd = new SqlCommand(strlenh, conn);
+            Sqlcmd.CommandType = CommandType.Text;
+            Sqlcmd.CommandTimeout = 600;// 10 phut 
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            try
+            {
+                Sqlcmd.ExecuteNonQuery();
+                conn.Close();
+                return 0;
+            }
+            catch (SqlException ex)
+            {
+                
+                MessageBox.Show(ex.Message);
+                conn.Close();
+                return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
+            }
+        }
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frmChinh = new FormMain();
-            Application.Run(frmChinh );
             //Application.Run(new FormMain());
+            Application.Run(frmChinh);
         }
     }
 }

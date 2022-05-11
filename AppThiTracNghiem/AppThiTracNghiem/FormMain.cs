@@ -22,9 +22,13 @@ namespace AppThiTracNghiem
             MaGVSV.Text = "Mã: " + Program.username;
             HoTen.Text = "Tên: " + Program.mHoten;
             Nhom.Text = "Nhóm: " + Program.mGroup;
+            ribHeThong.Visible = true;
+            btnTaoTaiKhoan.Enabled = false;
+            btnDangXuat.Enabled = false;
+            ribThi.Visible = false;
+            ribDanhMuc.Visible = false;
+            ribReport.Visible = false;
 
-            
-            
             if (Program.mGroup == "SinhVien")
             {
                 btnDangNhap.Enabled = false;
@@ -76,10 +80,25 @@ namespace AppThiTracNghiem
         private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            if (MessageBox.Show("Bạn có thật sự muốn đăng xuất khỏi tài khoản '"
-                + Program.loginDN + "' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "CẢNH BÁO", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
             {
-                Application.Restart();
+                Program.username = "";
+                Program.mlogin = "";
+                Program.password = "";
+                Program.mGroup = "";
+                Program.mHoten = "";
+                foreach (Form frm in this.MdiChildren)
+                {
+                    if (frm.ShowInTaskbar)
+                        frm.Close();
+                }
+                Program.frmChinh.hienThiMenu();
+
+                FormDangNhap f = new FormDangNhap();
+                f.MdiParent = this;
+
+                f.Show();
             }
         }
     

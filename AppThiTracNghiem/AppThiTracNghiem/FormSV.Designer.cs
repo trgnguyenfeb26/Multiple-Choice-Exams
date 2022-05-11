@@ -67,15 +67,13 @@ namespace AppThiTracNghiem
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnSV = new DevExpress.XtraEditors.PanelControl();
-            this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaLop = new System.Windows.Forms.TextBox();
             this.bdsSV = new System.Windows.Forms.BindingSource(this.components);
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.dNgaySinh = new DevExpress.XtraEditors.DateEdit();
-            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.txtHo = new DevExpress.XtraEditors.TextEdit();
             this.txtMaSv = new DevExpress.XtraEditors.TextEdit();
-            this.bdsBangDiem = new System.Windows.Forms.BindingSource(this.components);
-            this.bANGDIEMTableAdapter = new AppThiTracNghiem.DSTableAdapters.BANGDIEMTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +88,8 @@ namespace AppThiTracNghiem
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bdsBangDiem = new System.Windows.Forms.BindingSource(this.components);
+            this.bANGDIEMTableAdapter = new AppThiTracNghiem.DSTableAdapters.BANGDIEMTableAdapter();
             mACSLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             mASVLabel = new System.Windows.Forms.Label();
@@ -106,18 +106,17 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnSV)).BeginInit();
             this.pnSV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dNgaySinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaSv.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsBangDiem)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBangDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // mACSLabel
@@ -188,7 +187,7 @@ namespace AppThiTracNghiem
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(312, 99);
+            mALOPLabel.Location = new System.Drawing.Point(312, 101);
             mALOPLabel.Name = "mALOPLabel";
             mALOPLabel.Size = new System.Drawing.Size(56, 17);
             mALOPLabel.TabIndex = 15;
@@ -261,6 +260,7 @@ namespace AppThiTracNghiem
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnGhi
             // 
@@ -426,6 +426,7 @@ namespace AppThiTracNghiem
             this.gcLop.TabIndex = 26;
             this.gcLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gcLop.Click += new System.EventHandler(this.gcLop_Click);
             // 
             // gridView1
             // 
@@ -477,7 +478,7 @@ namespace AppThiTracNghiem
             this.pnSV.Controls.Add(nGAYSINHLabel);
             this.pnSV.Controls.Add(this.dNgaySinh);
             this.pnSV.Controls.Add(tENLabel);
-            this.pnSV.Controls.Add(this.tENTextEdit);
+            this.pnSV.Controls.Add(this.txtTen);
             this.pnSV.Controls.Add(hOLabel);
             this.pnSV.Controls.Add(this.txtHo);
             this.pnSV.Controls.Add(mASVLabel);
@@ -486,16 +487,15 @@ namespace AppThiTracNghiem
             this.pnSV.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnSV.Location = new System.Drawing.Point(0, 326);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(561, 357);
+            this.pnSV.Size = new System.Drawing.Size(548, 357);
             this.pnSV.TabIndex = 27;
             // 
             // txtMaLop
             // 
-            this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "MALOP", true));
+            this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSV, "MALOP", true));
             this.txtMaLop.Location = new System.Drawing.Point(374, 96);
-            this.txtMaLop.MenuManager = this.barManager1;
             this.txtMaLop.Name = "txtMaLop";
-            this.txtMaLop.Size = new System.Drawing.Size(152, 22);
+            this.txtMaLop.Size = new System.Drawing.Size(148, 23);
             this.txtMaLop.TabIndex = 16;
             // 
             // bdsSV
@@ -506,10 +506,10 @@ namespace AppThiTracNghiem
             // txtDiaChi
             // 
             this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "DIACHI", true));
-            this.txtDiaChi.Location = new System.Drawing.Point(122, 228);
+            this.txtDiaChi.Location = new System.Drawing.Point(122, 226);
             this.txtDiaChi.MenuManager = this.barManager1;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(404, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(400, 22);
             this.txtDiaChi.TabIndex = 15;
             // 
             // dNgaySinh
@@ -526,14 +526,14 @@ namespace AppThiTracNghiem
             this.dNgaySinh.Size = new System.Drawing.Size(184, 22);
             this.dNgaySinh.TabIndex = 14;
             // 
-            // tENTextEdit
+            // txtTen
             // 
-            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "TEN", true));
-            this.tENTextEdit.Location = new System.Drawing.Point(374, 141);
-            this.tENTextEdit.MenuManager = this.barManager1;
-            this.tENTextEdit.Name = "tENTextEdit";
-            this.tENTextEdit.Size = new System.Drawing.Size(152, 22);
-            this.tENTextEdit.TabIndex = 13;
+            this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "TEN", true));
+            this.txtTen.Location = new System.Drawing.Point(374, 141);
+            this.txtTen.MenuManager = this.barManager1;
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(148, 22);
+            this.txtTen.TabIndex = 13;
             // 
             // txtHo
             // 
@@ -552,10 +552,6 @@ namespace AppThiTracNghiem
             this.txtMaSv.Name = "txtMaSv";
             this.txtMaSv.Size = new System.Drawing.Size(184, 22);
             this.txtMaSv.TabIndex = 11;
-            // 
-            // bANGDIEMTableAdapter
-            // 
-            this.bANGDIEMTableAdapter.ClearBeforeFill = true;
             // 
             // contextMenuStrip1
             // 
@@ -601,14 +597,15 @@ namespace AppThiTracNghiem
             this.gcSV.DataSource = this.bdsSV;
             this.gcSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcSV.Enabled = false;
-            this.gcSV.Location = new System.Drawing.Point(561, 326);
+            this.gcSV.Location = new System.Drawing.Point(548, 326);
             this.gcSV.MainView = this.gridView2;
             this.gcSV.MenuManager = this.barManager1;
             this.gcSV.Name = "gcSV";
-            this.gcSV.Size = new System.Drawing.Size(733, 357);
+            this.gcSV.Size = new System.Drawing.Size(746, 357);
             this.gcSV.TabIndex = 31;
             this.gcSV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gcSV.Click += new System.EventHandler(this.gcSV_Click);
             // 
             // gridView2
             // 
@@ -682,6 +679,15 @@ namespace AppThiTracNghiem
             this.colMALOP.VisibleIndex = 5;
             this.colMALOP.Width = 94;
             // 
+            // bdsBangDiem
+            // 
+            this.bdsBangDiem.DataMember = "FK_BANGDIEM_SINHVIEN1";
+            this.bdsBangDiem.DataSource = this.bdsSV;
+            // 
+            // bANGDIEMTableAdapter
+            // 
+            this.bANGDIEMTableAdapter.ClearBeforeFill = true;
+            // 
             // FormSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -709,18 +715,17 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.pnSV)).EndInit();
             this.pnSV.ResumeLayout(false);
             this.pnSV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dNgaySinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaSv.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsBangDiem)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBangDiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -756,8 +761,6 @@ namespace AppThiTracNghiem
         private DevExpress.XtraGrid.Columns.GridColumn colMALOP1;
         private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
-        private System.Windows.Forms.BindingSource bdsBangDiem;
-        private DSTableAdapters.BANGDIEMTableAdapter bANGDIEMTableAdapter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
@@ -773,11 +776,13 @@ namespace AppThiTracNghiem
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
-        private DevExpress.XtraEditors.TextEdit txtMaLop;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraEditors.DateEdit dNgaySinh;
-        private DevExpress.XtraEditors.TextEdit tENTextEdit;
+        private DevExpress.XtraEditors.TextEdit txtTen;
         private DevExpress.XtraEditors.TextEdit txtHo;
         private DevExpress.XtraEditors.TextEdit txtMaSv;
+        private System.Windows.Forms.BindingSource bdsBangDiem;
+        private DSTableAdapters.BANGDIEMTableAdapter bANGDIEMTableAdapter;
+        private System.Windows.Forms.TextBox txtMaLop;
     }
 }
