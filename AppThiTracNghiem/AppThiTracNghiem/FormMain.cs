@@ -38,6 +38,7 @@ namespace AppThiTracNghiem
                 btnTaoTaiKhoan.Enabled = false ;
                 btnXemBD.Enabled = false;
                 btnDSDK.Enabled = false;
+                btnXemKQ.Enabled = true;
                 btnDangXuat.Enabled = true;
             }
             else
@@ -50,6 +51,10 @@ namespace AppThiTracNghiem
                 btnTaoTaiKhoan.Enabled = false;
                 btnDangXuat.Enabled = true;
                 btnXemKQ.Enabled = false;
+                btnSinhVien.Enabled = false;
+                btnKhoaLop.Enabled = false;
+                btnGiaoVien.Enabled = false;
+                btnMonHoc.Enabled = false;
             }
             else
             if (Program.mGroup == "TRUONG")
