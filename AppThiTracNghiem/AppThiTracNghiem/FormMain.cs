@@ -156,5 +156,17 @@ namespace AppThiTracNghiem
                 f.Show();
             }
         }
+
+        private void btnGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormGV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormGV f = new FormGV();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

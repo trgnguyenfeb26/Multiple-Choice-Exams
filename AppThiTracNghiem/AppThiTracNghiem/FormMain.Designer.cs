@@ -60,7 +60,6 @@ namespace AppThiTracNghiem
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
-          
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -93,7 +92,7 @@ namespace AppThiTracNghiem
             this.btnXemBD,
             this.btnDSDK});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -101,9 +100,8 @@ namespace AppThiTracNghiem
             this.ribDanhMuc,
             this.ribThi,
             this.ribReport});
-            this.ribbon.Size = new System.Drawing.Size(1023, 193);
+            this.ribbon.Size = new System.Drawing.Size(877, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
-            
             // 
             // btnDangNhap
             // 
@@ -149,6 +147,7 @@ namespace AppThiTracNghiem
             this.btnGiaoVien.Id = 10;
             this.btnGiaoVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGiaoVien.ImageOptions.SvgImage")));
             this.btnGiaoVien.Name = "btnGiaoVien";
+            this.btnGiaoVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaoVien_ItemClick);
             // 
             // btnMonHoc
             // 
@@ -289,11 +288,11 @@ namespace AppThiTracNghiem
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 466);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 379);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1023, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(877, 24);
             // 
             // btnLogin
             // 
@@ -301,7 +300,6 @@ namespace AppThiTracNghiem
             this.btnLogin.Id = 1;
             this.btnLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogin.ImageOptions.SvgImage")));
             this.btnLogin.Name = "btnLogin";
-            
             // 
             // ribbonPageGroup4
             // 
@@ -322,37 +320,39 @@ namespace AppThiTracNghiem
             this.MaGVSV,
             this.HoTen,
             this.Nhom});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 444);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 357);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1023, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(877, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // MaGVSV
             // 
             this.MaGVSV.Name = "MaGVSV";
-            this.MaGVSV.Size = new System.Drawing.Size(0, 16);
+            this.MaGVSV.Size = new System.Drawing.Size(0, 17);
             this.MaGVSV.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // HoTen
             // 
             this.HoTen.Name = "HoTen";
-            this.HoTen.Size = new System.Drawing.Size(0, 16);
+            this.HoTen.Size = new System.Drawing.Size(0, 17);
             // 
             // Nhom
             // 
             this.Nhom.Name = "Nhom";
-            this.Nhom.Size = new System.Drawing.Size(0, 16);
+            this.Nhom.Size = new System.Drawing.Size(0, 17);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 496);
+            this.ClientSize = new System.Drawing.Size(877, 403);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
