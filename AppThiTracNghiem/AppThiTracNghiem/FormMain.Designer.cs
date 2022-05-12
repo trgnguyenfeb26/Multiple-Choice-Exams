@@ -60,7 +60,6 @@ namespace AppThiTracNghiem
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
-          
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -93,7 +92,7 @@ namespace AppThiTracNghiem
             this.btnXemBD,
             this.btnDSDK});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(12);
             this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -103,7 +102,6 @@ namespace AppThiTracNghiem
             this.ribReport});
             this.ribbon.Size = new System.Drawing.Size(1023, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
-            
             // 
             // btnDangNhap
             // 
@@ -149,6 +147,7 @@ namespace AppThiTracNghiem
             this.btnGiaoVien.Id = 10;
             this.btnGiaoVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGiaoVien.ImageOptions.SvgImage")));
             this.btnGiaoVien.Name = "btnGiaoVien";
+            this.btnGiaoVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaoVien_ItemClick);
             // 
             // btnMonHoc
             // 
@@ -290,7 +289,7 @@ namespace AppThiTracNghiem
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 466);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(12);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1023, 30);
@@ -301,7 +300,6 @@ namespace AppThiTracNghiem
             this.btnLogin.Id = 1;
             this.btnLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogin.ImageOptions.SvgImage")));
             this.btnLogin.Name = "btnLogin";
-            
             // 
             // ribbonPageGroup4
             // 

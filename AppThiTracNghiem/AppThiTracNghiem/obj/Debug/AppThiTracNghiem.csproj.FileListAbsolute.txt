@@ -392,3 +392,4 @@ D:\CSDL-PTAN\THI2\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\A
 D:\CSDL-PTAN\THI2\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.exe
 D:\CSDL-PTAN\THI2\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.pdb
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormThi.resources
+D:\CSDL-PTAN\THI2\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormThi.resources

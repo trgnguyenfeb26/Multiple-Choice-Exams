@@ -29,7 +29,7 @@ namespace AppThiTracNghiem
         private void gIAOVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.bdsGiaoVien.EndEdit();
+            this.bdsGV.EndEdit();
             this.tableAdapterManager.UpdateAll(this.DS);
 
         }
@@ -37,14 +37,22 @@ namespace AppThiTracNghiem
         private void FormGV_Load(object sender, EventArgs e)
         {
             
+
             // Kiểm tra ràng buộc
             DS.EnforceConstraints = false;
+
             // TODO: This line of code loads data into the 'DS.KHOA' table. You can move, or remove it, as needed.
             this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.KHOATableAdapter.Fill(this.DS.KHOA);
             // TODO: This line of code loads data into the 'dS.GIAOVIEN' table. You can move, or remove it, as needed.
             this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
+            // TODO: This line of code loads data into the 'DS.BODE' table. You can move, or remove it, as needed.
+            this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+            this.bODETableAdapter.Fill(this.DS.BODE);
+            // TODO: This line of code loads data into the 'DS.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
+            this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.gIAOVIEN_DANGKYTableAdapter.Fill(this.DS.GIAOVIEN_DANGKY);
 
             cmbCoSo.DataSource = Program.bds_dspm;
             cmbCoSo.DisplayMember = "TENCS";
@@ -134,7 +142,13 @@ namespace AppThiTracNghiem
         {
             bdsGV.AddNew();
             ((DataRowView)bdsGV[bdsGV.Position])["MAKH"] = lbMaK.Text;
-            gcGV.Enabled = false;
+            
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = false;
+            btnGhi.Enabled = btnHuy.Enabled = true;
+            pnGv.Enabled = true;
+            gcGV.Enabled = gcKhoa.Enabled = false;
+            btnRefresh.Enabled = false;
+            dangThem = true;
         }
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
@@ -164,7 +178,7 @@ namespace AppThiTracNghiem
                 if (dangThem)
                 {
 
-                    if (Program.ExecSqlNonQuery("exec [dbo].[SP_CheckMaSV] '" + TxMaGV.Text + "'") == 1)
+                    if (Program.ExecSqlNonQuery("exec [dbo].[SP_CheckMaGV] '" + TxMaGV.Text + "'") == 1)
                     {
                         TxMaGV.Focus();
                         return;
@@ -176,14 +190,14 @@ namespace AppThiTracNghiem
                 this.GIAOVIENTableAdapter.Update(this.DS.GIAOVIEN);
                 if (dangThem)
                 {
-                    MessageBox.Show("Đã thêm Sinh viên thành công", "", MessageBoxButtons.OK);
-                    UndoStack.Push("exec [dbo].[SP_UndoThemSV] '" + TxMaGV.Text + "'");
+                    MessageBox.Show("Đã thêm Giáo viên thành công", "", MessageBoxButtons.OK);
+                    UndoStack.Push("exec [dbo].[SP_UndoThemGV] '" + TxMaGV.Text + "'");
                 }
                 else
                 {
-                    MessageBox.Show("Đã sửa Sinh viên thành công", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Đã sửa Giáo viên thành công", "", MessageBoxButtons.OK);
                 }
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnRefresh.Enabled = barButtonItem8.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnRefresh.Enabled = btnThoat.Enabled = true;
                 btnPhucHoi.Enabled = true;
                 btnHuy.Enabled = btnGhi.Enabled = false;
                 pnGv.Enabled = false;
@@ -191,7 +205,7 @@ namespace AppThiTracNghiem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi ghi sinh viên\n" + ex.Message, "Lỗi", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi giáo viên\n" + ex.Message, "Lỗi", MessageBoxButtons.OK);
             }
 
 
@@ -199,8 +213,24 @@ namespace AppThiTracNghiem
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
         {
-            bdsGV.CancelEdit();
-            // gặp lỗi nếu thêm item hơn 1 lần
+            if (dangThem) bdsGV.RemoveCurrent(); else bdsGV.CancelEdit();
+            bdsGV.Position = vitri;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnRefresh.Enabled = btnThoat.Enabled = true;
+
+            pnGv.Enabled = false;
+            gcGV.Enabled = gcKhoa.Enabled = true;
+            if (UndoStack.Count > 0) { UndoStack.Pop(); btnPhucHoi.Enabled = true; }
+
+            if ((btnThem.Enabled == false) || (btnSua.Enabled == false))
+            {
+                btnHuy.Enabled = true;
+                btnGhi.Enabled = true;
+            }
+            else
+            {
+                btnHuy.Enabled = false;
+                btnGhi.Enabled = false;
+            }
         }
 
         private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
@@ -218,18 +248,28 @@ namespace AppThiTracNghiem
             // TODO: This line of code loads data into the 'dS.GIAOVIEN' table. You can move, or remove it, as needed.
             this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
+            this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+            this.bODETableAdapter.Fill(this.DS.BODE);
+            // TODO: This line of code loads data into the 'DS.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
+            this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.gIAOVIEN_DANGKYTableAdapter.Fill(this.DS.GIAOVIEN_DANGKY);
 
-            cmbCoSo.DataSource = Program.bds_dspm;
-            cmbCoSo.DisplayMember = "TENCS";
-            cmbCoSo.ValueMember = "TENSERVER";
-            cmbCoSo.SelectedIndex = Program.mCoso;
-            this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
+
+            if (bdsGV.Count == 0) btnXoa.Enabled = btnSua.Enabled = false;
         }
 
         private void btnPhucHoi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (UndoStack.Count == 0) btnPhucHoi.Enabled = false;
+            else
+            {
+                if (Program.ExecSqlNonQuery(UndoStack.Pop()) == 0)
+                {
+                    this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
+                }
 
+            }
+            if (UndoStack.Count == 0) btnPhucHoi.Enabled = false;
         }
 
         private void tENTextEdit_EditValueChanged(object sender, EventArgs e)
@@ -246,10 +286,49 @@ namespace AppThiTracNghiem
             pnGv.Enabled = true;
             gcKhoa.Enabled = false;
             gcGV.Enabled = false;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = barButtonItem8.Enabled = btnRefresh.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = btnRefresh.Enabled = false;
             btnGhi.Enabled = btnHuy.Enabled = true;
             TxMaGV.Enabled = false;
             dangThem = false;
+        }
+
+        private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (bdsGVDK.Count > 0 )
+            {
+                MessageBox.Show("Giáo viên " + TxHo.Text + " " + TxTen.Text + " đã đăng kí thi nên không thể xóa!", "", MessageBoxButtons.OK);
+                return;
+            }
+            if ( bdsBD.Count > 0)
+            {
+                MessageBox.Show("Giáo viên " + TxHo.Text + " " + TxTen.Text + " đã soạn đề thi nên không thể xóa!", "", MessageBoxButtons.OK);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa Giáo viên: " + TxHo.Text + " " + TxTen.Text + " ?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+
+                    vitri = bdsGV.Position;
+                    UndoStack.Push("exec[dbo].[SP_UndoXoaGV] '" + TxMaGV.Text + "', N'"
+                        + TxHo.Text + "', N'" + TxTen.Text + "',N'" + TxDiaChi.Text + "','" + lbMaK.Text + "'");
+                    bdsGV.RemoveCurrent();
+                    this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.GIAOVIENTableAdapter.Update(this.DS.GIAOVIEN);
+                    btnPhucHoi.Enabled = true;
+
+                }
+                catch (Exception ex)
+                {
+                    UndoStack.Pop();
+                    MessageBox.Show("Lỗi xóa giáo viên \n" + ex.Message, "", MessageBoxButtons.OK);
+                    this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
+                    bdsGV.Position = vitri;
+                    return;
+                }
+
+            }
         }
 
 

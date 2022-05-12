@@ -116,11 +116,22 @@ namespace AppThiTracNghiem
                 Program.loginDN = Program.mlogin;
                 Program.passwordDN = Program.password;
                 string strLenh = "EXEC SP_LayThongTinGiaoVien'" + Program.mlogin + "'";
-                Program.myReader = Program.ExecSqlDataReader(strLenh);
-                if (Program.myReader == null) return;
-                Program.myReader.Read();
-                Program.username = Program.myReader.GetString(0);     // Lay user name
-                Program.mHoten = Program.myReader.GetString(1);
+                try
+                {
+                    Program.myReader = Program.ExecSqlDataReader(strLenh);
+                    if (Program.myReader == null) return;
+                    Program.myReader.Read();
+                    Program.username = Program.myReader.GetString(0);     // Lay user name
+                    Program.mHoten = Program.myReader.GetString(1);
+                }
+                catch(Exception )
+                {
+                    throw;
+                   
+                }
+                
+                
+                
                 if (Convert.IsDBNull(Program.mHoten))
                 {
                     MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);

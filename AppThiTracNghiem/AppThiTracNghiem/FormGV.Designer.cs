@@ -46,7 +46,7 @@ namespace AppThiTracNghiem
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
@@ -69,21 +69,22 @@ namespace AppThiTracNghiem
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnGv = new DevExpress.XtraEditors.PanelControl();
+            this.TxDiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.TxTen = new DevExpress.XtraEditors.TextEdit();
+            this.TxHo = new DevExpress.XtraEditors.TextEdit();
+            this.TxMaGV = new DevExpress.XtraEditors.TextEdit();
+            this.tENKHLabel2 = new System.Windows.Forms.Label();
+            this.lbMaK = new System.Windows.Forms.Label();
             this.gcKhoa = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KHOATableAdapter = new AppThiTracNghiem.DSTableAdapters.KHOATableAdapter();
-            this.bdsGiaoVien = new System.Windows.Forms.BindingSource(this.components);
-            this.lbMaK = new System.Windows.Forms.Label();
-            this.tENKHLabel2 = new System.Windows.Forms.Label();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lOPTableAdapter = new AppThiTracNghiem.DSTableAdapters.LOPTableAdapter();
-            this.TxMaGV = new DevExpress.XtraEditors.TextEdit();
-            this.TxHo = new DevExpress.XtraEditors.TextEdit();
-            this.TxTen = new DevExpress.XtraEditors.TextEdit();
-            this.TxDiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
+            this.gIAOVIEN_DANGKYTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
+            this.bdsBD = new System.Windows.Forms.BindingSource(this.components);
+            this.bODETableAdapter = new AppThiTracNghiem.DSTableAdapters.BODETableAdapter();
             tENKHLabel1 = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
@@ -102,14 +103,14 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnGv)).BeginInit();
             this.pnGv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxDiaChi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxTen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxHo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxMaGV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGiaoVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxMaGV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxHo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxTen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxDiaChi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).BeginInit();
             this.SuspendLayout();
             // 
             // tENKHLabel1
@@ -184,7 +185,7 @@ namespace AppThiTracNghiem
             this.btnPhucHoi,
             this.btnRefresh,
             this.btnHuy,
-            this.barButtonItem8});
+            this.btnThoat});
             this.barManager2.MainMenu = this.bar4;
             this.barManager2.MaxItemId = 8;
             this.barManager2.StatusBar = this.bar5;
@@ -203,7 +204,7 @@ namespace AppThiTracNghiem
             new DevExpress.XtraBars.LinkPersistInfo(this.btnPhucHoi),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThoat)});
             this.bar4.OptionsBar.MultiLine = true;
             this.bar4.OptionsBar.UseWholeRow = true;
             this.bar4.Text = "Main menu";
@@ -233,6 +234,7 @@ namespace AppThiTracNghiem
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnGhi
             // 
@@ -270,14 +272,14 @@ namespace AppThiTracNghiem
             this.btnHuy.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
-            // barButtonItem8
+            // btnThoat
             // 
-            this.barButtonItem8.Caption = "Thoát";
-            this.barButtonItem8.Id = 7;
-            this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 7;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // bar5
             // 
@@ -394,11 +396,11 @@ namespace AppThiTracNghiem
             // 
             this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGV.Location = new System.Drawing.Point(528, 173);
+            this.gcGV.Location = new System.Drawing.Point(598, 173);
             this.gcGV.MainView = this.gridView2;
             this.gcGV.MenuManager = this.barManager2;
             this.gcGV.Name = "gcGV";
-            this.gcGV.Size = new System.Drawing.Size(791, 309);
+            this.gcGV.Size = new System.Drawing.Size(721, 309);
             this.gcGV.TabIndex = 3;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -430,6 +432,8 @@ namespace AppThiTracNghiem
             this.colMAGV.FieldName = "MAGV";
             this.colMAGV.MinWidth = 25;
             this.colMAGV.Name = "colMAGV";
+            this.colMAGV.OptionsColumn.AllowEdit = false;
+            this.colMAGV.OptionsColumn.AllowFocus = false;
             this.colMAGV.Visible = true;
             this.colMAGV.VisibleIndex = 0;
             this.colMAGV.Width = 94;
@@ -440,6 +444,8 @@ namespace AppThiTracNghiem
             this.colHO.FieldName = "HO";
             this.colHO.MinWidth = 25;
             this.colHO.Name = "colHO";
+            this.colHO.OptionsColumn.AllowEdit = false;
+            this.colHO.OptionsColumn.AllowFocus = false;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
             this.colHO.Width = 94;
@@ -450,6 +456,8 @@ namespace AppThiTracNghiem
             this.colTEN.FieldName = "TEN";
             this.colTEN.MinWidth = 25;
             this.colTEN.Name = "colTEN";
+            this.colTEN.OptionsColumn.AllowEdit = false;
+            this.colTEN.OptionsColumn.AllowFocus = false;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
             this.colTEN.Width = 94;
@@ -460,6 +468,8 @@ namespace AppThiTracNghiem
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.MinWidth = 25;
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
+            this.colDIACHI.OptionsColumn.AllowFocus = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 3;
             this.colDIACHI.Width = 94;
@@ -471,6 +481,7 @@ namespace AppThiTracNghiem
             this.colMAKH1.MinWidth = 25;
             this.colMAKH1.Name = "colMAKH1";
             this.colMAKH1.OptionsColumn.AllowEdit = false;
+            this.colMAKH1.OptionsColumn.AllowFocus = false;
             this.colMAKH1.Visible = true;
             this.colMAKH1.VisibleIndex = 4;
             this.colMAKH1.Width = 94;
@@ -492,8 +503,63 @@ namespace AppThiTracNghiem
             this.pnGv.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnGv.Location = new System.Drawing.Point(2, 173);
             this.pnGv.Name = "pnGv";
-            this.pnGv.Size = new System.Drawing.Size(526, 309);
+            this.pnGv.Size = new System.Drawing.Size(596, 309);
             this.pnGv.TabIndex = 3;
+            // 
+            // TxDiaChi
+            // 
+            this.TxDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "DIACHI", true));
+            this.TxDiaChi.Location = new System.Drawing.Point(97, 213);
+            this.TxDiaChi.MenuManager = this.barManager2;
+            this.TxDiaChi.Name = "TxDiaChi";
+            this.TxDiaChi.Size = new System.Drawing.Size(204, 22);
+            this.TxDiaChi.TabIndex = 17;
+            // 
+            // TxTen
+            // 
+            this.TxTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "TEN", true));
+            this.TxTen.Location = new System.Drawing.Point(289, 167);
+            this.TxTen.MenuManager = this.barManager2;
+            this.TxTen.Name = "TxTen";
+            this.TxTen.Size = new System.Drawing.Size(125, 22);
+            this.TxTen.TabIndex = 15;
+            this.TxTen.EditValueChanged += new System.EventHandler(this.tENTextEdit_EditValueChanged);
+            // 
+            // TxHo
+            // 
+            this.TxHo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "HO", true));
+            this.TxHo.Location = new System.Drawing.Point(57, 167);
+            this.TxHo.MenuManager = this.barManager2;
+            this.TxHo.Name = "TxHo";
+            this.TxHo.Size = new System.Drawing.Size(168, 22);
+            this.TxHo.TabIndex = 14;
+            // 
+            // TxMaGV
+            // 
+            this.TxMaGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAGV", true));
+            this.TxMaGV.Location = new System.Drawing.Point(110, 121);
+            this.TxMaGV.MenuManager = this.barManager2;
+            this.TxMaGV.Name = "TxMaGV";
+            this.TxMaGV.Size = new System.Drawing.Size(191, 22);
+            this.TxMaGV.TabIndex = 13;
+            // 
+            // tENKHLabel2
+            // 
+            this.tENKHLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOABindingSource, "TENKH", true));
+            this.tENKHLabel2.Location = new System.Drawing.Point(110, 81);
+            this.tENKHLabel2.Name = "tENKHLabel2";
+            this.tENKHLabel2.Size = new System.Drawing.Size(204, 23);
+            this.tENKHLabel2.TabIndex = 12;
+            this.tENKHLabel2.Text = "label2";
+            // 
+            // lbMaK
+            // 
+            this.lbMaK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOABindingSource, "MAKH", true));
+            this.lbMaK.Location = new System.Drawing.Point(110, 39);
+            this.lbMaK.Name = "lbMaK";
+            this.lbMaK.Size = new System.Drawing.Size(175, 23);
+            this.lbMaK.TabIndex = 11;
+            this.lbMaK.Text = "label2";
             // 
             // gcKhoa
             // 
@@ -523,6 +589,7 @@ namespace AppThiTracNghiem
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 25;
             this.colMAKH.Name = "colMAKH";
+            this.colMAKH.OptionsColumn.AllowEdit = false;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 0;
             this.colMAKH.Width = 94;
@@ -533,6 +600,7 @@ namespace AppThiTracNghiem
             this.colTENKH.FieldName = "TENKH";
             this.colTENKH.MinWidth = 25;
             this.colTENKH.Name = "colTENKH";
+            this.colTENKH.OptionsColumn.AllowEdit = false;
             this.colTENKH.Visible = true;
             this.colTENKH.VisibleIndex = 1;
             this.colTENKH.Width = 94;
@@ -543,6 +611,7 @@ namespace AppThiTracNghiem
             this.colMACS.FieldName = "MACS";
             this.colMACS.MinWidth = 25;
             this.colMACS.Name = "colMACS";
+            this.colMACS.OptionsColumn.AllowEdit = false;
             this.colMACS.Visible = true;
             this.colMACS.VisibleIndex = 2;
             this.colMACS.Width = 94;
@@ -551,74 +620,23 @@ namespace AppThiTracNghiem
             // 
             this.KHOATableAdapter.ClearBeforeFill = true;
             // 
-            // bdsGiaoVien
+            // bdsGVDK
             // 
-            this.bdsGiaoVien.DataMember = "GIAOVIEN";
-            this.bdsGiaoVien.DataSource = this.DS;
+            this.bdsGVDK.DataMember = "FK_GIAOVIEN_DANGKY_GIAOVIEN1";
+            this.bdsGVDK.DataSource = this.bdsGV;
             // 
-            // lbMaK
+            // gIAOVIEN_DANGKYTableAdapter
             // 
-            this.lbMaK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOABindingSource, "MAKH", true));
-            this.lbMaK.Location = new System.Drawing.Point(110, 39);
-            this.lbMaK.Name = "lbMaK";
-            this.lbMaK.Size = new System.Drawing.Size(175, 23);
-            this.lbMaK.TabIndex = 11;
-            this.lbMaK.Text = "label2";
+            this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
             // 
-            // tENKHLabel2
+            // bdsBD
             // 
-            this.tENKHLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOABindingSource, "TENKH", true));
-            this.tENKHLabel2.Location = new System.Drawing.Point(110, 81);
-            this.tENKHLabel2.Name = "tENKHLabel2";
-            this.tENKHLabel2.Size = new System.Drawing.Size(204, 23);
-            this.tENKHLabel2.TabIndex = 12;
-            this.tENKHLabel2.Text = "label2";
+            this.bdsBD.DataMember = "FK_BODE_GIAOVIEN";
+            this.bdsBD.DataSource = this.bdsGV;
             // 
-            // lOPBindingSource
+            // bODETableAdapter
             // 
-            this.lOPBindingSource.DataMember = "FK_LOP_KHOA";
-            this.lOPBindingSource.DataSource = this.kHOABindingSource;
-            // 
-            // lOPTableAdapter
-            // 
-            this.lOPTableAdapter.ClearBeforeFill = true;
-            // 
-            // TxMaGV
-            // 
-            this.TxMaGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAGV", true));
-            this.TxMaGV.Location = new System.Drawing.Point(110, 121);
-            this.TxMaGV.MenuManager = this.barManager2;
-            this.TxMaGV.Name = "TxMaGV";
-            this.TxMaGV.Size = new System.Drawing.Size(191, 22);
-            this.TxMaGV.TabIndex = 13;
-            // 
-            // TxHo
-            // 
-            this.TxHo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "HO", true));
-            this.TxHo.Location = new System.Drawing.Point(57, 167);
-            this.TxHo.MenuManager = this.barManager2;
-            this.TxHo.Name = "TxHo";
-            this.TxHo.Size = new System.Drawing.Size(168, 22);
-            this.TxHo.TabIndex = 14;
-            // 
-            // TxTen
-            // 
-            this.TxTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "TEN", true));
-            this.TxTen.Location = new System.Drawing.Point(289, 167);
-            this.TxTen.MenuManager = this.barManager2;
-            this.TxTen.Name = "TxTen";
-            this.TxTen.Size = new System.Drawing.Size(125, 22);
-            this.TxTen.TabIndex = 15;
-            this.TxTen.EditValueChanged += new System.EventHandler(this.tENTextEdit_EditValueChanged);
-            // 
-            // TxDiaChi
-            // 
-            this.TxDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "DIACHI", true));
-            this.TxDiaChi.Location = new System.Drawing.Point(97, 213);
-            this.TxDiaChi.MenuManager = this.barManager2;
-            this.TxDiaChi.Name = "TxDiaChi";
-            this.TxDiaChi.Size = new System.Drawing.Size(204, 22);
-            this.TxDiaChi.TabIndex = 17;
+            this.bODETableAdapter.ClearBeforeFill = true;
             // 
             // FormGV
             // 
@@ -650,14 +668,14 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.pnGv)).EndInit();
             this.pnGv.ResumeLayout(false);
             this.pnGv.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxDiaChi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxTen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxHo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxMaGV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGiaoVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxMaGV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxHo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxTen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxDiaChi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,7 +692,7 @@ namespace AppThiTracNghiem
         private DevExpress.XtraBars.BarButtonItem btnPhucHoi;
         private DevExpress.XtraBars.BarButtonItem btnRefresh;
         private DevExpress.XtraBars.BarButtonItem btnHuy;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Bar bar5;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
@@ -703,14 +721,15 @@ namespace AppThiTracNghiem
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH1;
         private System.Windows.Forms.BindingSource bdsGV;
-        private System.Windows.Forms.BindingSource bdsGiaoVien;
         private System.Windows.Forms.Label tENKHLabel2;
         private System.Windows.Forms.Label lbMaK;
-        private System.Windows.Forms.BindingSource lOPBindingSource;
-        private DSTableAdapters.LOPTableAdapter lOPTableAdapter;
         private DevExpress.XtraEditors.TextEdit TxDiaChi;
         private DevExpress.XtraEditors.TextEdit TxTen;
         private DevExpress.XtraEditors.TextEdit TxHo;
         private DevExpress.XtraEditors.TextEdit TxMaGV;
+        private System.Windows.Forms.BindingSource bdsGVDK;
+        private DSTableAdapters.GIAOVIEN_DANGKYTableAdapter gIAOVIEN_DANGKYTableAdapter;
+        private System.Windows.Forms.BindingSource bdsBD;
+        private DSTableAdapters.BODETableAdapter bODETableAdapter;
     }
 }
