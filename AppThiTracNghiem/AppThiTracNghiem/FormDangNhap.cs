@@ -99,7 +99,7 @@ namespace AppThiTracNghiem
                 }
                 Program.mHoten = Program.myReader.GetString(1);
                 Program.mGroup = Program.myReader.GetString(2);
-                Program.NgaySinhSV = Program.myReader.GetString(3);
+                Program.NgaySinhSV = Program.myReader.GetDateTime(3).ToString();
                 Program.DiaChiSV = Program.myReader.GetString(4);
                 Program.MaLopSV = Program.myReader.GetString(5);
                 Program.myReader.Close();
