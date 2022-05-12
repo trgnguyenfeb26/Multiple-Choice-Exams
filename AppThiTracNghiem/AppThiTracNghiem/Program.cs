@@ -36,6 +36,10 @@ namespace AppThiTracNghiem
         public static int mCoso = 0;
         public static String mMaCS = "";
 
+        public static string MaLopSV;
+        public static string NgaySinhSV;
+        public static string DiaChiSV;
+
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static FormMain frmChinh;
         public static int KetNoi()
