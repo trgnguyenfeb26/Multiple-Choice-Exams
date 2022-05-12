@@ -123,9 +123,9 @@ namespace AppThiTracNghiem
             // 
             mACSLabel.AutoSize = true;
             mACSLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mACSLabel.Location = new System.Drawing.Point(38, 29);
+            mACSLabel.Location = new System.Drawing.Point(33, 24);
             mACSLabel.Name = "mACSLabel";
-            mACSLabel.Size = new System.Drawing.Size(66, 24);
+            mACSLabel.Size = new System.Drawing.Size(55, 19);
             mACSLabel.TabIndex = 17;
             mACSLabel.Text = "Cơ sở:";
             // 
@@ -133,63 +133,63 @@ namespace AppThiTracNghiem
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(12, 17);
+            label1.Location = new System.Drawing.Point(10, 14);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(171, 23);
+            label1.Size = new System.Drawing.Size(131, 18);
             label1.TabIndex = 10;
             label1.Text = "Thông tin sinh viên";
             // 
             // mASVLabel
             // 
             mASVLabel.AutoSize = true;
-            mASVLabel.Location = new System.Drawing.Point(69, 99);
+            mASVLabel.Location = new System.Drawing.Point(59, 80);
             mASVLabel.Name = "mASVLabel";
-            mASVLabel.Size = new System.Drawing.Size(47, 17);
+            mASVLabel.Size = new System.Drawing.Size(38, 13);
             mASVLabel.TabIndex = 10;
             mASVLabel.Text = "MASV:";
             // 
             // hOLabel
             // 
             hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(84, 144);
+            hOLabel.Location = new System.Drawing.Point(72, 117);
             hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(32, 17);
+            hOLabel.Size = new System.Drawing.Size(26, 13);
             hOLabel.TabIndex = 11;
             hOLabel.Text = "HO:";
             // 
             // tENLabel
             // 
             tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(330, 144);
+            tENLabel.Location = new System.Drawing.Point(283, 117);
             tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(38, 17);
+            tENLabel.Size = new System.Drawing.Size(30, 13);
             tENLabel.TabIndex = 12;
             tENLabel.Text = "TEN:";
             // 
             // nGAYSINHLabel
             // 
             nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(39, 187);
+            nGAYSINHLabel.Location = new System.Drawing.Point(33, 152);
             nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(77, 17);
+            nGAYSINHLabel.Size = new System.Drawing.Size(62, 13);
             nGAYSINHLabel.TabIndex = 13;
             nGAYSINHLabel.Text = "NGAYSINH:";
             // 
             // dIACHILabel
             // 
             dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(59, 231);
+            dIACHILabel.Location = new System.Drawing.Point(51, 188);
             dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(57, 17);
+            dIACHILabel.Size = new System.Drawing.Size(47, 13);
             dIACHILabel.TabIndex = 14;
             dIACHILabel.Text = "DIACHI:";
             // 
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(312, 101);
+            mALOPLabel.Location = new System.Drawing.Point(267, 82);
             mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(56, 17);
+            mALOPLabel.Size = new System.Drawing.Size(45, 13);
             mALOPLabel.TabIndex = 15;
             mALOPLabel.Text = "MALOP:";
             // 
@@ -325,35 +325,31 @@ namespace AppThiTracNghiem
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1294, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1109, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 683);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 551);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1294, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1109, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 653);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 527);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1294, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1109, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 653);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 527);
             // 
             // bar1
             // 
@@ -370,9 +366,10 @@ namespace AppThiTracNghiem
             this.panel1.Controls.Add(this.cmbCoSo);
             this.panel1.Controls.Add(mACSLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1294, 76);
+            this.panel1.Size = new System.Drawing.Size(1109, 62);
             this.panel1.TabIndex = 20;
             // 
             // cmbCoSo
@@ -380,9 +377,10 @@ namespace AppThiTracNghiem
             this.cmbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCoSo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCoSo.FormattingEnabled = true;
-            this.cmbCoSo.Location = new System.Drawing.Point(103, 26);
+            this.cmbCoSo.Location = new System.Drawing.Point(88, 21);
+            this.cmbCoSo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCoSo.Name = "cmbCoSo";
-            this.cmbCoSo.Size = new System.Drawing.Size(271, 32);
+            this.cmbCoSo.Size = new System.Drawing.Size(233, 27);
             this.cmbCoSo.TabIndex = 19;
             this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
             // 
@@ -419,11 +417,13 @@ namespace AppThiTracNghiem
             // 
             this.gcLop.DataSource = this.bdsLop;
             this.gcLop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcLop.Location = new System.Drawing.Point(0, 106);
+            this.gcLop.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcLop.Location = new System.Drawing.Point(0, 86);
             this.gcLop.MainView = this.gridView1;
+            this.gcLop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcLop.MenuManager = this.barManager1;
             this.gcLop.Name = "gcLop";
-            this.gcLop.Size = new System.Drawing.Size(1294, 220);
+            this.gcLop.Size = new System.Drawing.Size(1109, 179);
             this.gcLop.TabIndex = 26;
             this.gcLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -435,38 +435,39 @@ namespace AppThiTracNghiem
             this.colMALOP1,
             this.colTENLOP,
             this.colMAKH});
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gcLop;
             this.gridView1.Name = "gridView1";
             // 
             // colMALOP1
             // 
             this.colMALOP1.FieldName = "MALOP";
-            this.colMALOP1.MinWidth = 25;
+            this.colMALOP1.MinWidth = 21;
             this.colMALOP1.Name = "colMALOP1";
             this.colMALOP1.OptionsColumn.AllowEdit = false;
             this.colMALOP1.Visible = true;
             this.colMALOP1.VisibleIndex = 0;
-            this.colMALOP1.Width = 94;
+            this.colMALOP1.Width = 81;
             // 
             // colTENLOP
             // 
             this.colTENLOP.FieldName = "TENLOP";
-            this.colTENLOP.MinWidth = 25;
+            this.colTENLOP.MinWidth = 21;
             this.colTENLOP.Name = "colTENLOP";
             this.colTENLOP.OptionsColumn.AllowEdit = false;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
-            this.colTENLOP.Width = 94;
+            this.colTENLOP.Width = 81;
             // 
             // colMAKH
             // 
             this.colMAKH.FieldName = "MAKH";
-            this.colMAKH.MinWidth = 25;
+            this.colMAKH.MinWidth = 21;
             this.colMAKH.Name = "colMAKH";
             this.colMAKH.OptionsColumn.AllowEdit = false;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 2;
-            this.colMAKH.Width = 94;
+            this.colMAKH.Width = 81;
             // 
             // pnSV
             // 
@@ -486,17 +487,19 @@ namespace AppThiTracNghiem
             this.pnSV.Controls.Add(this.txtMaSv);
             this.pnSV.Controls.Add(label1);
             this.pnSV.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnSV.Location = new System.Drawing.Point(0, 326);
+            this.pnSV.Location = new System.Drawing.Point(0, 265);
+            this.pnSV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(548, 357);
+            this.pnSV.Size = new System.Drawing.Size(470, 286);
             this.pnSV.TabIndex = 27;
             // 
             // txtMaLop
             // 
             this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSV, "MALOP", true));
-            this.txtMaLop.Location = new System.Drawing.Point(374, 96);
+            this.txtMaLop.Location = new System.Drawing.Point(321, 78);
+            this.txtMaLop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaLop.Name = "txtMaLop";
-            this.txtMaLop.Size = new System.Drawing.Size(148, 23);
+            this.txtMaLop.Size = new System.Drawing.Size(127, 21);
             this.txtMaLop.TabIndex = 16;
             // 
             // bdsSV
@@ -507,51 +510,56 @@ namespace AppThiTracNghiem
             // txtDiaChi
             // 
             this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "DIACHI", true));
-            this.txtDiaChi.Location = new System.Drawing.Point(122, 226);
+            this.txtDiaChi.Location = new System.Drawing.Point(105, 184);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.MenuManager = this.barManager1;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(400, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(343, 20);
             this.txtDiaChi.TabIndex = 15;
             // 
             // dNgaySinh
             // 
             this.dNgaySinh.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "NGAYSINH", true));
             this.dNgaySinh.EditValue = null;
-            this.dNgaySinh.Location = new System.Drawing.Point(122, 184);
+            this.dNgaySinh.Location = new System.Drawing.Point(105, 150);
+            this.dNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dNgaySinh.MenuManager = this.barManager1;
             this.dNgaySinh.Name = "dNgaySinh";
             this.dNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dNgaySinh.Size = new System.Drawing.Size(184, 22);
+            this.dNgaySinh.Size = new System.Drawing.Size(158, 20);
             this.dNgaySinh.TabIndex = 14;
             // 
             // txtTen
             // 
             this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "TEN", true));
-            this.txtTen.Location = new System.Drawing.Point(374, 141);
+            this.txtTen.Location = new System.Drawing.Point(321, 115);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTen.MenuManager = this.barManager1;
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(148, 22);
+            this.txtTen.Size = new System.Drawing.Size(127, 20);
             this.txtTen.TabIndex = 13;
             // 
             // txtHo
             // 
             this.txtHo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "HO", true));
-            this.txtHo.Location = new System.Drawing.Point(122, 141);
+            this.txtHo.Location = new System.Drawing.Point(105, 115);
+            this.txtHo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHo.MenuManager = this.barManager1;
             this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(184, 22);
+            this.txtHo.Size = new System.Drawing.Size(158, 20);
             this.txtHo.TabIndex = 12;
             // 
             // txtMaSv
             // 
             this.txtMaSv.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "MASV", true));
-            this.txtMaSv.Location = new System.Drawing.Point(122, 96);
+            this.txtMaSv.Location = new System.Drawing.Point(105, 78);
+            this.txtMaSv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaSv.MenuManager = this.barManager1;
             this.txtMaSv.Name = "txtMaSv";
-            this.txtMaSv.Size = new System.Drawing.Size(184, 22);
+            this.txtMaSv.Size = new System.Drawing.Size(158, 20);
             this.txtMaSv.TabIndex = 11;
             // 
             // contextMenuStrip1
@@ -563,30 +571,30 @@ namespace AppThiTracNghiem
             this.sửaToolStripMenuItem,
             this.ghiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 100);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 92);
             // 
             // thêmToolStripMenuItem
             // 
             this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.thêmToolStripMenuItem.Text = "Thêm";
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // sửaToolStripMenuItem
             // 
             this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.sửaToolStripMenuItem.Text = "Sửa";
             // 
             // ghiToolStripMenuItem
             // 
             this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
-            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.ghiToolStripMenuItem.Text = "Ghi";
             // 
             // sINHVIENTableAdapter
@@ -597,12 +605,14 @@ namespace AppThiTracNghiem
             // 
             this.gcSV.DataSource = this.bdsSV;
             this.gcSV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcSV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSV.Enabled = false;
-            this.gcSV.Location = new System.Drawing.Point(548, 326);
+            this.gcSV.Location = new System.Drawing.Point(470, 265);
             this.gcSV.MainView = this.gridView2;
+            this.gcSV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSV.MenuManager = this.barManager1;
             this.gcSV.Name = "gcSV";
-            this.gcSV.Size = new System.Drawing.Size(746, 357);
+            this.gcSV.Size = new System.Drawing.Size(639, 286);
             this.gcSV.TabIndex = 31;
             this.gcSV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -617,68 +627,69 @@ namespace AppThiTracNghiem
             this.colNGAYSINH,
             this.colDIACHI,
             this.colMALOP});
+            this.gridView2.DetailHeight = 284;
             this.gridView2.GridControl = this.gcSV;
             this.gridView2.Name = "gridView2";
             // 
             // colMASV
             // 
             this.colMASV.FieldName = "MASV";
-            this.colMASV.MinWidth = 25;
+            this.colMASV.MinWidth = 21;
             this.colMASV.Name = "colMASV";
             this.colMASV.OptionsColumn.AllowEdit = false;
             this.colMASV.Visible = true;
             this.colMASV.VisibleIndex = 0;
-            this.colMASV.Width = 94;
+            this.colMASV.Width = 81;
             // 
             // colHO
             // 
             this.colHO.FieldName = "HO";
-            this.colHO.MinWidth = 25;
+            this.colHO.MinWidth = 21;
             this.colHO.Name = "colHO";
             this.colHO.OptionsColumn.AllowEdit = false;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
-            this.colHO.Width = 94;
+            this.colHO.Width = 81;
             // 
             // colTEN
             // 
             this.colTEN.FieldName = "TEN";
-            this.colTEN.MinWidth = 25;
+            this.colTEN.MinWidth = 21;
             this.colTEN.Name = "colTEN";
             this.colTEN.OptionsColumn.AllowEdit = false;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
-            this.colTEN.Width = 94;
+            this.colTEN.Width = 81;
             // 
             // colNGAYSINH
             // 
             this.colNGAYSINH.FieldName = "NGAYSINH";
-            this.colNGAYSINH.MinWidth = 25;
+            this.colNGAYSINH.MinWidth = 21;
             this.colNGAYSINH.Name = "colNGAYSINH";
             this.colNGAYSINH.OptionsColumn.AllowEdit = false;
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 3;
-            this.colNGAYSINH.Width = 94;
+            this.colNGAYSINH.Width = 81;
             // 
             // colDIACHI
             // 
             this.colDIACHI.FieldName = "DIACHI";
-            this.colDIACHI.MinWidth = 25;
+            this.colDIACHI.MinWidth = 21;
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 4;
-            this.colDIACHI.Width = 94;
+            this.colDIACHI.Width = 81;
             // 
             // colMALOP
             // 
             this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.MinWidth = 25;
+            this.colMALOP.MinWidth = 21;
             this.colMALOP.Name = "colMALOP";
             this.colMALOP.OptionsColumn.AllowEdit = false;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 5;
-            this.colMALOP.Width = 94;
+            this.colMALOP.Width = 81;
             // 
             // bdsBangDiem
             // 
@@ -691,9 +702,9 @@ namespace AppThiTracNghiem
             // 
             // FormSV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 703);
+            this.ClientSize = new System.Drawing.Size(1109, 571);
             this.Controls.Add(this.gcSV);
             this.Controls.Add(this.pnSV);
             this.Controls.Add(this.gcLop);
@@ -702,7 +713,6 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormSV";
             this.Text = "Sinh Viên";
             this.Load += new System.EventHandler(this.FormSV_Load);

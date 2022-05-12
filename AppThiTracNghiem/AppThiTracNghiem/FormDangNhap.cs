@@ -22,8 +22,6 @@ namespace AppThiTracNghiem
             cbbTenCS.DataSource = Program.bds_dspm;
             cbbTenCS.DisplayMember = "TENCS"; cbbTenCS.ValueMember = "TENSERVER";
 
-
-
         }
         public FormDangNhap()
         {
@@ -101,7 +99,9 @@ namespace AppThiTracNghiem
                 }
                 Program.mHoten = Program.myReader.GetString(1);
                 Program.mGroup = Program.myReader.GetString(2);
-
+                Program.NgaySinhSV = Program.myReader.GetString(3);
+                Program.DiaChiSV = Program.myReader.GetString(4);
+                Program.MaLopSV = Program.myReader.GetString(5);
                 Program.myReader.Close();
                 Program.conn.Close();
             }

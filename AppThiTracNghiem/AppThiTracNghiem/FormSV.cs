@@ -202,8 +202,9 @@ namespace AppThiTracNghiem
                 {
                     MessageBox.Show("Đã sửa Sinh viên thành công", "", MessageBoxButtons.OK);
                 }
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled  = btnRefresh.Enabled = btnThoat.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled   = btnRefresh.Enabled = btnThoat.Enabled = true;
                 btnPhucHoi.Enabled = true;
+                btnHuy.Enabled=btnGhi.Enabled = false;
                 pnSV.Enabled = false;
                 gcSV.Enabled = gcLop.Enabled = true;
             }
@@ -251,6 +252,7 @@ namespace AppThiTracNghiem
                     bdsSV.RemoveCurrent();
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
+                    btnPhucHoi.Enabled = true;
                     
                 }
                 catch (Exception ex)
@@ -262,6 +264,7 @@ namespace AppThiTracNghiem
                     bdsSV.Position = vitri;
                     return;
                 }
+               
             }
         }
 
@@ -298,6 +301,7 @@ namespace AppThiTracNghiem
                 }
 
             }
+            if (UndoStack.Count == 0) btnPhucHoi.Enabled = false;
         }
             
 
