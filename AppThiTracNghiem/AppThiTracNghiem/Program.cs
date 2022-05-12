@@ -77,7 +77,7 @@ namespace AppThiTracNghiem
             }
         }
 
-        public static DataTable ExecSqlDataTable(String cmd, String connectionString)
+        public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();
             if (Program.conn.State == ConnectionState.Closed)
