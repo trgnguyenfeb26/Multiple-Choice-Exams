@@ -71,12 +71,19 @@ namespace AppThiTracNghiem
             if (Program.mGroup == "TRUONG")
             {
                 cmbCoSo.Enabled = true;
-                btnGhi.Enabled = btnThem.Enabled = btnPhucHoi.Enabled = btnXoa.Enabled = btnXoa.Enabled =btnSua.Enabled = false;
+                btnGhi.Enabled = btnThem.Enabled = btnPhucHoi.Enabled = btnXoa.Enabled  =btnSua.Enabled =btnHuy.Enabled = false;
+                TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = false;
+               
             }
             else
             {
                 cmbCoSo.Enabled = false;
-                btnGhi.Enabled = btnThem.Enabled = btnPhucHoi.Enabled = btnXoa.Enabled = btnXoa.Enabled = true;
+                TxMaGV.Enabled= TxDiaChi.Enabled=TxHo.Enabled=TxTen.Enabled = false;
+                btnPhucHoi.Enabled = btnHuy.Enabled = btnGhi.Enabled = false;
+                if (bdsGV.Count == 0)
+                {
+                    btnXoa.Enabled = btnSua.Enabled = false;
+                }
 
             }
         }
@@ -140,12 +147,13 @@ namespace AppThiTracNghiem
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
+            TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = true;
             bdsGV.AddNew();
             ((DataRowView)bdsGV[bdsGV.Position])["MAKH"] = lbMaK.Text;
             
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnHuy.Enabled = true;
-            pnGv.Enabled = true;
+            //pnGv.Enabled = true;
             gcGV.Enabled = gcKhoa.Enabled = false;
             btnRefresh.Enabled = false;
             dangThem = true;
@@ -200,7 +208,7 @@ namespace AppThiTracNghiem
                 btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnRefresh.Enabled = btnThoat.Enabled = true;
                 btnPhucHoi.Enabled = true;
                 btnHuy.Enabled = btnGhi.Enabled = false;
-                pnGv.Enabled = false;
+                //pnGv.Enabled = false;
                 gcGV.Enabled = gcKhoa.Enabled = true;
             }
             catch (Exception ex)
@@ -213,11 +221,13 @@ namespace AppThiTracNghiem
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
         {
+            TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = false;
+
             if (dangThem) bdsGV.RemoveCurrent(); else bdsGV.CancelEdit();
             bdsGV.Position = vitri;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnRefresh.Enabled = btnThoat.Enabled = true;
 
-            pnGv.Enabled = false;
+            //pnGv.Enabled = false;
             gcGV.Enabled = gcKhoa.Enabled = true;
             if (UndoStack.Count > 0) { UndoStack.Pop(); btnPhucHoi.Enabled = true; }
 
@@ -254,12 +264,15 @@ namespace AppThiTracNghiem
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.DS.GIAOVIEN_DANGKY);
 
+            TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = false;
 
             if (bdsGV.Count == 0) btnXoa.Enabled = btnSua.Enabled = false;
         }
 
         private void btnPhucHoi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = false;
+
             if (UndoStack.Count == 0) btnPhucHoi.Enabled = false;
             else
             {
@@ -279,6 +292,8 @@ namespace AppThiTracNghiem
 
         private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
         {
+            TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = true;
+
             vitri = bdsGV.Position;
                                                             
             UndoStack.Push("exec[dbo].[SP_UndoSuaGV] '" + TxMaGV.Text + "', N'"
