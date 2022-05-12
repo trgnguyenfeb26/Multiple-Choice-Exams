@@ -158,19 +158,19 @@ namespace AppThiTracNghiem
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (txtMaSv.Text.Trim().Length == 0)
+            if (txtMaSv.Text=="")
             {
                 MessageBox.Show("Mã sinh viên không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtMaSv.Focus();
                 return;
             }
-            if (txtHo.Text.Trim().Length == 0)
+            if (txtHo.Text=="")
             {
                 MessageBox.Show("Họ sinh viên không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtHo.Focus();
                 return;
             }
-            if (txtTen.Text.Trim().Length == 0)
+            if (txtTen.Text=="")
             {
                 MessageBox.Show("Tên sinh viên không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtTen.Focus();
