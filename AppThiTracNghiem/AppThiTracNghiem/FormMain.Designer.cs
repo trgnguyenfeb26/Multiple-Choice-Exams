@@ -36,7 +36,7 @@ namespace AppThiTracNghiem
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnTaoTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
             this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
-            this.btnKhoaLop = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKhoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiaoVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnBoDe = new DevExpress.XtraBars.BarButtonItem();
@@ -45,6 +45,7 @@ namespace AppThiTracNghiem
             this.btnXemKQ = new DevExpress.XtraBars.BarButtonItem();
             this.btnXemBD = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSDK = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLop = new DevExpress.XtraBars.BarButtonItem();
             this.ribHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -82,7 +83,7 @@ namespace AppThiTracNghiem
             this.btnDangXuat,
             this.btnTaoTaiKhoan,
             this.btnSinhVien,
-            this.btnKhoaLop,
+            this.btnKhoa,
             this.btnGiaoVien,
             this.btnMonHoc,
             this.btnBoDe,
@@ -90,10 +91,11 @@ namespace AppThiTracNghiem
             this.btnChonMonThi,
             this.btnXemKQ,
             this.btnXemBD,
-            this.btnDSDK});
+            this.btnDSDK,
+            this.btnLop});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(12);
-            this.ribbon.MaxItemId = 20;
+            this.ribbon.MaxItemId = 21;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribHeThong,
@@ -134,12 +136,13 @@ namespace AppThiTracNghiem
             this.btnSinhVien.Name = "btnSinhVien";
             this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSinhVien_ItemClick);
             // 
-            // btnKhoaLop
+            // btnKhoa
             // 
-            this.btnKhoaLop.Caption = "Khoa, Lớp";
-            this.btnKhoaLop.Id = 9;
-            this.btnKhoaLop.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKhoaLop.ImageOptions.SvgImage")));
-            this.btnKhoaLop.Name = "btnKhoaLop";
+            this.btnKhoa.Caption = "Khoa";
+            this.btnKhoa.Id = 9;
+            this.btnKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKhoa.ImageOptions.SvgImage")));
+            this.btnKhoa.Name = "btnKhoa";
+            this.btnKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoa_ItemClick);
             // 
             // btnGiaoVien
             // 
@@ -198,6 +201,14 @@ namespace AppThiTracNghiem
             this.btnDSDK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSDK.ImageOptions.SvgImage")));
             this.btnDSDK.Name = "btnDSDK";
             // 
+            // btnLop
+            // 
+            this.btnLop.Caption = "Lớp";
+            this.btnLop.Id = 20;
+            this.btnLop.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLop.ImageOptions.SvgImage")));
+            this.btnLop.Name = "btnLop";
+            this.btnLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLop_ItemClick);
+            // 
             // ribHeThong
             // 
             this.ribHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -229,7 +240,8 @@ namespace AppThiTracNghiem
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSinhVien);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnKhoaLop);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnKhoa);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnLop);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnGiaoVien);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnMonHoc);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnBoDe);
@@ -246,6 +258,7 @@ namespace AppThiTracNghiem
             this.btnLapLichThi.Id = 13;
             this.btnLapLichThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLapLichThi.ImageOptions.SvgImage")));
             this.btnLapLichThi.Name = "btnLapLichThi";
+            this.btnLapLichThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLapLichThi_ItemClick);
             // 
             // ribThi
             // 
@@ -381,7 +394,7 @@ namespace AppThiTracNghiem
         private DevExpress.XtraBars.Ribbon.RibbonPage ribDanhMuc;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnSinhVien;
-        private DevExpress.XtraBars.BarButtonItem btnKhoaLop;
+        private DevExpress.XtraBars.BarButtonItem btnKhoa;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnGiaoVien;
@@ -405,5 +418,6 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.ToolStripStatusLabel MaGVSV;
         private System.Windows.Forms.ToolStripStatusLabel HoTen;
         private System.Windows.Forms.ToolStripStatusLabel Nhom;
+        private DevExpress.XtraBars.BarButtonItem btnLop;
     }
 }

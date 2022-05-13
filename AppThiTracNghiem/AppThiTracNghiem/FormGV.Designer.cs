@@ -276,7 +276,7 @@ namespace AppThiTracNghiem
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 7;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
@@ -651,7 +651,7 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.barDockControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormGV";
-            this.Text = "FormGV";
+            this.Text = "Giáo viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();

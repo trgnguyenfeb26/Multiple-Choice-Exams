@@ -52,7 +52,7 @@ namespace AppThiTracNghiem
                 btnDangXuat.Enabled = true;
                 btnXemKQ.Enabled = false;
                 btnSinhVien.Enabled = false;
-                btnKhoaLop.Enabled = false;
+                btnKhoa.Enabled = false;
                 btnGiaoVien.Enabled = false;
                 btnMonHoc.Enabled = false;
             }
@@ -65,7 +65,7 @@ namespace AppThiTracNghiem
                 ribReport.Visible = true;
                 btnDangXuat.Enabled = true;
                 btnTaoTaiKhoan.Enabled = true;
-                btnLapLichThi.Enabled=false;
+                btnLapLichThi.Enabled=true;
                 btnXemKQ.Enabled = false;
 
             }
@@ -164,6 +164,42 @@ namespace AppThiTracNghiem
             else
             {
                 FormGV f = new FormGV();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnKhoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormKhoa));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormKhoa f = new FormKhoa();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnLop_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormLop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormLop f = new FormLop();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnLapLichThi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormChuanBiThi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormChuanBiThi f = new FormChuanBiThi();
                 f.MdiParent = this;
                 f.Show();
             }

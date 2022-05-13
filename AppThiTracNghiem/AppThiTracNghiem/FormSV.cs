@@ -18,10 +18,8 @@ namespace AppThiTracNghiem
         private Stack<string> UndoStack = new Stack<string>();
         private int vitri;
         Boolean dangThem;
-        private BindingSource bds = new BindingSource();
-        private DataTable dt = new DataTable();
-      
-        private Boolean isDangThem = false, isDangSua = false, suaLop = false;
+        
+       
         public FormSV()
         {
             InitializeComponent();
@@ -136,7 +134,7 @@ namespace AppThiTracNghiem
         {
             //bdsSV.CancelEdit();
             if (dangThem) bdsSV.RemoveCurrent(); else bdsSV.CancelEdit();
-            bdsSV.Position = vitri;
+            if (dangThem == false) bdsSV.Position = vitri;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnRefresh.Enabled = btnThoat.Enabled= true;
             
             pnSV.Enabled = false;
@@ -176,7 +174,12 @@ namespace AppThiTracNghiem
                 txtTen.Focus();
                 return;
             }
-           
+            if (DateTime.Compare(DateTime.Parse(dNgaySinh.Text.ToString()),
+                 DateTime.Parse(DateTime.Now.ToShortDateString())) > 0)
+            {
+                MessageBox.Show("Ngày sinh phải nhỏ hơn ngày hiện tại!", "Lỗi ngày sinh", MessageBoxButtons.OK);
+                return;
+            }
             try
             {
 
@@ -215,6 +218,7 @@ namespace AppThiTracNghiem
 
         private void btnRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
+            dS.EnforceConstraints = false;
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -289,9 +293,10 @@ namespace AppThiTracNghiem
 
         private void btnPhucHoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-         
-           // Program.ExecSqlNonQuery(UndoStack.Pop());
-           if (UndoStack.Count == 0) btnPhucHoi.Enabled = false;
+
+            // Program.ExecSqlNonQuery(UndoStack.Pop());
+            this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
+            if (UndoStack.Count == 0) btnPhucHoi.Enabled = false;
             else
             {
                 if (Program.ExecSqlNonQuery(UndoStack.Pop()) == 0)
@@ -341,7 +346,7 @@ namespace AppThiTracNghiem
             else
             {
 
-
+                dS.EnforceConstraints = false;
                 this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
 
