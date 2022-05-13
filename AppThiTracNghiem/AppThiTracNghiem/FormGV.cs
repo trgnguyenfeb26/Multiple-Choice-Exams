@@ -161,7 +161,7 @@ namespace AppThiTracNghiem
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = false;
             if (TxMaGV.Text == "")
             {
                 MessageBox.Show("Mã giáo viên không được trống!", "Lỗi", MessageBoxButtons.OK);
