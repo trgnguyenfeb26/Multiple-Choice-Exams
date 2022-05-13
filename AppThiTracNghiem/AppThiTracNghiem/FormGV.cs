@@ -86,6 +86,17 @@ namespace AppThiTracNghiem
                 }
 
             }
+            if (bdsGV.Count == 0 || Program.mGroup == "TRUONG")
+            {
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
+            }
+
         }
 
         private void cmbCoSo_SelectedIndexChanged(object sender, EventArgs e)
@@ -343,6 +354,20 @@ namespace AppThiTracNghiem
                     return;
                 }
 
+            }
+        }
+
+        private void gcKhoa_Click(object sender, EventArgs e)
+        {
+            if (bdsGV.Count == 0 || Program.mGroup == "TRUONG")
+            {
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
             }
         }
 
