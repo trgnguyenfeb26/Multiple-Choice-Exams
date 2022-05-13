@@ -17,8 +17,8 @@ namespace AppThiTracNghiem
         /// 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstrPublisher = "Data Source=MSI;Initial Catalog=TN_CSDLPT;Integrated Security=True";
-       // public static String connstrPublisher = "Data Source=DESKTOP-O30665V;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+       // public static String connstrPublisher = "Data Source=MSI;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+       public static String connstrPublisher = "Data Source=DESKTOP-O30665V;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
 
         //public static SqlDataAdapter da;
