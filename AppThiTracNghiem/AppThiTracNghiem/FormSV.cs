@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +25,21 @@ namespace AppThiTracNghiem
         {
             InitializeComponent();
         }
+        public string GetMD5(string chuoi)
+        {
+            string str_md5 = "";
+            byte[] mang = System.Text.Encoding.UTF8.GetBytes(chuoi);
 
+            MD5CryptoServiceProvider my_md5 = new MD5CryptoServiceProvider();
+            mang = my_md5.ComputeHash(mang);
+
+            foreach (byte b in mang)
+            {
+                str_md5 += b.ToString("X2");
+            }
+
+            return str_md5;
+        }
         private void FormSV_Load(object sender, EventArgs e)
         {
 
@@ -43,7 +58,7 @@ namespace AppThiTracNghiem
             cmbCoSo.DisplayMember = "TENCS";
             cmbCoSo.ValueMember = "TENSERVER";
             cmbCoSo.SelectedIndex = Program.mCoso;
-
+            
             if (Program.mGroup == "TRUONG")
             {
                
@@ -114,7 +129,7 @@ namespace AppThiTracNghiem
             pnSV.Enabled = true;
             gcSV.Enabled = gcLop.Enabled = false;
             btnRefresh.Enabled = false;
-
+            txtMK.Enabled = true;
             gcLop.Enabled = false;
             dNgaySinh.EditValue = "";
             txtMaSv.Enabled = true;
@@ -137,6 +152,7 @@ namespace AppThiTracNghiem
             btnGhi.Enabled = btnHuy.Enabled = true;
             txtMaSv.Enabled = false;
             dangThem = false;
+            txtMK.Enabled = false;
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
@@ -199,8 +215,9 @@ namespace AppThiTracNghiem
                         txtMaSv.Focus();
                         return;
                     }
+                    ((DataRowView)bdsSV[bdsSV.Position])["MATKHAU"] = GetMD5(txtMK.Text);
                 }
-            
+                
                 bdsSV.EndEdit();
                 bdsSV.ResetCurrentItem();
                 this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
@@ -213,6 +230,8 @@ namespace AppThiTracNghiem
                 {
                     MessageBox.Show("Đã sửa Sinh viên thành công", "", MessageBoxButtons.OK);
                 }
+
+                
                 btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled   = btnRefresh.Enabled = btnThoat.Enabled = true;
                 btnPhucHoi.Enabled = true;
                 btnHuy.Enabled=btnGhi.Enabled = false;

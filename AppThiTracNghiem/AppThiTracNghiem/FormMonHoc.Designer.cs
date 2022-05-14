@@ -30,11 +30,11 @@ namespace AppThiTracNghiem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMonHoc));
             System.Windows.Forms.Label mACSLabel;
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label tENMHLabel;
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMonHoc));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -52,22 +52,22 @@ namespace AppThiTracNghiem
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbCoSo = new System.Windows.Forms.ComboBox();
             this.pnMH = new DevExpress.XtraEditors.PanelControl();
-            this.dS = new AppThiTracNghiem.DS();
+            this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.bdsMH = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new AppThiTracNghiem.DS();
+            this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
             this.mONHOCTableAdapter = new AppThiTracNghiem.DSTableAdapters.MONHOCTableAdapter();
             this.tableAdapterManager = new AppThiTracNghiem.DSTableAdapters.TableAdapterManager();
+            this.bANGDIEMTableAdapter = new AppThiTracNghiem.DSTableAdapters.BANGDIEMTableAdapter();
+            this.bODETableAdapter = new AppThiTracNghiem.DSTableAdapters.BODETableAdapter();
+            this.gIAOVIEN_DANGKYTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
             this.gcMH = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
-            this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
-            this.gIAOVIEN_DANGKYTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
             this.bdsBoDe = new System.Windows.Forms.BindingSource(this.components);
-            this.bODETableAdapter = new AppThiTracNghiem.DSTableAdapters.BODETableAdapter();
             this.bdsBD = new System.Windows.Forms.BindingSource(this.components);
-            this.bANGDIEMTableAdapter = new AppThiTracNghiem.DSTableAdapters.BANGDIEMTableAdapter();
             mACSLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
@@ -76,16 +76,56 @@ namespace AppThiTracNghiem
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnMH)).BeginInit();
             this.pnMH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBoDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mACSLabel
+            // 
+            mACSLabel.AutoSize = true;
+            mACSLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mACSLabel.Location = new System.Drawing.Point(38, 26);
+            mACSLabel.Name = "mACSLabel";
+            mACSLabel.Size = new System.Drawing.Size(66, 24);
+            mACSLabel.TabIndex = 17;
+            mACSLabel.Text = "Cơ sở:";
+            // 
+            // mAMHLabel
+            // 
+            mAMHLabel.AutoSize = true;
+            mAMHLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mAMHLabel.Location = new System.Drawing.Point(38, 43);
+            mAMHLabel.Name = "mAMHLabel";
+            mAMHLabel.Size = new System.Drawing.Size(64, 21);
+            mAMHLabel.TabIndex = 0;
+            mAMHLabel.Text = "MAMH:";
+            // 
+            // tENMHLabel
+            // 
+            tENMHLabel.AutoSize = true;
+            tENMHLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tENMHLabel.Location = new System.Drawing.Point(691, 43);
+            tENMHLabel.Name = "tENMHLabel";
+            tENMHLabel.Size = new System.Drawing.Size(71, 21);
+            tENMHLabel.TabIndex = 2;
+            tENMHLabel.Text = "TENMH:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(148, 21);
+            label1.TabIndex = 4;
+            label1.Text = "Thông tin môn học";
             // 
             // barManager1
             // 
@@ -243,7 +283,7 @@ namespace AppThiTracNghiem
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1374, 79);
+            this.panel1.Size = new System.Drawing.Size(1374, 124);
             this.panel1.TabIndex = 24;
             // 
             // cmbCoSo
@@ -258,16 +298,6 @@ namespace AppThiTracNghiem
             this.cmbCoSo.TabIndex = 19;
             this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
             // 
-            // mACSLabel
-            // 
-            mACSLabel.AutoSize = true;
-            mACSLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mACSLabel.Location = new System.Drawing.Point(38, 26);
-            mACSLabel.Name = "mACSLabel";
-            mACSLabel.Size = new System.Drawing.Size(66, 24);
-            mACSLabel.TabIndex = 17;
-            mACSLabel.Text = "Cơ sở:";
-            // 
             // pnMH
             // 
             this.pnMH.Controls.Add(label1);
@@ -276,20 +306,42 @@ namespace AppThiTracNghiem
             this.pnMH.Controls.Add(mAMHLabel);
             this.pnMH.Controls.Add(this.txtMaMH);
             this.pnMH.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnMH.Location = new System.Drawing.Point(0, 109);
+            this.pnMH.Location = new System.Drawing.Point(0, 154);
             this.pnMH.Name = "pnMH";
-            this.pnMH.Size = new System.Drawing.Size(1374, 103);
+            this.pnMH.Size = new System.Drawing.Size(1374, 161);
             this.pnMH.TabIndex = 25;
+            // 
+            // txtTen
+            // 
+            this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "TENMH", true));
+            this.txtTen.Location = new System.Drawing.Point(780, 40);
+            this.txtTen.MenuManager = this.barManager1;
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Properties.Appearance.Options.UseFont = true;
+            this.txtTen.Size = new System.Drawing.Size(475, 28);
+            this.txtTen.TabIndex = 3;
+            // 
+            // bdsMH
+            // 
+            this.bdsMH.DataMember = "MONHOC";
+            this.bdsMH.DataSource = this.dS;
             // 
             // dS
             // 
             this.dS.DataSetName = "DS";
             this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bdsMH
+            // txtMaMH
             // 
-            this.bdsMH.DataMember = "MONHOC";
-            this.bdsMH.DataSource = this.dS;
+            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "MAMH", true));
+            this.txtMaMH.Location = new System.Drawing.Point(108, 40);
+            this.txtMaMH.MenuManager = this.barManager1;
+            this.txtMaMH.Name = "txtMaMH";
+            this.txtMaMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaMH.Properties.Appearance.Options.UseFont = true;
+            this.txtMaMH.Size = new System.Drawing.Size(313, 28);
+            this.txtMaMH.TabIndex = 1;
             // 
             // mONHOCTableAdapter
             // 
@@ -310,15 +362,27 @@ namespace AppThiTracNghiem
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = AppThiTracNghiem.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // bANGDIEMTableAdapter
+            // 
+            this.bANGDIEMTableAdapter.ClearBeforeFill = true;
+            // 
+            // bODETableAdapter
+            // 
+            this.bODETableAdapter.ClearBeforeFill = true;
+            // 
+            // gIAOVIEN_DANGKYTableAdapter
+            // 
+            this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
+            // 
             // gcMH
             // 
             this.gcMH.DataSource = this.bdsMH;
             this.gcMH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMH.Location = new System.Drawing.Point(0, 212);
+            this.gcMH.Location = new System.Drawing.Point(0, 315);
             this.gcMH.MainView = this.gridView1;
             this.gcMH.MenuManager = this.barManager1;
             this.gcMH.Name = "gcMH";
-            this.gcMH.Size = new System.Drawing.Size(1374, 471);
+            this.gcMH.Size = new System.Drawing.Size(1374, 368);
             this.gcMH.TabIndex = 26;
             this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -354,84 +418,20 @@ namespace AppThiTracNghiem
             this.colTENMH.VisibleIndex = 1;
             this.colTENMH.Width = 94;
             // 
-            // mAMHLabel
-            // 
-            mAMHLabel.AutoSize = true;
-            mAMHLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAMHLabel.Location = new System.Drawing.Point(38, 43);
-            mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(64, 21);
-            mAMHLabel.TabIndex = 0;
-            mAMHLabel.Text = "MAMH:";
-            // 
-            // txtMaMH
-            // 
-            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "MAMH", true));
-            this.txtMaMH.Location = new System.Drawing.Point(108, 40);
-            this.txtMaMH.MenuManager = this.barManager1;
-            this.txtMaMH.Name = "txtMaMH";
-            this.txtMaMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaMH.Properties.Appearance.Options.UseFont = true;
-            this.txtMaMH.Size = new System.Drawing.Size(313, 28);
-            this.txtMaMH.TabIndex = 1;
-            // 
-            // tENMHLabel
-            // 
-            tENMHLabel.AutoSize = true;
-            tENMHLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tENMHLabel.Location = new System.Drawing.Point(691, 43);
-            tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(71, 21);
-            tENMHLabel.TabIndex = 2;
-            tENMHLabel.Text = "TENMH:";
-            // 
-            // txtTen
-            // 
-            this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "TENMH", true));
-            this.txtTen.Location = new System.Drawing.Point(780, 40);
-            this.txtTen.MenuManager = this.barManager1;
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTen.Properties.Appearance.Options.UseFont = true;
-            this.txtTen.Size = new System.Drawing.Size(475, 28);
-            this.txtTen.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(148, 21);
-            label1.TabIndex = 4;
-            label1.Text = "Thông tin môn học";
-            // 
             // bdsGVDK
             // 
             this.bdsGVDK.DataMember = "FK_GIAOVIEN_DANGKY_MONHOC1";
             this.bdsGVDK.DataSource = this.bdsMH;
-            // 
-            // gIAOVIEN_DANGKYTableAdapter
-            // 
-            this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
             // 
             // bdsBoDe
             // 
             this.bdsBoDe.DataMember = "FK_BODE_MONHOC";
             this.bdsBoDe.DataSource = this.bdsMH;
             // 
-            // bODETableAdapter
-            // 
-            this.bODETableAdapter.ClearBeforeFill = true;
-            // 
             // bdsBD
             // 
             this.bdsBD.DataMember = "FK_BANGDIEM_MONHOC";
             this.bdsBD.DataSource = this.bdsMH;
-            // 
-            // bANGDIEMTableAdapter
-            // 
-            this.bANGDIEMTableAdapter.ClearBeforeFill = true;
             // 
             // FormMonHoc
             // 
@@ -454,12 +454,12 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.pnMH)).EndInit();
             this.pnMH.ResumeLayout(false);
             this.pnMH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBoDe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).EndInit();

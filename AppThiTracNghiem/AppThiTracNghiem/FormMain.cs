@@ -87,8 +87,8 @@ namespace AppThiTracNghiem
             if (dialogResult == DialogResult.OK)
             {
                 Program.username = "";
-                Program.mlogin = "";
-                Program.password = "";
+                Program.mlogin = Program.remoteLogin;
+                Program.password = Program.remotePassword;
                 Program.mGroup = "";
                 Program.mHoten = "";
                 foreach (Form frm in this.MdiChildren)
@@ -121,6 +121,7 @@ namespace AppThiTracNghiem
             
                 f.Show();
             }
+            btnDangNhap.Enabled = false;
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
