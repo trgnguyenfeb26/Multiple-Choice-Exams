@@ -76,6 +76,7 @@ namespace AppThiTracNghiem
             this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gIAOVIENTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIENTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbxDA = new System.Windows.Forms.ComboBox();
             this.cbxBB = new System.Windows.Forms.ComboBox();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.lbMGV = new System.Windows.Forms.Label();
@@ -89,7 +90,6 @@ namespace AppThiTracNghiem
             this.txtA = new System.Windows.Forms.TextBox();
             this.txtD = new System.Windows.Forms.TextBox();
             this.txtC = new System.Windows.Forms.TextBox();
-            this.cbxDA = new System.Windows.Forms.ComboBox();
             this.bdsBT = new System.Windows.Forms.BindingSource(this.components);
             this.bAITHITableAdapter = new AppThiTracNghiem.DSTableAdapters.BAITHITableAdapter();
             hotenLabel = new System.Windows.Forms.Label();
@@ -578,6 +578,20 @@ namespace AppThiTracNghiem
             this.panelControl1.Size = new System.Drawing.Size(1250, 150);
             this.panelControl1.TabIndex = 22;
             // 
+            // cbxDA
+            // 
+            this.cbxDA.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsBD, "DAP_AN", true));
+            this.cbxDA.FormattingEnabled = true;
+            this.cbxDA.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D"});
+            this.cbxDA.Location = new System.Drawing.Point(391, 102);
+            this.cbxDA.Name = "cbxDA";
+            this.cbxDA.Size = new System.Drawing.Size(121, 24);
+            this.cbxDA.TabIndex = 38;
+            // 
             // cbxBB
             // 
             this.cbxBB.BackColor = System.Drawing.SystemColors.MenuBar;
@@ -707,20 +721,6 @@ namespace AppThiTracNghiem
             this.txtC.Size = new System.Drawing.Size(233, 116);
             this.txtC.TabIndex = 37;
             // 
-            // cbxDA
-            // 
-            this.cbxDA.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsBD, "DAP_AN", true));
-            this.cbxDA.FormattingEnabled = true;
-            this.cbxDA.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D"});
-            this.cbxDA.Location = new System.Drawing.Point(391, 102);
-            this.cbxDA.Name = "cbxDA";
-            this.cbxDA.Size = new System.Drawing.Size(121, 24);
-            this.cbxDA.TabIndex = 38;
-            // 
             // bdsBT
             // 
             this.bdsBT.DataMember = "fk_cau_hoi";
@@ -744,7 +744,7 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.barDockControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormBoDe";
-            this.Text = "FormBoDe";
+            this.Text = "Bộ đề";
             this.Load += new System.EventHandler(this.FormBoDe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();

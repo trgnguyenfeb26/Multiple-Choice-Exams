@@ -90,7 +90,26 @@ namespace AppThiTracNghiem
                 return null;
             }
         }
-
+        public static SqlDataReader ExecSqlDataReader1(String strLenh)
+        {
+            SqlDataReader myreader;
+            SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+            sqlcmd.CommandTimeout = 600;
+            if (Program.conn.State == ConnectionState.Closed)
+                Program.conn.Open();
+            try
+            {
+                myreader = sqlcmd.ExecuteReader();
+                return myreader;
+            }
+            catch (SqlException ex)
+            {
+                Program.conn.Close();
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
         public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();

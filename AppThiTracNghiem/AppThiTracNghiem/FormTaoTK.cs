@@ -61,10 +61,10 @@ namespace AppThiTracNghiem
         private void gcGV_Click(object sender, EventArgs e)
         {
             label6.Text = "dzfdsf";
-            string strLenh = "EXEC SP_GetRole'" + txtUser.Text + "'";
+            string strLenh = "EXEC SP_GetRole '" + txtUser.Text + "'";
             try
             {
-                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                Program.myReader = Program.ExecSqlDataReader1(strLenh);
              
                 if (Program.myReader == null) return;
                 Program.myReader.Read();

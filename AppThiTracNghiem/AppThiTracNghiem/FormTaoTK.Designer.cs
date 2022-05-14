@@ -324,7 +324,7 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.gcGV);
             this.Controls.Add(this.panelControl1);
             this.Name = "FormTaoTK";
-            this.Text = "FormTaoTK";
+            this.Text = "Tạo tài khoản";
             this.Load += new System.EventHandler(this.FormTaoTK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
