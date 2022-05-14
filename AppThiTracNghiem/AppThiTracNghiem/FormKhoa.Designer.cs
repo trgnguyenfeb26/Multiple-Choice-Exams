@@ -250,7 +250,7 @@ namespace AppThiTracNghiem
             this.gcKhoa.Location = new System.Drawing.Point(0, 178);
             this.gcKhoa.MainView = this.gridView1;
             this.gcKhoa.Name = "gcKhoa";
-            this.gcKhoa.Size = new System.Drawing.Size(1130, 238);
+            this.gcKhoa.Size = new System.Drawing.Size(1130, 332);
             this.gcKhoa.TabIndex = 1;
             this.gcKhoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -387,7 +387,7 @@ namespace AppThiTracNghiem
             this.barDockControlRight.Location = new System.Drawing.Point(1130, 30);
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 386);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 480);
             // 
             // barManager1
             // 
@@ -528,7 +528,7 @@ namespace AppThiTracNghiem
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 416);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 510);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1130, 20);
@@ -540,7 +540,7 @@ namespace AppThiTracNghiem
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 386);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 480);
             // 
             // barDockControl1
             // 
@@ -549,7 +549,7 @@ namespace AppThiTracNghiem
             this.barDockControl1.Location = new System.Drawing.Point(1130, 30);
             this.barDockControl1.Manager = this.barManager1;
             this.barDockControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControl1.Size = new System.Drawing.Size(0, 386);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 480);
             // 
             // bdsGV
             // 
@@ -564,7 +564,7 @@ namespace AppThiTracNghiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 436);
+            this.ClientSize = new System.Drawing.Size(1130, 530);
             this.Controls.Add(this.gcKhoa);
             this.Controls.Add(this.pnKhoa);
             this.Controls.Add(this.panel1);

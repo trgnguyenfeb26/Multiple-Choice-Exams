@@ -130,6 +130,7 @@ namespace AppThiTracNghiem
             gcSV.Enabled = gcLop.Enabled = false;
             btnRefresh.Enabled = false;
             txtMK.Enabled = true;
+            txtXN.Enabled = true;
             gcLop.Enabled = false;
             dNgaySinh.EditValue = "";
             txtMaSv.Enabled = true;
@@ -153,6 +154,7 @@ namespace AppThiTracNghiem
             txtMaSv.Enabled = false;
             dangThem = false;
             txtMK.Enabled = false;
+            txtXN.Enabled = false;
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
@@ -181,24 +183,31 @@ namespace AppThiTracNghiem
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (txtMaSv.Text=="")
+            if (txtMaSv.Text.ToString().Trim()=="")
             {
                 MessageBox.Show("Mã sinh viên không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtMaSv.Focus();
                 return;
             }
-            if (txtHo.Text=="")
+            if (txtHo.Text.ToString().Trim() == "")
             {
                 MessageBox.Show("Họ sinh viên không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtHo.Focus();
                 return;
             }
-            if (txtTen.Text=="")
+            if (txtTen.Text.ToString().Trim() == "")
             {
                 MessageBox.Show("Tên sinh viên không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtTen.Focus();
                 return;
             }
+            if(txtMK.Text.ToString()!= txtXN.Text.ToString())
+            {
+                MessageBox.Show("Nhập lại mật khẩu không trùng với mật khẩu mới ", "", MessageBoxButtons.OK);
+                txtXN.Focus();
+                return;
+            }
+            if (dNgaySinh.Text != "")
             if (DateTime.Compare(DateTime.Parse(dNgaySinh.Text.ToString()),
                  DateTime.Parse(DateTime.Now.ToShortDateString())) > 0)
             {
@@ -387,5 +396,7 @@ namespace AppThiTracNghiem
               //  maLop = ((DataRowView)bdsLop[0])["MALOP"].ToString();
             }
         }
+
+
     }
 }

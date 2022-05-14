@@ -81,7 +81,7 @@ namespace AppThiTracNghiem
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1121, 347);
+            this.panelControl1.Size = new System.Drawing.Size(1121, 543);
             this.panelControl1.TabIndex = 1;
             // 
             // label6
@@ -236,10 +236,10 @@ namespace AppThiTracNghiem
             // 
             this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGV.Location = new System.Drawing.Point(0, 347);
+            this.gcGV.Location = new System.Drawing.Point(0, 543);
             this.gcGV.MainView = this.gridView1;
             this.gcGV.Name = "gcGV";
-            this.gcGV.Size = new System.Drawing.Size(1121, 453);
+            this.gcGV.Size = new System.Drawing.Size(1121, 257);
             this.gcGV.TabIndex = 2;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

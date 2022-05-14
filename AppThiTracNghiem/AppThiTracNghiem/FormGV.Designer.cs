@@ -379,11 +379,11 @@ namespace AppThiTracNghiem
             // 
             this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGV.Location = new System.Drawing.Point(492, 173);
+            this.gcGV.Location = new System.Drawing.Point(492, 194);
             this.gcGV.MainView = this.gridView2;
             this.gcGV.MenuManager = this.barManager2;
             this.gcGV.Name = "gcGV";
-            this.gcGV.Size = new System.Drawing.Size(827, 309);
+            this.gcGV.Size = new System.Drawing.Size(827, 288);
             this.gcGV.TabIndex = 3;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -484,9 +484,9 @@ namespace AppThiTracNghiem
             this.pnGv.Controls.Add(mAKHLabel);
             this.pnGv.Controls.Add(tENKHLabel1);
             this.pnGv.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnGv.Location = new System.Drawing.Point(2, 173);
+            this.pnGv.Location = new System.Drawing.Point(2, 194);
             this.pnGv.Name = "pnGv";
-            this.pnGv.Size = new System.Drawing.Size(490, 309);
+            this.pnGv.Size = new System.Drawing.Size(490, 288);
             this.pnGv.TabIndex = 3;
             // 
             // TxDiaChi
@@ -552,7 +552,7 @@ namespace AppThiTracNghiem
             this.gcKhoa.MainView = this.gridView1;
             this.gcKhoa.MenuManager = this.barManager2;
             this.gcKhoa.Name = "gcKhoa";
-            this.gcKhoa.Size = new System.Drawing.Size(1317, 171);
+            this.gcKhoa.Size = new System.Drawing.Size(1317, 192);
             this.gcKhoa.TabIndex = 0;
             this.gcKhoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

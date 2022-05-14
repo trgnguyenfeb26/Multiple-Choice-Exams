@@ -272,7 +272,7 @@ namespace AppThiTracNghiem
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 478);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 633);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1252, 0);
@@ -284,7 +284,7 @@ namespace AppThiTracNghiem
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 448);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 603);
             // 
             // barDockControl1
             // 
@@ -293,7 +293,7 @@ namespace AppThiTracNghiem
             this.barDockControl1.Location = new System.Drawing.Point(1252, 30);
             this.barDockControl1.Manager = this.barManager1;
             this.barDockControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControl1.Size = new System.Drawing.Size(0, 448);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 603);
             // 
             // panel1
             // 
@@ -303,7 +303,7 @@ namespace AppThiTracNghiem
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1252, 79);
+            this.panel1.Size = new System.Drawing.Size(1252, 76);
             this.panel1.TabIndex = 22;
             // 
             // cmbCoSo
@@ -351,9 +351,9 @@ namespace AppThiTracNghiem
             // 
             this.panelControl1.Controls.Add(this.gcKH);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 109);
+            this.panelControl1.Location = new System.Drawing.Point(0, 106);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1252, 144);
+            this.panelControl1.Size = new System.Drawing.Size(1252, 234);
             this.panelControl1.TabIndex = 29;
             // 
             // gcKH
@@ -364,7 +364,7 @@ namespace AppThiTracNghiem
             this.gcKH.MainView = this.gridView1;
             this.gcKH.MenuManager = this.barManager1;
             this.gcKH.Name = "gcKH";
-            this.gcKH.Size = new System.Drawing.Size(1248, 140);
+            this.gcKH.Size = new System.Drawing.Size(1248, 230);
             this.gcKH.TabIndex = 0;
             this.gcKH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -419,9 +419,9 @@ namespace AppThiTracNghiem
             this.pnLop.Controls.Add(mALOPLabel);
             this.pnLop.Controls.Add(this.txtMaLop);
             this.pnLop.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnLop.Location = new System.Drawing.Point(0, 253);
+            this.pnLop.Location = new System.Drawing.Point(0, 340);
             this.pnLop.Name = "pnLop";
-            this.pnLop.Size = new System.Drawing.Size(374, 225);
+            this.pnLop.Size = new System.Drawing.Size(386, 293);
             this.pnLop.TabIndex = 30;
             // 
             // txtMaKH
@@ -467,14 +467,15 @@ namespace AppThiTracNghiem
             // 
             this.gcLop.DataSource = this.bdsLop;
             this.gcLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcLop.Location = new System.Drawing.Point(374, 253);
+            this.gcLop.Location = new System.Drawing.Point(386, 340);
             this.gcLop.MainView = this.gridView2;
             this.gcLop.MenuManager = this.barManager1;
             this.gcLop.Name = "gcLop";
-            this.gcLop.Size = new System.Drawing.Size(878, 225);
+            this.gcLop.Size = new System.Drawing.Size(866, 293);
             this.gcLop.TabIndex = 30;
             this.gcLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gcLop.Click += new System.EventHandler(this.gcLop_Click);
             // 
             // gridView2
             // 
@@ -537,7 +538,7 @@ namespace AppThiTracNghiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 478);
+            this.ClientSize = new System.Drawing.Size(1252, 633);
             this.Controls.Add(this.gcLop);
             this.Controls.Add(this.pnLop);
             this.Controls.Add(this.panelControl1);

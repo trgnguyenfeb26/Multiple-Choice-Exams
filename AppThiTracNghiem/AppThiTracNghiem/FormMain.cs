@@ -28,6 +28,7 @@ namespace AppThiTracNghiem
             ribThi.Visible = false;
             ribDanhMuc.Visible = false;
             ribReport.Visible = false;
+            btnDMK.Enabled = false;
 
             if (Program.mGroup == "SinhVien")
             {
@@ -36,8 +37,8 @@ namespace AppThiTracNghiem
                 ribDanhMuc.Visible = false;
                 ribReport.Visible = false;
                 btnTaoTaiKhoan.Enabled = false ;
-               
                 btnDangXuat.Enabled = true;
+                btnDMK.Enabled = true;
             }
             else
             if (Program.mGroup == "GIANGVIEN")
@@ -53,6 +54,7 @@ namespace AppThiTracNghiem
                 btnKhoa.Enabled = true;
                 btnGiaoVien.Enabled = true;
                 btnMonHoc.Enabled = true;
+                btnDMK.Enabled = true;
             }
             else
             if (Program.mGroup == "TRUONG")
@@ -65,6 +67,7 @@ namespace AppThiTracNghiem
                 btnTaoTaiKhoan.Enabled = true;
                 btnLapLichThi.Enabled=true;
                 btnXemKQ.Enabled = false;
+                btnDMK.Enabled = true;
 
             }
             if (Program.mGroup == "COSO")
@@ -76,6 +79,7 @@ namespace AppThiTracNghiem
                 btnDangXuat.Enabled = true;
                 btnTaoTaiKhoan.Enabled = true;
                 btnXemKQ.Enabled = false;
+                btnDMK.Enabled = true;
             }
 
 
@@ -232,6 +236,18 @@ namespace AppThiTracNghiem
             else
             {
                 FormTaoTK f = new FormTaoTK();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDMK_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormDoiMK));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormDoiMK f = new FormDoiMK();
                 f.MdiParent = this;
                 f.Show();
             }

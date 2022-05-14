@@ -321,6 +321,9 @@ namespace AppThiTracNghiem
             }
         }
 
-       
+        private void gcLop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

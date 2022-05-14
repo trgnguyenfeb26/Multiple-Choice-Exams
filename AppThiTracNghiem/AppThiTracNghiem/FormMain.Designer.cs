@@ -46,6 +46,8 @@ namespace AppThiTracNghiem
             this.btnXemBD = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSDK = new DevExpress.XtraBars.BarButtonItem();
             this.btnLop = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCMT = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDMK = new DevExpress.XtraBars.BarButtonItem();
             this.ribHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -91,10 +93,12 @@ namespace AppThiTracNghiem
             this.btnXemKQ,
             this.btnXemBD,
             this.btnDSDK,
-            this.btnLop});
+            this.btnLop,
+            this.btnCMT,
+            this.btnDMK});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(12);
-            this.ribbon.MaxItemId = 21;
+            this.ribbon.MaxItemId = 25;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribHeThong,
@@ -211,6 +215,22 @@ namespace AppThiTracNghiem
             this.btnLop.Name = "btnLop";
             this.btnLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLop_ItemClick);
             // 
+            // btnCMT
+            // 
+            this.btnCMT.Caption = "Chọn môn thi";
+            this.btnCMT.Id = 23;
+            this.btnCMT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCMT.ImageOptions.SvgImage")));
+            this.btnCMT.Name = "btnCMT";
+            // 
+            // btnDMK
+            // 
+            this.btnDMK.Caption = "Đổi mật khẩu";
+            this.btnDMK.Enabled = false;
+            this.btnDMK.Id = 24;
+            this.btnDMK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDMK.ImageOptions.SvgImage")));
+            this.btnDMK.Name = "btnDMK";
+            this.btnDMK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDMK_ItemClick);
+            // 
             // ribHeThong
             // 
             this.ribHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -228,6 +248,7 @@ namespace AppThiTracNghiem
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTaoTaiKhoan);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnDMK);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribDanhMuc
@@ -272,7 +293,7 @@ namespace AppThiTracNghiem
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnChonMonThi);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnCMT);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribReport
@@ -414,5 +435,7 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.ToolStripStatusLabel HoTen;
         private System.Windows.Forms.ToolStripStatusLabel Nhom;
         private DevExpress.XtraBars.BarButtonItem btnLop;
+        private DevExpress.XtraBars.BarButtonItem btnCMT;
+        private DevExpress.XtraBars.BarButtonItem btnDMK;
     }
 }

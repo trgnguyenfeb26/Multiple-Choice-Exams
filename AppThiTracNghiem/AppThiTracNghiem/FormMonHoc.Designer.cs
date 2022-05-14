@@ -283,7 +283,7 @@ namespace AppThiTracNghiem
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1374, 124);
+            this.panel1.Size = new System.Drawing.Size(1374, 88);
             this.panel1.TabIndex = 24;
             // 
             // cmbCoSo
@@ -306,9 +306,9 @@ namespace AppThiTracNghiem
             this.pnMH.Controls.Add(mAMHLabel);
             this.pnMH.Controls.Add(this.txtMaMH);
             this.pnMH.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnMH.Location = new System.Drawing.Point(0, 154);
+            this.pnMH.Location = new System.Drawing.Point(0, 118);
             this.pnMH.Name = "pnMH";
-            this.pnMH.Size = new System.Drawing.Size(1374, 161);
+            this.pnMH.Size = new System.Drawing.Size(1374, 128);
             this.pnMH.TabIndex = 25;
             // 
             // txtTen
@@ -378,11 +378,11 @@ namespace AppThiTracNghiem
             // 
             this.gcMH.DataSource = this.bdsMH;
             this.gcMH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMH.Location = new System.Drawing.Point(0, 315);
+            this.gcMH.Location = new System.Drawing.Point(0, 246);
             this.gcMH.MainView = this.gridView1;
             this.gcMH.MenuManager = this.barManager1;
             this.gcMH.Name = "gcMH";
-            this.gcMH.Size = new System.Drawing.Size(1374, 368);
+            this.gcMH.Size = new System.Drawing.Size(1374, 437);
             this.gcMH.TabIndex = 26;
             this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
