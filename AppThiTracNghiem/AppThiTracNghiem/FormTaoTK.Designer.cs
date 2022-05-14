@@ -31,7 +31,9 @@ namespace AppThiTracNghiem
         {
             this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtUser = new DevExpress.XtraEditors.TextEdit();
+            this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new AppThiTracNghiem.DS();
             this.cmbGroup = new System.Windows.Forms.ComboBox();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -52,9 +54,11 @@ namespace AppThiTracNghiem
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -62,6 +66,8 @@ namespace AppThiTracNghiem
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.label6);
+            this.panelControl1.Controls.Add(this.txtUser);
             this.panelControl1.Controls.Add(this.cmbGroup);
             this.panelControl1.Controls.Add(this.btnThoat);
             this.panelControl1.Controls.Add(this.btnTao);
@@ -78,10 +84,29 @@ namespace AppThiTracNghiem
             this.panelControl1.Size = new System.Drawing.Size(1121, 347);
             this.panelControl1.TabIndex = 1;
             // 
-            // gIAOVIENBindingSource
+            // label6
             // 
-            this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
-            this.gIAOVIENBindingSource.DataSource = this.dS;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(852, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "label6";
+            // 
+            // txtUser
+            // 
+            this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUser.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAGV", true));
+            this.txtUser.Enabled = false;
+            this.txtUser.Location = new System.Drawing.Point(445, 146);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(280, 22);
+            this.txtUser.TabIndex = 26;
+            // 
+            // bdsGV
+            // 
+            this.bdsGV.DataMember = "GIAOVIEN";
+            this.bdsGV.DataSource = this.dS;
             // 
             // dS
             // 
@@ -119,6 +144,7 @@ namespace AppThiTracNghiem
             this.btnTao.TabIndex = 23;
             this.btnTao.Text = "Tạo";
             this.btnTao.UseVisualStyleBackColor = true;
+            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
             // label5
             // 
@@ -208,7 +234,7 @@ namespace AppThiTracNghiem
             // 
             // gcGV
             // 
-            this.gcGV.DataSource = this.gIAOVIENBindingSource;
+            this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcGV.Location = new System.Drawing.Point(0, 347);
             this.gcGV.MainView = this.gridView1;
@@ -217,6 +243,7 @@ namespace AppThiTracNghiem
             this.gcGV.TabIndex = 2;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gcGV.Click += new System.EventHandler(this.gcGV_Click);
             // 
             // gridView1
             // 
@@ -225,7 +252,8 @@ namespace AppThiTracNghiem
             this.colHO,
             this.colTEN,
             this.colDIACHI,
-            this.colMAKH});
+            this.colMAKH,
+            this.colGroup});
             this.gridView1.GridControl = this.gcGV;
             this.gridView1.Name = "gridView1";
             // 
@@ -234,6 +262,7 @@ namespace AppThiTracNghiem
             this.colMAGV.FieldName = "MAGV";
             this.colMAGV.MinWidth = 25;
             this.colMAGV.Name = "colMAGV";
+            this.colMAGV.OptionsColumn.ReadOnly = true;
             this.colMAGV.Visible = true;
             this.colMAGV.VisibleIndex = 0;
             this.colMAGV.Width = 94;
@@ -243,6 +272,7 @@ namespace AppThiTracNghiem
             this.colHO.FieldName = "HO";
             this.colHO.MinWidth = 25;
             this.colHO.Name = "colHO";
+            this.colHO.OptionsColumn.ReadOnly = true;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
             this.colHO.Width = 94;
@@ -252,6 +282,7 @@ namespace AppThiTracNghiem
             this.colTEN.FieldName = "TEN";
             this.colTEN.MinWidth = 25;
             this.colTEN.Name = "colTEN";
+            this.colTEN.OptionsColumn.ReadOnly = true;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
             this.colTEN.Width = 94;
@@ -261,6 +292,7 @@ namespace AppThiTracNghiem
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.MinWidth = 25;
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.ReadOnly = true;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 3;
             this.colDIACHI.Width = 94;
@@ -270,9 +302,19 @@ namespace AppThiTracNghiem
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 25;
             this.colMAKH.Name = "colMAKH";
+            this.colMAKH.OptionsColumn.ReadOnly = true;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 4;
             this.colMAKH.Width = 94;
+            // 
+            // colGroup
+            // 
+            this.colGroup.Caption = "Group";
+            this.colGroup.MinWidth = 25;
+            this.colGroup.Name = "colGroup";
+            this.colGroup.Visible = true;
+            this.colGroup.VisibleIndex = 5;
+            this.colGroup.Width = 94;
             // 
             // FormTaoTK
             // 
@@ -287,7 +329,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -308,7 +351,7 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DS dS;
-        private System.Windows.Forms.BindingSource gIAOVIENBindingSource;
+        private System.Windows.Forms.BindingSource bdsGV;
         private DSTableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gcGV;
@@ -319,5 +362,8 @@ namespace AppThiTracNghiem
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.TextEdit txtUser;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraGrid.Columns.GridColumn colGroup;
     }
 }

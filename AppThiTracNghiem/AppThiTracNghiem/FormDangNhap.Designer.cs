@@ -44,6 +44,7 @@ namespace AppThiTracNghiem
             // 
             // tENCSLabel
             // 
+            tENCSLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             tENCSLabel.AutoSize = true;
             tENCSLabel.Font = new System.Drawing.Font("Tahoma", 15F);
             tENCSLabel.Location = new System.Drawing.Point(257, 42);
@@ -54,6 +55,7 @@ namespace AppThiTracNghiem
             // 
             // rdbSV
             // 
+            this.rdbSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdbSV.AutoSize = true;
             this.rdbSV.Checked = true;
             this.rdbSV.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -69,6 +71,7 @@ namespace AppThiTracNghiem
             // 
             // rdbGV
             // 
+            this.rdbGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdbGV.AutoSize = true;
             this.rdbGV.Font = new System.Drawing.Font("Tahoma", 15F);
             this.rdbGV.Location = new System.Drawing.Point(291, 99);
@@ -83,6 +86,7 @@ namespace AppThiTracNghiem
             // 
             // cbbTenCS
             // 
+            this.cbbTenCS.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbbTenCS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTenCS.Font = new System.Drawing.Font("Tahoma", 15F);
             this.cbbTenCS.FormattingEnabled = true;
@@ -95,6 +99,7 @@ namespace AppThiTracNghiem
             // 
             // btnThoat
             // 
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnThoat.Location = new System.Drawing.Point(487, 317);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -107,6 +112,7 @@ namespace AppThiTracNghiem
             // 
             // btnDangNhap
             // 
+            this.btnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDangNhap.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnDangNhap.Location = new System.Drawing.Point(236, 317);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -119,6 +125,7 @@ namespace AppThiTracNghiem
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPassword.Font = new System.Drawing.Font("Tahoma", 15F);
             this.txtPassword.Location = new System.Drawing.Point(394, 224);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -129,6 +136,7 @@ namespace AppThiTracNghiem
             // 
             // txtLogin
             // 
+            this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLogin.Font = new System.Drawing.Font("Tahoma", 15F);
             this.txtLogin.Location = new System.Drawing.Point(394, 161);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -138,6 +146,7 @@ namespace AppThiTracNghiem
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label2.Location = new System.Drawing.Point(257, 232);
@@ -148,6 +157,7 @@ namespace AppThiTracNghiem
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label1.Location = new System.Drawing.Point(257, 164);
