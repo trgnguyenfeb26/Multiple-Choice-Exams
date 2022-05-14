@@ -13,6 +13,8 @@ namespace AppThiTracNghiem
 {
     public partial class FormThi : DevExpress.XtraEditors.XtraForm
     {
+
+
         public FormThi()
         {
             InitializeComponent();

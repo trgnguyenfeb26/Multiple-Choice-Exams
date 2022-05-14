@@ -204,5 +204,17 @@ namespace AppThiTracNghiem
                 f.Show();
             }
         }
+
+        private void btnBoDe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormBoDe));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormBoDe f = new FormBoDe();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

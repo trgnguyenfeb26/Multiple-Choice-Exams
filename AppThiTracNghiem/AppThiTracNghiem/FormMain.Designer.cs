@@ -165,6 +165,7 @@ namespace AppThiTracNghiem
             this.btnBoDe.Id = 12;
             this.btnBoDe.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBoDe.ImageOptions.SvgImage")));
             this.btnBoDe.Name = "btnBoDe";
+            this.btnBoDe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoDe_ItemClick);
             // 
             // btnThongTinSV
             // 

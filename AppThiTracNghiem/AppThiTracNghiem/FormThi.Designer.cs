@@ -38,17 +38,8 @@ namespace AppThiTracNghiem
             this.rdbCauHoi = new DevExpress.XtraEditors.RadioGroup();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.gIAOVIEN_DANGKYGridControl = new DevExpress.XtraGrid.GridControl();
             this.gIAOVIEN_DANGKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new AppThiTracNghiem.DS();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTRINHDO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAYTHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLAN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOCAUTHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTHOIGIAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.label3 = new System.Windows.Forms.Label();
             this.tENMHTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -86,11 +77,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.rdbCauHoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tENMHTextEdit.Properties)).BeginInit();
@@ -103,7 +91,7 @@ namespace AppThiTracNghiem
             // tENMHLabel
             // 
             tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(22, 39);
+            tENMHLabel.Location = new System.Drawing.Point(21, 61);
             tENMHLabel.Name = "tENMHLabel";
             tENMHLabel.Size = new System.Drawing.Size(57, 17);
             tENMHLabel.TabIndex = 0;
@@ -161,26 +149,12 @@ namespace AppThiTracNghiem
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.gIAOVIEN_DANGKYGridControl);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(0, 170);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1342, 218);
             this.panelControl3.TabIndex = 2;
-            // 
-            // gIAOVIEN_DANGKYGridControl
-            // 
-            this.gIAOVIEN_DANGKYGridControl.DataSource = this.gIAOVIEN_DANGKYBindingSource;
-            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(348, 37);
-            this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView1;
-            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
-            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(350, 177);
-            this.gIAOVIEN_DANGKYGridControl.TabIndex = 0;
-            this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
             // 
             // gIAOVIEN_DANGKYBindingSource
             // 
@@ -191,83 +165,6 @@ namespace AppThiTracNghiem
             // 
             this.dS.DataSetName = "DS";
             this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAMH,
-            this.colMALOP,
-            this.colTRINHDO,
-            this.colNGAYTHI,
-            this.colLAN,
-            this.colSOCAUTHI,
-            this.colTHOIGIAN});
-            this.gridView1.DetailHeight = 431;
-            this.gridView1.GridControl = this.gIAOVIEN_DANGKYGridControl;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colMAMH
-            // 
-            this.colMAMH.FieldName = "MAMH";
-            this.colMAMH.MinWidth = 23;
-            this.colMAMH.Name = "colMAMH";
-            this.colMAMH.Visible = true;
-            this.colMAMH.VisibleIndex = 0;
-            this.colMAMH.Width = 87;
-            // 
-            // colMALOP
-            // 
-            this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.MinWidth = 23;
-            this.colMALOP.Name = "colMALOP";
-            this.colMALOP.Visible = true;
-            this.colMALOP.VisibleIndex = 1;
-            this.colMALOP.Width = 87;
-            // 
-            // colTRINHDO
-            // 
-            this.colTRINHDO.FieldName = "TRINHDO";
-            this.colTRINHDO.MinWidth = 23;
-            this.colTRINHDO.Name = "colTRINHDO";
-            this.colTRINHDO.Visible = true;
-            this.colTRINHDO.VisibleIndex = 2;
-            this.colTRINHDO.Width = 87;
-            // 
-            // colNGAYTHI
-            // 
-            this.colNGAYTHI.FieldName = "NGAYTHI";
-            this.colNGAYTHI.MinWidth = 23;
-            this.colNGAYTHI.Name = "colNGAYTHI";
-            this.colNGAYTHI.Visible = true;
-            this.colNGAYTHI.VisibleIndex = 3;
-            this.colNGAYTHI.Width = 87;
-            // 
-            // colLAN
-            // 
-            this.colLAN.FieldName = "LAN";
-            this.colLAN.MinWidth = 23;
-            this.colLAN.Name = "colLAN";
-            this.colLAN.Visible = true;
-            this.colLAN.VisibleIndex = 4;
-            this.colLAN.Width = 87;
-            // 
-            // colSOCAUTHI
-            // 
-            this.colSOCAUTHI.FieldName = "SOCAUTHI";
-            this.colSOCAUTHI.MinWidth = 23;
-            this.colSOCAUTHI.Name = "colSOCAUTHI";
-            this.colSOCAUTHI.Visible = true;
-            this.colSOCAUTHI.VisibleIndex = 5;
-            this.colSOCAUTHI.Width = 87;
-            // 
-            // colTHOIGIAN
-            // 
-            this.colTHOIGIAN.FieldName = "THOIGIAN";
-            this.colTHOIGIAN.MinWidth = 23;
-            this.colTHOIGIAN.Name = "colTHOIGIAN";
-            this.colTHOIGIAN.Visible = true;
-            this.colTHOIGIAN.VisibleIndex = 6;
-            this.colTHOIGIAN.Width = 87;
             // 
             // panelControl4
             // 
@@ -287,7 +184,7 @@ namespace AppThiTracNghiem
             this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(5, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 21);
             this.label3.TabIndex = 18;
@@ -296,7 +193,7 @@ namespace AppThiTracNghiem
             // tENMHTextEdit
             // 
             this.tENMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.mONHOCBindingSource, "TENMH", true));
-            this.tENMHTextEdit.Location = new System.Drawing.Point(82, 36);
+            this.tENMHTextEdit.Location = new System.Drawing.Point(100, 58);
             this.tENMHTextEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tENMHTextEdit.Name = "tENMHTextEdit";
             this.tENMHTextEdit.Size = new System.Drawing.Size(205, 22);
@@ -331,7 +228,7 @@ namespace AppThiTracNghiem
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(5, 0);
+            this.label1.Location = new System.Drawing.Point(6, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 21);
             this.label1.TabIndex = 17;
@@ -342,7 +239,7 @@ namespace AppThiTracNghiem
             this.txtB_IDClass.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtB_IDClass.Enabled = false;
             this.txtB_IDClass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtB_IDClass.Location = new System.Drawing.Point(439, 33);
+            this.txtB_IDClass.Location = new System.Drawing.Point(450, 36);
             this.txtB_IDClass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtB_IDClass.Name = "txtB_IDClass";
             this.txtB_IDClass.Size = new System.Drawing.Size(191, 23);
@@ -353,7 +250,7 @@ namespace AppThiTracNghiem
             this.lb_IDClass.AutoSize = true;
             this.lb_IDClass.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_IDClass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_IDClass.Location = new System.Drawing.Point(383, 38);
+            this.lb_IDClass.Location = new System.Drawing.Point(383, 41);
             this.lb_IDClass.Name = "lb_IDClass";
             this.lb_IDClass.Size = new System.Drawing.Size(52, 17);
             this.lb_IDClass.TabIndex = 15;
@@ -364,7 +261,7 @@ namespace AppThiTracNghiem
             this.txtB_FullName.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtB_FullName.Enabled = false;
             this.txtB_FullName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtB_FullName.Location = new System.Drawing.Point(125, 98);
+            this.txtB_FullName.Location = new System.Drawing.Point(129, 98);
             this.txtB_FullName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtB_FullName.Name = "txtB_FullName";
             this.txtB_FullName.Size = new System.Drawing.Size(195, 23);
@@ -375,10 +272,10 @@ namespace AppThiTracNghiem
             this.txtB_NameClass.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtB_NameClass.Enabled = false;
             this.txtB_NameClass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtB_NameClass.Location = new System.Drawing.Point(449, 98);
+            this.txtB_NameClass.Location = new System.Drawing.Point(450, 98);
             this.txtB_NameClass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtB_NameClass.Name = "txtB_NameClass";
-            this.txtB_NameClass.Size = new System.Drawing.Size(180, 23);
+            this.txtB_NameClass.Size = new System.Drawing.Size(191, 23);
             this.txtB_NameClass.TabIndex = 13;
             // 
             // txtB_IDStudent
@@ -386,7 +283,7 @@ namespace AppThiTracNghiem
             this.txtB_IDStudent.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtB_IDStudent.Enabled = false;
             this.txtB_IDStudent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtB_IDStudent.Location = new System.Drawing.Point(125, 34);
+            this.txtB_IDStudent.Location = new System.Drawing.Point(129, 36);
             this.txtB_IDStudent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtB_IDStudent.Name = "txtB_IDStudent";
             this.txtB_IDStudent.Size = new System.Drawing.Size(195, 23);
@@ -397,7 +294,7 @@ namespace AppThiTracNghiem
             this.lb_NameClass.AutoSize = true;
             this.lb_NameClass.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_NameClass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_NameClass.Location = new System.Drawing.Point(383, 106);
+            this.lb_NameClass.Location = new System.Drawing.Point(383, 101);
             this.lb_NameClass.Name = "lb_NameClass";
             this.lb_NameClass.Size = new System.Drawing.Size(58, 17);
             this.lb_NameClass.TabIndex = 11;
@@ -408,7 +305,7 @@ namespace AppThiTracNghiem
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(36, 106);
+            this.label2.Location = new System.Drawing.Point(36, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 10;
@@ -419,7 +316,7 @@ namespace AppThiTracNghiem
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(36, 38);
+            this.label4.Location = new System.Drawing.Point(36, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 17);
             this.label4.TabIndex = 9;
@@ -588,11 +485,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.rdbCauHoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
@@ -632,16 +526,7 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Label label4;
         private DSTableAdapters.GIAOVIEN_DANGKYTableAdapter gIAOVIEN_DANGKYTableAdapter;
         private System.Windows.Forms.BindingSource gIAOVIEN_DANGKYBindingSource;
-        private DevExpress.XtraGrid.GridControl gIAOVIEN_DANGKYGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.RadioGroup rdbCauHoi;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
-        private DevExpress.XtraGrid.Columns.GridColumn colTRINHDO;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAYTHI;
-        private DevExpress.XtraGrid.Columns.GridColumn colLAN;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOCAUTHI;
-        private DevExpress.XtraGrid.Columns.GridColumn colTHOIGIAN;
         private DevExpress.XtraEditors.RadioGroup rdbDapAn;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
