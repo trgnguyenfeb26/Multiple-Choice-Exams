@@ -106,7 +106,7 @@ namespace AppThiTracNghiem
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = bdsMH.Position;
-            UndoStack.Push("exec[dbo].[SP_UndoSuaKH] '" + txtMaMH.Text + "', N'"
+            UndoStack.Push("exec[dbo].[SP_UndoSuaMH] '" + txtMaMH.Text + "', N'"
                 + txtTen.Text + "'");
             pnMH.Enabled = true;
             gcMH.Enabled = false;
@@ -182,7 +182,7 @@ namespace AppThiTracNghiem
                 if (dangThem)
                 {
                     MessageBox.Show("Đã thêm Môn học thành công", "", MessageBoxButtons.OK);
-                    UndoStack.Push("exec [dbo].[SP_UndoThemKH] '" + txtMaMH.Text + "'");
+                    UndoStack.Push("exec [dbo].[SP_UndoThemMH] '" + txtMaMH.Text + "'");
                 }
                 else
                 {
@@ -236,13 +236,13 @@ namespace AppThiTracNghiem
             {
                 MessageBox.Show("Môn học đã có bảng điểm, không thể xoá!", "THÔNG BÁO", MessageBoxButtons.OK);
             }
-            if (MessageBox.Show("Bạn có muốn xóa Khoa: " + txtTen.Text + " ?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa Môn học: " + txtTen.Text + " ?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
 
                     vitri = bdsMH.Position;
-                    UndoStack.Push("exec[dbo].[SP_UndoXoaKH] '" + txtMaMH.Text + "', N'"
+                    UndoStack.Push("exec[dbo].[SP_UndoXoaMH] '" + txtMaMH.Text + "', N'"
                         + txtTen.Text + "'");
                     bdsMH.RemoveCurrent();
                     this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -253,7 +253,7 @@ namespace AppThiTracNghiem
                 catch (Exception ex)
                 {
                     UndoStack.Pop();
-                    MessageBox.Show("Lỗi xóa Khoa \n" + ex.Message, "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa Môn học \n" + ex.Message, "", MessageBoxButtons.OK);
                     this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
                     bdsMH.Position = vitri;

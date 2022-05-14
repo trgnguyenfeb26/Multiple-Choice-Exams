@@ -446,7 +446,7 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormMonHoc";
-            this.Text = "FormMonHoc";
+            this.Text = "Môn học";
             this.Load += new System.EventHandler(this.FormMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.panel1.ResumeLayout(false);
