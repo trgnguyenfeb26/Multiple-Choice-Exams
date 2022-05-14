@@ -17,8 +17,8 @@ namespace AppThiTracNghiem
         /// 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-       // public static String connstrPublisher = "Data Source=MSI;Initial Catalog=TN_CSDLPT;Integrated Security=True";
-       public static String connstrPublisher = "Data Source=DESKTOP-O30665V;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+        public static String connstrPublisher = "Data Source=MSI;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+        //public static String connstrPublisher = "Data Source=DESKTOP-O30665V;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
 
         //public static SqlDataAdapter da;
@@ -41,6 +41,14 @@ namespace AppThiTracNghiem
         public static string MaLopSV;
         public static string NgaySinhSV;
         public static string DiaChiSV;
+
+        // luu thong tin thi
+        public static string MAMH;
+        public static string TD;
+        public static string soCau;
+        public static int time;
+        public static int lanThi;
+        public static string ngayThi;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static FormMain frmChinh;
