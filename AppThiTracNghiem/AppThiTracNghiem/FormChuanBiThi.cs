@@ -90,10 +90,7 @@ namespace AppThiTracNghiem
             txtMaGV.Enabled = false;
             
             dangThem = true;
-            txtMaMH.SelectedIndex = 1;
-            txtMaMH.SelectedIndex = 0;
-            txtMaLop.SelectedIndex = 1;
-            txtMaLop.SelectedIndex = 0;
+            
 
         }
 
@@ -115,7 +112,7 @@ namespace AppThiTracNghiem
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (DateTime.Compare(DateTime.Parse(dNgayThi.Text.ToString()),
-                 DateTime.Parse(DateTime.Now.ToShortDateString())) > 0)
+                 DateTime.Parse(DateTime.Now.ToShortDateString())) < 0)
             {
                 MessageBox.Show("Lịch thi đã thi không thể xóa!", "", MessageBoxButtons.OK);
                 return;
@@ -224,20 +221,17 @@ namespace AppThiTracNghiem
             try
             {
 
-                //if (dangThem)
-                //{
+                if (dangThem)
+                {
 
-                //    if (Program.ExecSqlNonQuery("exec [dbo].[SP_CheckMaKH] '" + txtMaKH.Text + "'") == 1)
-                //    {
-                //        txtMaKH.Focus();
-                //        return;
-                //    }
-                //}
-                //if (Program.ExecSqlNonQuery("exec [dbo].[SP_CheckTenKH] N'" + txtTen.Text + "'") == 1)
-                //{
-                //    txtTen.Focus();
-                //    return;
-                //}
+                    if (Program.ExecSqlNonQuery("exec [dbo].[SP_ChuanBiThi] '" + txtMaMH.GetItemText(txtMaMH.SelectedValue) + "','" + txtMaLop.GetItemText(txtMaLop.SelectedValue)
+                        + "','"+txtTD.Text.Trim()+ "','" +txtSCT.Text.Trim()+"','" +txtLan.Text.Trim()+ "','" +dNgayThi.Text.ToString()+ "'") == 1)
+                    {
+                        txtMaMH.Focus();
+                        return;
+                    }
+                }
+            
                 bdsGVDK.EndEdit();
                 bdsGVDK.ResetCurrentItem();
                 this.gIAOVIEN_DANGKYTableAdapter.Update(this.dS.GIAOVIEN_DANGKY);
@@ -281,6 +275,7 @@ namespace AppThiTracNghiem
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
             }
+             colMAMH.ColumnEditName=txtMaMH.GetItemText(txtMaMH.SelectedValue);
         }
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -369,5 +364,7 @@ namespace AppThiTracNghiem
                 //  maLop = ((DataRowView)bdsLop[0])["MALOP"].ToString();
             }
         }
+
+  
     }
 }

@@ -573,6 +573,7 @@ namespace AppThiTracNghiem
             this.gcKhoa.TabIndex = 0;
             this.gcKhoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gcKhoa.Click += new System.EventHandler(this.gcKhoa_Click);
             // 
             // gridView1
             // 

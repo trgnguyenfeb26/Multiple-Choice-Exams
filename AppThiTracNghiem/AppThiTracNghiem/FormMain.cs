@@ -54,7 +54,7 @@ namespace AppThiTracNghiem
                 btnSinhVien.Enabled = false;
                 btnKhoa.Enabled = false;
                 btnGiaoVien.Enabled = false;
-                btnMonHoc.Enabled = false;
+                btnMonHoc.Enabled = true;
             }
             else
             if (Program.mGroup == "TRUONG")
@@ -207,11 +207,16 @@ namespace AppThiTracNghiem
 
         private void btnBoDe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(FormBoDe));
+            
+        }
+
+        private void btnMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormMonHoc));
             if (frm != null) frm.Activate();
             else
             {
-                FormBoDe f = new FormBoDe();
+                FormMonHoc f = new FormMonHoc();
                 f.MdiParent = this;
                 f.Show();
             }

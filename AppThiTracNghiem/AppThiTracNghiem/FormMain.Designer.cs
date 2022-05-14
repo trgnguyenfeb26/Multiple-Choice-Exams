@@ -158,6 +158,7 @@ namespace AppThiTracNghiem
             this.btnMonHoc.Id = 11;
             this.btnMonHoc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnMonHoc.ImageOptions.SvgImage")));
             this.btnMonHoc.Name = "btnMonHoc";
+            this.btnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonHoc_ItemClick);
             // 
             // btnBoDe
             // 
