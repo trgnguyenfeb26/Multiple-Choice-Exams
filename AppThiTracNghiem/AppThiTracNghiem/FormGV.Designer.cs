@@ -36,6 +36,7 @@ namespace AppThiTracNghiem
             System.Windows.Forms.Label hOLabel;
             System.Windows.Forms.Label tENLabel;
             System.Windows.Forms.Label dIACHILabel;
+            System.Windows.Forms.Label mACSLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGV));
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar4 = new DevExpress.XtraBars.Bar();
@@ -52,9 +53,6 @@ namespace AppThiTracNghiem
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.cmbCoSo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.DS = new AppThiTracNghiem.DS();
             this.GIAOVIENTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIENTableAdapter();
             this.tableAdapterManager = new AppThiTracNghiem.DSTableAdapters.TableAdapterManager();
@@ -85,15 +83,16 @@ namespace AppThiTracNghiem
             this.gIAOVIEN_DANGKYTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
             this.bdsBD = new System.Windows.Forms.BindingSource(this.components);
             this.bODETableAdapter = new AppThiTracNghiem.DSTableAdapters.BODETableAdapter();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmbCoSo = new System.Windows.Forms.ComboBox();
             tENKHLabel1 = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
             dIACHILabel = new System.Windows.Forms.Label();
+            mACSLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlGV)).BeginInit();
             this.pnlGV.SuspendLayout();
@@ -111,6 +110,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tENKHLabel1
@@ -166,6 +167,16 @@ namespace AppThiTracNghiem
             dIACHILabel.Size = new System.Drawing.Size(53, 17);
             dIACHILabel.TabIndex = 10;
             dIACHILabel.Text = "Địa chỉ:";
+            // 
+            // mACSLabel
+            // 
+            mACSLabel.AutoSize = true;
+            mACSLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mACSLabel.Location = new System.Drawing.Point(34, 23);
+            mACSLabel.Name = "mACSLabel";
+            mACSLabel.Size = new System.Drawing.Size(66, 24);
+            mACSLabel.TabIndex = 20;
+            mACSLabel.Text = "Cơ sở:";
             // 
             // barManager2
             // 
@@ -329,34 +340,6 @@ namespace AppThiTracNghiem
             this.barDockControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControl4.Size = new System.Drawing.Size(0, 550);
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.cmbCoSo);
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 30);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1321, 66);
-            this.panelControl1.TabIndex = 8;
-            // 
-            // cmbCoSo
-            // 
-            this.cmbCoSo.FormattingEnabled = true;
-            this.cmbCoSo.Location = new System.Drawing.Point(99, 21);
-            this.cmbCoSo.Name = "cmbCoSo";
-            this.cmbCoSo.Size = new System.Drawing.Size(211, 24);
-            this.cmbCoSo.TabIndex = 2;
-            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cơ sở";
-            // 
             // DS
             // 
             this.DS.DataSetName = "DS";
@@ -396,11 +379,11 @@ namespace AppThiTracNghiem
             // 
             this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGV.Location = new System.Drawing.Point(598, 173);
+            this.gcGV.Location = new System.Drawing.Point(492, 173);
             this.gcGV.MainView = this.gridView2;
             this.gcGV.MenuManager = this.barManager2;
             this.gcGV.Name = "gcGV";
-            this.gcGV.Size = new System.Drawing.Size(721, 309);
+            this.gcGV.Size = new System.Drawing.Size(827, 309);
             this.gcGV.TabIndex = 3;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -503,7 +486,7 @@ namespace AppThiTracNghiem
             this.pnGv.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnGv.Location = new System.Drawing.Point(2, 173);
             this.pnGv.Name = "pnGv";
-            this.pnGv.Size = new System.Drawing.Size(596, 309);
+            this.pnGv.Size = new System.Drawing.Size(490, 309);
             this.pnGv.TabIndex = 3;
             // 
             // TxDiaChi
@@ -639,6 +622,28 @@ namespace AppThiTracNghiem
             // 
             this.bODETableAdapter.ClearBeforeFill = true;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.cmbCoSo);
+            this.panelControl1.Controls.Add(mACSLabel);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 30);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1321, 66);
+            this.panelControl1.TabIndex = 8;
+            // 
+            // cmbCoSo
+            // 
+            this.cmbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCoSo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCoSo.FormattingEnabled = true;
+            this.cmbCoSo.Location = new System.Drawing.Point(106, 20);
+            this.cmbCoSo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCoSo.Name = "cmbCoSo";
+            this.cmbCoSo.Size = new System.Drawing.Size(271, 32);
+            this.cmbCoSo.TabIndex = 21;
+            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged_1);
+            // 
             // FormGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -656,9 +661,6 @@ namespace AppThiTracNghiem
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlGV)).EndInit();
             this.pnlGV.ResumeLayout(false);
@@ -677,6 +679,9 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,9 +704,6 @@ namespace AppThiTracNghiem
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbCoSo;
         private DS DS;
         private DSTableAdapters.GIAOVIENTableAdapter GIAOVIENTableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
@@ -732,5 +734,7 @@ namespace AppThiTracNghiem
         private DSTableAdapters.GIAOVIEN_DANGKYTableAdapter gIAOVIEN_DANGKYTableAdapter;
         private System.Windows.Forms.BindingSource bdsBD;
         private DSTableAdapters.BODETableAdapter bODETableAdapter;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private System.Windows.Forms.ComboBox cmbCoSo;
     }
 }

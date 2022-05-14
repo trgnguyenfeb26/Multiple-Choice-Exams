@@ -54,6 +54,15 @@ namespace AppThiTracNghiem
                 pnKhoa.Enabled = false;
                 gcKhoa.Enabled = true;
             }
+            if (Program.mGroup == "GIANGVIEN")
+            {
+
+                cmbCoSo.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                btnHuy.Enabled = false;
+                pnKhoa.Enabled = false;
+                gcKhoa.Enabled = true;
+            }
             if (Program.mGroup == "COSO")
             {
                 cmbCoSo.Enabled = false;
@@ -236,7 +245,7 @@ namespace AppThiTracNghiem
 
         private void gcKhoa_Click(object sender, EventArgs e)
         {
-            if (bdsKhoa.Count == 0 || Program.mGroup == "TRUONG")
+            if (bdsKhoa.Count == 0 || Program.mGroup == "TRUONG" || Program.mGroup == "GIANGVIEN")
             {
                 btnXoa.Enabled = false;
                 btnSua.Enabled = false;

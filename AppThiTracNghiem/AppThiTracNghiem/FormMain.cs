@@ -34,11 +34,9 @@ namespace AppThiTracNghiem
                 btnDangNhap.Enabled = false;
                 ribThi.Visible = true;
                 ribDanhMuc.Visible = false;
-                ribReport.Visible = true;
+                ribReport.Visible = false;
                 btnTaoTaiKhoan.Enabled = false ;
-                btnXemBD.Enabled = false;
-                btnDSDK.Enabled = false;
-                btnXemKQ.Enabled = true;
+               
                 btnDangXuat.Enabled = true;
             }
             else
@@ -50,10 +48,10 @@ namespace AppThiTracNghiem
                 ribReport.Visible = true;
                 btnTaoTaiKhoan.Enabled = false;
                 btnDangXuat.Enabled = true;
-                btnXemKQ.Enabled = false;
-                btnSinhVien.Enabled = false;
-                btnKhoa.Enabled = false;
-                btnGiaoVien.Enabled = false;
+                btnXemKQ.Enabled = true;
+                btnSinhVien.Enabled = true;
+                btnKhoa.Enabled = true;
+                btnGiaoVien.Enabled = true;
                 btnMonHoc.Enabled = true;
             }
             else
@@ -99,11 +97,8 @@ namespace AppThiTracNghiem
                         frm.Close();
                 }
                 Program.frmChinh.hienThiMenu();
-
-                FormDangNhap f = new FormDangNhap();
-                f.MdiParent = this;
-
-                f.Show();
+                btnDangNhap.Enabled = true;
+              
             }
         }
     
@@ -207,7 +202,14 @@ namespace AppThiTracNghiem
 
         private void btnBoDe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            Form frm = this.CheckExists(typeof(FormBoDe));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormBoDe f = new FormBoDe();
+                f.MdiParent = this;
+                f.Show();
+            }
         }
 
         private void btnMonHoc_ItemClick(object sender, ItemClickEventArgs e)
@@ -217,6 +219,18 @@ namespace AppThiTracNghiem
             else
             {
                 FormMonHoc f = new FormMonHoc();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnTaoTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormTaoTK));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormTaoTK f = new FormTaoTK();
                 f.MdiParent = this;
                 f.Show();
             }

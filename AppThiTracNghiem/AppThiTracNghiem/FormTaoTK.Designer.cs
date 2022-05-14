@@ -1,7 +1,7 @@
 ﻿
 namespace AppThiTracNghiem
 {
-    partial class TaoTK
+    partial class FormTaoTK
     {
         /// <summary>
         /// Required designer variable.
@@ -31,23 +31,21 @@ namespace AppThiTracNghiem
         {
             this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new AppThiTracNghiem.DS();
             this.cmbGroup = new System.Windows.Forms.ComboBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnTao = new System.Windows.Forms.Button();
-            this.btnChon = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dS = new AppThiTracNghiem.DS();
-            this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gIAOVIENTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIENTableAdapter();
             this.tableAdapterManager = new AppThiTracNghiem.DSTableAdapters.TableAdapterManager();
-            this.gIAOVIENGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gcGV = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,9 +54,9 @@ namespace AppThiTracNghiem
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,9 +65,7 @@ namespace AppThiTracNghiem
             this.panelControl1.Controls.Add(this.cmbGroup);
             this.panelControl1.Controls.Add(this.btnThoat);
             this.panelControl1.Controls.Add(this.btnTao);
-            this.panelControl1.Controls.Add(this.btnChon);
             this.panelControl1.Controls.Add(this.label5);
-            this.panelControl1.Controls.Add(this.txtUser);
             this.panelControl1.Controls.Add(this.label4);
             this.panelControl1.Controls.Add(this.txtPassword);
             this.panelControl1.Controls.Add(this.label3);
@@ -79,15 +75,25 @@ namespace AppThiTracNghiem
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1202, 347);
-            this.panelControl1.TabIndex = 0;
+            this.panelControl1.Size = new System.Drawing.Size(1121, 347);
+            this.panelControl1.TabIndex = 1;
+            // 
+            // gIAOVIENBindingSource
+            // 
+            this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
+            this.gIAOVIENBindingSource.DataSource = this.dS;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbGroup
             // 
             this.cmbGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGroup.FormattingEnabled = true;
-            this.cmbGroup.Location = new System.Drawing.Point(486, 180);
+            this.cmbGroup.Location = new System.Drawing.Point(445, 180);
             this.cmbGroup.Name = "cmbGroup";
             this.cmbGroup.Size = new System.Drawing.Size(280, 24);
             this.cmbGroup.TabIndex = 25;
@@ -96,7 +102,7 @@ namespace AppThiTracNghiem
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(676, 245);
+            this.btnThoat.Location = new System.Drawing.Point(635, 245);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(90, 33);
             this.btnThoat.TabIndex = 24;
@@ -107,47 +113,28 @@ namespace AppThiTracNghiem
             // 
             this.btnTao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTao.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTao.Location = new System.Drawing.Point(486, 245);
+            this.btnTao.Location = new System.Drawing.Point(445, 245);
             this.btnTao.Name = "btnTao";
             this.btnTao.Size = new System.Drawing.Size(90, 33);
             this.btnTao.TabIndex = 23;
             this.btnTao.Text = "Tạo";
             this.btnTao.UseVisualStyleBackColor = true;
             // 
-            // btnChon
-            // 
-            this.btnChon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnChon.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChon.Location = new System.Drawing.Point(772, 146);
-            this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(61, 28);
-            this.btnChon.TabIndex = 22;
-            this.btnChon.Text = "Chọn";
-            this.btnChon.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(369, 183);
+            this.label5.Location = new System.Drawing.Point(328, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 17);
             this.label5.TabIndex = 21;
             this.label5.Text = "Nhóm quyền";
             // 
-            // txtUser
-            // 
-            this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtUser.Location = new System.Drawing.Point(486, 146);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(280, 23);
-            this.txtUser.TabIndex = 20;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(369, 149);
+            this.label4.Location = new System.Drawing.Point(328, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 17);
             this.label4.TabIndex = 19;
@@ -156,7 +143,7 @@ namespace AppThiTracNghiem
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPassword.Location = new System.Drawing.Point(486, 112);
+            this.txtPassword.Location = new System.Drawing.Point(445, 112);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(280, 23);
             this.txtPassword.TabIndex = 18;
@@ -165,7 +152,7 @@ namespace AppThiTracNghiem
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(369, 115);
+            this.label3.Location = new System.Drawing.Point(328, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 17;
@@ -174,7 +161,7 @@ namespace AppThiTracNghiem
             // txtLogin
             // 
             this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtLogin.Location = new System.Drawing.Point(486, 78);
+            this.txtLogin.Location = new System.Drawing.Point(445, 78);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(280, 23);
             this.txtLogin.TabIndex = 16;
@@ -183,7 +170,7 @@ namespace AppThiTracNghiem
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(369, 81);
+            this.label2.Location = new System.Drawing.Point(328, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 15;
@@ -194,21 +181,11 @@ namespace AppThiTracNghiem
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(480, 14);
+            this.label1.Location = new System.Drawing.Point(439, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(261, 35);
             this.label1.TabIndex = 14;
             this.label1.Text = "TẠO TÀI KHOẢN";
-            // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gIAOVIENBindingSource
-            // 
-            this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
-            this.gIAOVIENBindingSource.DataSource = this.dS;
             // 
             // gIAOVIENTableAdapter
             // 
@@ -229,16 +206,16 @@ namespace AppThiTracNghiem
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = AppThiTracNghiem.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // gIAOVIENGridControl
+            // gcGV
             // 
-            this.gIAOVIENGridControl.DataSource = this.gIAOVIENBindingSource;
-            this.gIAOVIENGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gIAOVIENGridControl.Location = new System.Drawing.Point(0, 347);
-            this.gIAOVIENGridControl.MainView = this.gridView1;
-            this.gIAOVIENGridControl.Name = "gIAOVIENGridControl";
-            this.gIAOVIENGridControl.Size = new System.Drawing.Size(1202, 331);
-            this.gIAOVIENGridControl.TabIndex = 1;
-            this.gIAOVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcGV.DataSource = this.gIAOVIENBindingSource;
+            this.gcGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcGV.Location = new System.Drawing.Point(0, 347);
+            this.gcGV.MainView = this.gridView1;
+            this.gcGV.Name = "gcGV";
+            this.gcGV.Size = new System.Drawing.Size(1121, 453);
+            this.gcGV.TabIndex = 2;
+            this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -249,7 +226,7 @@ namespace AppThiTracNghiem
             this.colTEN,
             this.colDIACHI,
             this.colMAKH});
-            this.gridView1.GridControl = this.gIAOVIENGridControl;
+            this.gridView1.GridControl = this.gcGV;
             this.gridView1.Name = "gridView1";
             // 
             // colMAGV
@@ -297,21 +274,22 @@ namespace AppThiTracNghiem
             this.colMAKH.VisibleIndex = 4;
             this.colMAKH.Width = 94;
             // 
-            // TaoTK
+            // FormTaoTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 678);
-            this.Controls.Add(this.gIAOVIENGridControl);
+            this.ClientSize = new System.Drawing.Size(1121, 800);
+            this.Controls.Add(this.gcGV);
             this.Controls.Add(this.panelControl1);
-            this.Name = "TaoTK";
-            this.Text = "Tạo tài khoản";
+            this.Name = "FormTaoTK";
+            this.Text = "FormTaoTK";
+            this.Load += new System.EventHandler(this.FormTaoTK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -320,28 +298,26 @@ namespace AppThiTracNghiem
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DS dS;
-        private System.Windows.Forms.BindingSource gIAOVIENBindingSource;
-        private DSTableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
-        private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox cmbGroup;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnTao;
-        private System.Windows.Forms.Button btnChon;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraGrid.GridControl gIAOVIENGridControl;
+        private DS dS;
+        private System.Windows.Forms.BindingSource gIAOVIENBindingSource;
+        private DSTableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
+        private DSTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraGrid.GridControl gcGV;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private DevExpress.XtraGrid.Columns.GridColumn colHO;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
+        private System.Windows.Forms.Label label4;
     }
 }

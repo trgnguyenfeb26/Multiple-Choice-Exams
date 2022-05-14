@@ -54,7 +54,6 @@ namespace AppThiTracNghiem
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnLapLichThi = new DevExpress.XtraBars.BarButtonItem();
             this.ribThi = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribReport = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -127,6 +126,7 @@ namespace AppThiTracNghiem
             this.btnTaoTaiKhoan.Id = 6;
             this.btnTaoTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTaoTaiKhoan.ImageOptions.SvgImage")));
             this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
+            this.btnTaoTaiKhoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaoTaiKhoan_ItemClick);
             // 
             // btnSinhVien
             // 
@@ -265,16 +265,10 @@ namespace AppThiTracNghiem
             // ribThi
             // 
             this.ribThi.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7,
             this.ribbonPageGroup8});
             this.ribThi.Name = "ribThi";
             this.ribThi.Text = "Thi";
             this.ribThi.Visible = false;
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnThongTinSV);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPageGroup8
             // 
@@ -410,7 +404,6 @@ namespace AppThiTracNghiem
         private DevExpress.XtraBars.BarButtonItem btnXemBD;
         private DevExpress.XtraBars.BarButtonItem btnDSDK;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribThi;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribReport;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;

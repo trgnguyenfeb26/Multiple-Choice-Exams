@@ -36,7 +36,7 @@ namespace AppThiTracNghiem
 
         private void FormGV_Load(object sender, EventArgs e)
         {
-            
+
 
             // Kiểm tra ràng buộc
             DS.EnforceConstraints = false;
@@ -71,14 +71,23 @@ namespace AppThiTracNghiem
             if (Program.mGroup == "TRUONG")
             {
                 cmbCoSo.Enabled = true;
-                btnGhi.Enabled = btnThem.Enabled = btnPhucHoi.Enabled = btnXoa.Enabled  =btnSua.Enabled =btnHuy.Enabled = false;
+                btnGhi.Enabled = btnThem.Enabled = btnPhucHoi.Enabled = btnXoa.Enabled = btnSua.Enabled = btnHuy.Enabled = false;
                 TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = false;
-               
+
             }
-            else
+            if (Program.mGroup == "GIANGVIEN")
+            {
+
+                cmbCoSo.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                btnHuy.Enabled = false;
+                pnGv.Enabled = false;
+                gcGV.Enabled = true;
+            }
+            if (Program.mGroup == "COSO")
             {
                 cmbCoSo.Enabled = false;
-                TxMaGV.Enabled= TxDiaChi.Enabled=TxHo.Enabled=TxTen.Enabled = false;
+                TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = false;
                 btnPhucHoi.Enabled = btnHuy.Enabled = btnGhi.Enabled = false;
                 if (bdsGV.Count == 0)
                 {
@@ -99,48 +108,7 @@ namespace AppThiTracNghiem
 
         }
 
-        private void cmbCoSo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Kiểm tra đã chọn giá trị ở cmbCoSo hay chưa
-            if (cmbCoSo.SelectedValue.ToString() == "System.Data.DataRowView")
-                return;
-            Program.servername = cmbCoSo.SelectedValue.ToString();
-            if (cmbCoSo.SelectedIndex != Program.mCoso)
-            {
-                Program.mlogin = Program.remoteLogin;
-                Program.password = Program.remotePassword;
-            }
-            else
-            {
-                Program.mlogin = Program.loginDN;
-                Program.password = Program.passwordDN;
-            }
-            if (Program.KetNoi() == 0)
-            {
-                MessageBox.Show("Lỗi kết nối tới cơ sở mới!", "Lỗi", MessageBoxButtons.OK);
-                cmbCoSo.DisplayMember = "TENCS";
-                cmbCoSo.ValueMember = "TENSERVER";
-                cmbCoSo.SelectedIndex = Program.mCoso;
-            }
-               
-            else
-            {
-                this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
-                this.KHOATableAdapter.Fill(this.DS.KHOA);
-                this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
-
-                //dt = Program.ExecSqlDataTable("SELECT MAKH, TENKH FROM KHOA");
-                //cmbKhoa.DataSource = dt;
-                //cmbKhoa.DisplayMember = "TENKH";
-                //cmbKhoa.ValueMember = "MAKH";
-                //cmbKhoa.SelectedIndex = 0;
-
-                //maKH = cmbKhoa.SelectedValue.ToString().Trim();
-                //this.bdsGiaoVien.Filter = "MAKH = '" + maKH + "'";
-
-            }
-        }
+       
 
 
 
@@ -149,7 +117,7 @@ namespace AppThiTracNghiem
 
         }
 
- 
+
 
         private void gIAOVIENGridControl_Click(object sender, EventArgs e)
         {
@@ -161,7 +129,7 @@ namespace AppThiTracNghiem
             TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = true;
             bdsGV.AddNew();
             ((DataRowView)bdsGV[bdsGV.Position])["MAKH"] = lbMaK.Text;
-            
+
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnHuy.Enabled = true;
             //pnGv.Enabled = true;
@@ -256,7 +224,10 @@ namespace AppThiTracNghiem
 
         private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn thật sự muốn thoát khỏi form?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
@@ -306,9 +277,9 @@ namespace AppThiTracNghiem
             TxMaGV.Enabled = TxDiaChi.Enabled = TxHo.Enabled = TxTen.Enabled = true;
 
             vitri = bdsGV.Position;
-                                                            
+
             UndoStack.Push("exec[dbo].[SP_UndoSuaGV] '" + TxMaGV.Text + "', N'"
-                + TxHo.Text + "', N'"+ TxTen.Text + "',N'"+ TxDiaChi.Text + "'"  );
+                + TxHo.Text + "', N'" + TxTen.Text + "',N'" + TxDiaChi.Text + "'");
             pnGv.Enabled = true;
             gcKhoa.Enabled = false;
             gcGV.Enabled = false;
@@ -320,12 +291,12 @@ namespace AppThiTracNghiem
 
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (bdsGVDK.Count > 0 )
+            if (bdsGVDK.Count > 0)
             {
                 MessageBox.Show("Giáo viên " + TxHo.Text + " " + TxTen.Text + " đã đăng kí thi nên không thể xóa!", "", MessageBoxButtons.OK);
                 return;
             }
-            if ( bdsBD.Count > 0)
+            if (bdsBD.Count > 0)
             {
                 MessageBox.Show("Giáo viên " + TxHo.Text + " " + TxTen.Text + " đã soạn đề thi nên không thể xóa!", "", MessageBoxButtons.OK);
                 return;
@@ -359,7 +330,7 @@ namespace AppThiTracNghiem
 
         private void gcKhoa_Click(object sender, EventArgs e)
         {
-            if (bdsGV.Count == 0 || Program.mGroup == "TRUONG")
+            if (bdsGV.Count == 0 || Program.mGroup == "TRUONG" || Program.mGroup == "GIANGVIEN")
             {
                 btnXoa.Enabled = false;
                 btnSua.Enabled = false;
@@ -371,22 +342,57 @@ namespace AppThiTracNghiem
             }
         }
 
+        private void cmbCoSo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbCoSo.SelectedValue == null)
+            {
+                return;
+            }
+
+            if (cmbCoSo.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+            Program.servername = cmbCoSo.SelectedValue.ToString();
+
+            if (cmbCoSo.SelectedIndex != Program.mCoso)
+            {
+                Program.mlogin = Program.remoteLogin;
+                Program.password = Program.remotePassword;
+            }
+            else
+            {
+                Program.mlogin = Program.loginDN;
+                Program.password = Program.passwordDN;
+            }
+
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("Lỗi kết nối về phòng ban mới!");
+            }
+            else
+            {
+                this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                this.KHOATableAdapter.Fill(this.DS.KHOA);
+                this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
+            }
 
 
 
-        //private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (cmbKhoa.SelectedValue != null)
-        //    {
-        //        maKH = cmbKhoa.SelectedValue.ToString().Trim();
-        //        tenKH = cmbKhoa.GetItemText(cmbKhoa.SelectedItem);
-        //        index = cmbKhoa.SelectedIndex;
-        //    }
-        //    this.bdsGiaoVien.Filter = "MAKH = '" + maKH + "'";
-        //    cmbKhoa.Text = tenKH;
-        //    if (bdsGiaoVien.Count != 0)
-        //        //btnXoa.Enabled = true;
-        //    return;
-        //}
+
+            //private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+            //{
+            //    if (cmbKhoa.SelectedValue != null)
+            //    {
+            //        maKH = cmbKhoa.SelectedValue.ToString().Trim();
+            //        tenKH = cmbKhoa.GetItemText(cmbKhoa.SelectedItem);
+            //        index = cmbKhoa.SelectedIndex;
+            //    }
+            //    this.bdsGiaoVien.Filter = "MAKH = '" + maKH + "'";
+            //    cmbKhoa.Text = tenKH;
+            //    if (bdsGiaoVien.Count != 0)
+            //        //btnXoa.Enabled = true;
+            //    return;
+            //}
+        }
     }
 }

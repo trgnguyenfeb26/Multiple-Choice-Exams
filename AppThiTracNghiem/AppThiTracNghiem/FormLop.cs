@@ -55,6 +55,15 @@ namespace AppThiTracNghiem
                 pnLop.Enabled = false;
                 gcKH.Enabled = gcLop.Enabled = true;
             }
+            if (Program.mGroup == "GIANGVIEN")
+            {
+
+                cmbCoSo.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                btnHuy.Enabled = false;
+                pnLop.Enabled = false;
+                gcLop.Enabled = true;
+            }
             if (Program.mGroup == "COSO")
             {
                 cmbCoSo.Enabled = false;
@@ -241,7 +250,7 @@ namespace AppThiTracNghiem
 
         private void gcKH_Click(object sender, EventArgs e)
         {
-            if (bdsLop.Count == 0 || Program.mGroup == "TRUONG")
+            if (bdsLop.Count == 0 || Program.mGroup == "TRUONG" || Program.mGroup == "GIANGVIEN")
             {
                 btnXoa.Enabled = false;
                 btnSua.Enabled = false;

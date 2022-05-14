@@ -63,7 +63,7 @@ namespace AppThiTracNghiem
             cbxBB.SelectedIndex = 0;
             lbTenGV.Text = cbxBB.Text;
 
-            if (Program.mGroup == "TRUONG" || Program.mGroup == "COSO")
+            if (Program.mGroup == "TRUONG" )
             {
                 
                 btnGhi.Enabled = btnThem.Enabled = btnPhucHoi.Enabled = btnXoa.Enabled = btnSua.Enabled = btnHuy.Enabled = false;
@@ -130,8 +130,13 @@ namespace AppThiTracNghiem
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
-           
+
+            if (txtND.Text == "")
+            {
+                MessageBox.Show("Nội dung không được trống!", "Lỗi", MessageBoxButtons.OK);
+                txtND.Focus();
+                return;
+            }
             if (txtA.Text == "")
             {
                 MessageBox.Show("Đáp án A không được trống!", "Lỗi", MessageBoxButtons.OK);
@@ -188,7 +193,7 @@ namespace AppThiTracNghiem
 
         private void gcBD_Click(object sender, EventArgs e)
         {
-            if (bdsBD.Count == 0
+            if (bdsBD.Count == 0|| Program.mGroup == "TRUONG"
                 || (Program.username != ((DataRowView)bdsBD[bdsBD.Position])["MAGV"].ToString().Trim() && Program.mGroup == "GIANGVIEN"))
             {
                 btnXoa.Enabled = false;
@@ -205,7 +210,7 @@ namespace AppThiTracNghiem
             cbxBB.DataSource = dt;
             cbxBB.DisplayMember = "hoten";
             cbxBB.ValueMember = "hoten";
-            cbxBB.SelectedIndex = 0;
+                cbxBB.SelectedIndex = 0;
             lbTenGV.Text = cbxBB.Text;
         }
 
@@ -316,7 +321,7 @@ namespace AppThiTracNghiem
             cbxBB.SelectedIndex = 0;
             lbTenGV.Text = cbxBB.Text;
 
-            if (Program.mGroup == "TRUONG" || Program.mGroup == "COSO")
+            if (Program.mGroup == "TRUONG" )
             {
 
                 btnGhi.Enabled = btnThem.Enabled = btnPhucHoi.Enabled = btnXoa.Enabled = btnSua.Enabled = btnHuy.Enabled = false;
@@ -364,7 +369,10 @@ namespace AppThiTracNghiem
 
         private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn thật sự muốn thoát khỏi form?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }
