@@ -221,6 +221,7 @@ namespace AppThiTracNghiem
             this.btnCMT.Id = 23;
             this.btnCMT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCMT.ImageOptions.SvgImage")));
             this.btnCMT.Name = "btnCMT";
+            this.btnCMT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCMT_ItemClick);
             // 
             // btnDMK
             // 

@@ -84,10 +84,12 @@ namespace AppThiTracNghiem
                     }
 
                 }
-                catch (Exception)
+                catch (Exception )
                 {
 
-                    throw;
+                    XtraMessageBox.Show("Dổi mật khẩu KHÔNG thành công\n", " ", MessageBoxButtons.OK);
+                    //throw;
+                    return;
                 }
             }
             

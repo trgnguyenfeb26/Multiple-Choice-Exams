@@ -252,5 +252,17 @@ namespace AppThiTracNghiem
                 f.Show();
             }
         }
+
+        private void btnCMT_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormChonMonThi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormChonMonThi f = new FormChonMonThi();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
