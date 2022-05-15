@@ -575,7 +575,7 @@ namespace AppThiTracNghiem
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 373);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1250, 235);
+            this.panelControl1.Size = new System.Drawing.Size(1250, 167);
             this.panelControl1.TabIndex = 22;
             // 
             // cbxDA
@@ -689,9 +689,9 @@ namespace AppThiTracNghiem
             this.panelControl2.Controls.Add(this.txtND);
             this.panelControl2.Controls.Add(aLabel1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 608);
+            this.panelControl2.Location = new System.Drawing.Point(0, 540);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1250, 172);
+            this.panelControl2.Size = new System.Drawing.Size(1250, 240);
             this.panelControl2.TabIndex = 36;
             // 
             // txtA

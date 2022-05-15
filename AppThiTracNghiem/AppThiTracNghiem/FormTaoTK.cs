@@ -29,25 +29,43 @@ namespace AppThiTracNghiem
 
         private void FormTaoTK_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.Get_TaoTK' table. You can move, or remove it, as needed.
+            
             dS.EnforceConstraints = false;
-            this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
+            this.get_TaoTKTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.get_TaoTKTableAdapter.Fill(this.dS.Get_TaoTK);
+            if (Program.mGroup == "TRUONG")
+            {
+                cmbGroup.Items.Add("TRUONG");
+            }
+            else if (Program.mGroup == "COSO")
+            {
+                cmbGroup.Items.Add("COSO");
+                cmbGroup.Items.Add("GIAOVIEN");
+            }
 
+            cmbGroup.SelectedIndex = 0;
 
         }
 
         private void btnTao_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text == "")
+            if (txtLogin.Text.Trim() == "")
             {
                 MessageBox.Show("Tên tài khoản không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtLogin.Focus();
                 return;
             }
-            if (txtPassword.Text == "")
+            if (txtPassword.Text.Trim() == "")
             {
                 MessageBox.Show("Mật khẩu không được trống!", "Lỗi", MessageBoxButtons.OK);
                 txtPassword.Focus();
+                return;
+            }
+            if (txtPassword.Text.Trim() != txtXN.Text.Trim())
+            {
+                MessageBox.Show("Nhập lại mật khẩu không trùng với mật khẩu!", "Lỗi", MessageBoxButtons.OK);
+                txtXN.Focus();
                 return;
             }
             string sql = "EXEC SP_TaoTaiKhoan '" + txtLogin.Text.Trim() + "', '"
@@ -58,27 +76,13 @@ namespace AppThiTracNghiem
             }
         }
 
-        private void gcGV_Click(object sender, EventArgs e)
-        {
-            label6.Text = "dzfdsf";
-            string strLenh = "EXEC SP_GetRole '" + txtUser.Text + "'";
-            try
-            {
-                Program.myReader = Program.ExecSqlDataReader1(strLenh);
-             
-                if (Program.myReader == null) return;
-                Program.myReader.Read();
-                
 
-                if (Program.myReader != null) label6.Text = Program.myReader.GetString(0);     // Lay user name
-                
-            }
-            catch (Exception)
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn thật sự muốn thoát khỏi form?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-               throw;
+                this.Close();
             }
-            Program.myReader.Close();
-            Program.conn.Close();
         }
     }
 }

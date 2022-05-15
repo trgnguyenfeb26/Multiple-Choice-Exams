@@ -62,6 +62,7 @@ namespace AppThiTracNghiem
                 f.Show();
             }
             else return;
+            btnStart.Enabled = false;
         }
 
         private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
