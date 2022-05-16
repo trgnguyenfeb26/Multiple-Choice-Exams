@@ -134,8 +134,10 @@ namespace AppThiTracNghiem
             }
             catch (SqlException ex)
             {
-                
-                MessageBox.Show(ex.Message);
+
+                if (ex.Message.Contains("Cannot alter the login '"+Program.mlogin.Trim()+"', because it does not exist or you do not have permission."))
+                    MessageBox.Show("Mật khẩu cũ không đúng");
+                else MessageBox.Show(ex.Message);
                 conn.Close();
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
