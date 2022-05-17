@@ -262,5 +262,17 @@ namespace AppThiTracNghiem
                 f.Show();
             }
         }
+
+        private void btnXemKQ_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormXemKQ));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormXemKQ f = new FormXemKQ();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

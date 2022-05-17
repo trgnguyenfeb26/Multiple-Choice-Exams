@@ -277,7 +277,7 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormChonMonThi";
-            this.Text = "FormChonMonThi";
+            this.Text = "Chọn môn thi";
             this.Load += new System.EventHandler(this.FormChonMonThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();

@@ -160,6 +160,12 @@
     <Compile Include="FormThi.Designer.cs">
       <DependentUpon>FormThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXemKQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemKQ.Designer.cs">
+      <DependentUpon>FormXemKQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBoDe.resx">
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThi.resx">
       <DependentUpon>FormThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemKQ.resx">
+      <DependentUpon>FormXemKQ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
