@@ -213,7 +213,7 @@ namespace AppThiTracNghiem
     
 
             if (DateTime.Compare(DateTime.Parse(dNgayThi.Text.ToString()), 
-                DateTime.Parse(DateTime.Now.ToShortDateString())) <= 0)
+                DateTime.Parse(DateTime.Now.ToShortDateString())) < 0)
             {
                 MessageBox.Show("Ngày thi phải lớn hơn hoặc bằng ngày hiện tại!", "Lỗi", MessageBoxButtons.OK);
                 return;

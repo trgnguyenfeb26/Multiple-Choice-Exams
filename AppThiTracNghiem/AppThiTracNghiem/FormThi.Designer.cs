@@ -60,7 +60,7 @@ namespace AppThiTracNghiem
             this.lb_1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.time_Thi = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.lb_SoCauThi = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lb_TrinhDo = new System.Windows.Forms.Label();
@@ -76,9 +76,11 @@ namespace AppThiTracNghiem
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.summarylistview = new System.Windows.Forms.ListView();
-            this.cauHoi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dapAn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gcNoiDung = new DevExpress.XtraEditors.GroupControl();
+            this.rdbListQS = new DevExpress.XtraEditors.RadioGroup();
+            this.rdbDA = new DevExpress.XtraEditors.RadioGroup();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lblCauHoi = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
@@ -95,6 +97,12 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayThi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNoiDung)).BeginInit();
+            this.gcNoiDung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdbListQS.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdbDA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mAMHLabel
@@ -366,7 +374,7 @@ namespace AppThiTracNghiem
             // 
             // panelControl4
             // 
-            this.panelControl4.Controls.Add(this.time_Thi);
+            this.panelControl4.Controls.Add(this.lblTime);
             this.panelControl4.Controls.Add(this.lb_SoCauThi);
             this.panelControl4.Controls.Add(this.label10);
             this.panelControl4.Controls.Add(this.lb_TrinhDo);
@@ -386,15 +394,15 @@ namespace AppThiTracNghiem
             this.panelControl4.Size = new System.Drawing.Size(952, 171);
             this.panelControl4.TabIndex = 4;
             // 
-            // time_Thi
+            // lblTime
             // 
-            this.time_Thi.AutoSize = true;
-            this.time_Thi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.time_Thi.Location = new System.Drawing.Point(816, 65);
-            this.time_Thi.Name = "time_Thi";
-            this.time_Thi.Size = new System.Drawing.Size(107, 39);
-            this.time_Thi.TabIndex = 11;
-            this.time_Thi.Text = "00:00";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(816, 65);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(107, 39);
+            this.lblTime.TabIndex = 11;
+            this.lblTime.Text = "00:00";
             // 
             // lb_SoCauThi
             // 
@@ -495,7 +503,7 @@ namespace AppThiTracNghiem
             // 
             // date_NgayThi
             // 
-            this.date_NgayThi.EditValue = new System.DateTime(2021, 8, 10, 0, 0, 0, 0);
+            this.date_NgayThi.EditValue = new System.DateTime(2022, 5, 17, 0, 0, 0, 0);
             this.date_NgayThi.Location = new System.Drawing.Point(433, 46);
             this.date_NgayThi.Margin = new System.Windows.Forms.Padding(4);
             this.date_NgayThi.Name = "date_NgayThi";
@@ -568,40 +576,81 @@ namespace AppThiTracNghiem
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // summarylistview
+            // timer1
             // 
-            this.summarylistview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.cauHoi,
-            this.dapAn});
-            this.summarylistview.Dock = System.Windows.Forms.DockStyle.Left;
-            this.summarylistview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.summarylistview.GridLines = true;
-            this.summarylistview.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.summarylistview.HideSelection = false;
-            this.summarylistview.Location = new System.Drawing.Point(0, 279);
-            this.summarylistview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.summarylistview.Name = "summarylistview";
-            this.summarylistview.Size = new System.Drawing.Size(147, 523);
-            this.summarylistview.TabIndex = 19;
-            this.summarylistview.UseCompatibleStateImageBehavior = false;
-            this.summarylistview.View = System.Windows.Forms.View.Details;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cauHoi
+            // gcNoiDung
             // 
-            this.cauHoi.Text = "Câu hỏi";
-            this.cauHoi.Width = 72;
+            this.gcNoiDung.Controls.Add(this.rdbDA);
+            this.gcNoiDung.Controls.Add(this.panelControl1);
+            this.gcNoiDung.Controls.Add(this.rdbListQS);
+            this.gcNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcNoiDung.Location = new System.Drawing.Point(0, 279);
+            this.gcNoiDung.Name = "gcNoiDung";
+            this.gcNoiDung.Size = new System.Drawing.Size(1690, 523);
+            this.gcNoiDung.TabIndex = 24;
+            this.gcNoiDung.Text = "Nội dung";
             // 
-            // dapAn
+            // rdbListQS
             // 
-            this.dapAn.Text = "Đáp án";
-            this.dapAn.Width = 120;
+            this.rdbListQS.AllowDrop = true;
+            this.rdbListQS.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rdbListQS.Location = new System.Drawing.Point(2, 28);
+            this.rdbListQS.MenuManager = this.barManager1;
+            this.rdbListQS.Name = "rdbListQS";
+            this.rdbListQS.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.rdbListQS.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.rdbListQS.Properties.Appearance.Options.UseBackColor = true;
+            this.rdbListQS.Properties.Appearance.Options.UseFont = true;
+            this.rdbListQS.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.rdbListQS.Size = new System.Drawing.Size(90, 493);
+            this.rdbListQS.TabIndex = 2;
+            this.rdbListQS.SelectedIndexChanged += new System.EventHandler(this.rdbListQS_SelectedIndexChanged);
+            // 
+            // rdbDA
+            // 
+            this.rdbDA.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdbDA.Location = new System.Drawing.Point(92, 200);
+            this.rdbDA.MenuManager = this.barManager1;
+            this.rdbDA.Name = "rdbDA";
+            this.rdbDA.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.rdbDA.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.rdbDA.Properties.Appearance.Options.UseBackColor = true;
+            this.rdbDA.Properties.Appearance.Options.UseFont = true;
+            this.rdbDA.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.rdbDA.Size = new System.Drawing.Size(1596, 139);
+            this.rdbDA.TabIndex = 1;
+            this.rdbDA.SelectedIndexChanged += new System.EventHandler(this.rdbDA_SelectedIndexChanged);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.lblCauHoi);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(92, 28);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1596, 172);
+            this.panelControl1.TabIndex = 4;
+            // 
+            // lblCauHoi
+            // 
+            this.lblCauHoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCauHoi.AutoSize = true;
+            this.lblCauHoi.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblCauHoi.Location = new System.Drawing.Point(5, 12);
+            this.lblCauHoi.Name = "lblCauHoi";
+            this.lblCauHoi.Size = new System.Drawing.Size(68, 24);
+            this.lblCauHoi.TabIndex = 1;
+            this.lblCauHoi.Text = "Câu 1:";
             // 
             // FormThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1690, 802);
-            this.Controls.Add(this.summarylistview);
+            this.Controls.Add(this.gcNoiDung);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.barDockControlLeft);
@@ -631,6 +680,13 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNoiDung)).EndInit();
+            this.gcNoiDung.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rdbListQS.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdbDA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,7 +728,6 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.SpinEdit spin_LanThi;
         private System.Windows.Forms.ComboBox cmb_MonHoc;
-        private System.Windows.Forms.Label time_Thi;
         private System.Windows.Forms.Label lb_SoCauThi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lb_TrinhDo;
@@ -680,9 +735,12 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.DateEdit date_NgayThi;
         private System.Windows.Forms.Timer timer1;
-        public System.Windows.Forms.ListView summarylistview;
-        private System.Windows.Forms.ColumnHeader cauHoi;
-        private System.Windows.Forms.ColumnHeader dapAn;
         private System.Windows.Forms.Button btn_BatDau;
+        private DevExpress.XtraEditors.GroupControl gcNoiDung;
+        private System.Windows.Forms.Label lblTime;
+        private DevExpress.XtraEditors.RadioGroup rdbListQS;
+        private DevExpress.XtraEditors.RadioGroup rdbDA;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private System.Windows.Forms.Label lblCauHoi;
     }
 }
