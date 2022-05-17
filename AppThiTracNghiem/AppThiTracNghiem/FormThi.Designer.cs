@@ -40,8 +40,8 @@ namespace AppThiTracNghiem
             this.gIAOVIEN_DANGKYTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
+            this.btn_BatDau = new DevExpress.XtraBars.BarButtonItem();
             this.btnNopBai = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXemKQ = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -50,13 +50,12 @@ namespace AppThiTracNghiem
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.lb_TENLOP = new System.Windows.Forms.Label();
+            this.lb_MASV = new System.Windows.Forms.ComboBox();
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lb_MALOP = new System.Windows.Forms.ComboBox();
             this.lb_4 = new System.Windows.Forms.Label();
-            this.lb_MALOP = new System.Windows.Forms.Label();
             this.lb_3 = new System.Windows.Forms.Label();
-            this.lb_TENSV = new System.Windows.Forms.Label();
             this.lb_2 = new System.Windows.Forms.Label();
-            this.lb_MASV = new System.Windows.Forms.Label();
             this.lb_1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -72,15 +71,16 @@ namespace AppThiTracNghiem
             this.date_NgayThi = new DevExpress.XtraEditors.DateEdit();
             this.cmb_MonHoc = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_BatDau = new System.Windows.Forms.Button();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gcNoiDung = new DevExpress.XtraEditors.GroupControl();
-            this.rdbListQS = new DevExpress.XtraEditors.RadioGroup();
             this.rdbDA = new DevExpress.XtraEditors.RadioGroup();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lblCauHoi = new System.Windows.Forms.Label();
+            this.rdbListQS = new DevExpress.XtraEditors.RadioGroup();
+            this.lOPTableAdapter = new AppThiTracNghiem.DSTableAdapters.LOPTableAdapter();
+            this.lb_TENLOP = new System.Windows.Forms.ComboBox();
+            this.lb_TENSV = new System.Windows.Forms.ComboBox();
             mAMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
@@ -90,19 +90,18 @@ namespace AppThiTracNghiem
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spin_LanThi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayThi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayThi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcNoiDung)).BeginInit();
             this.gcNoiDung.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rdbListQS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdbDA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdbListQS.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mAMHLabel
@@ -165,7 +164,7 @@ namespace AppThiTracNghiem
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnNopBai,
             this.btnThoat,
-            this.btnXemKQ,
+            this.btn_BatDau,
             this.barStaticItem1});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 4;
@@ -177,12 +176,21 @@ namespace AppThiTracNghiem
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_BatDau),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNopBai),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnXemKQ),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThoat)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
+            // 
+            // btn_BatDau
+            // 
+            this.btn_BatDau.Caption = "Bắt đầu";
+            this.btn_BatDau.Id = 2;
+            this.btn_BatDau.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_BatDau.ImageOptions.SvgImage")));
+            this.btn_BatDau.Name = "btn_BatDau";
+            this.btn_BatDau.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_BatDau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BatDau_ItemClick);
             // 
             // btnNopBai
             // 
@@ -192,14 +200,6 @@ namespace AppThiTracNghiem
             this.btnNopBai.Name = "btnNopBai";
             this.btnNopBai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnNopBai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNopBai_ItemClick);
-            // 
-            // btnXemKQ
-            // 
-            this.btnXemKQ.Caption = "Xem kết quả";
-            this.btnXemKQ.Id = 2;
-            this.btnXemKQ.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXemKQ.ImageOptions.SvgImage")));
-            this.btnXemKQ.Name = "btnXemKQ";
-            this.btnXemKQ.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // btnThoat
             // 
@@ -217,16 +217,16 @@ namespace AppThiTracNghiem
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1690, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1778, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 802);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 722);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1690, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1778, 0);
             // 
             // barDockControlLeft
             // 
@@ -235,16 +235,16 @@ namespace AppThiTracNghiem
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 772);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 692);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1690, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1778, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 772);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 692);
             // 
             // barStaticItem1
             // 
@@ -259,102 +259,87 @@ namespace AppThiTracNghiem
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 30);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1690, 175);
+            this.panelControl2.Size = new System.Drawing.Size(1778, 175);
             this.panelControl2.TabIndex = 9;
             // 
             // panelControl5
             // 
-            this.panelControl5.Controls.Add(this.lb_TENLOP);
-            this.panelControl5.Controls.Add(this.lb_4);
-            this.panelControl5.Controls.Add(this.lb_MALOP);
-            this.panelControl5.Controls.Add(this.lb_3);
             this.panelControl5.Controls.Add(this.lb_TENSV);
-            this.panelControl5.Controls.Add(this.lb_2);
+            this.panelControl5.Controls.Add(this.lb_TENLOP);
             this.panelControl5.Controls.Add(this.lb_MASV);
+            this.panelControl5.Controls.Add(this.lb_MALOP);
+            this.panelControl5.Controls.Add(this.lb_4);
+            this.panelControl5.Controls.Add(this.lb_3);
+            this.panelControl5.Controls.Add(this.lb_2);
             this.panelControl5.Controls.Add(this.lb_1);
             this.panelControl5.Controls.Add(this.label1);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(954, 2);
             this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(734, 171);
+            this.panelControl5.Size = new System.Drawing.Size(822, 171);
             this.panelControl5.TabIndex = 5;
             // 
-            // lb_TENLOP
+            // lb_MASV
             // 
-            this.lb_TENLOP.AutoSize = true;
-            this.lb_TENLOP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TENLOP.Location = new System.Drawing.Point(573, 102);
-            this.lb_TENLOP.Name = "lb_TENLOP";
-            this.lb_TENLOP.Size = new System.Drawing.Size(60, 23);
-            this.lb_TENLOP.TabIndex = 25;
-            this.lb_TENLOP.Text = "label7";
+            this.lb_MASV.FormattingEnabled = true;
+            this.lb_MASV.Location = new System.Drawing.Point(192, 46);
+            this.lb_MASV.Name = "lb_MASV";
+            this.lb_MASV.Size = new System.Drawing.Size(199, 24);
+            this.lb_MASV.TabIndex = 27;
+            // 
+            // lOPBindingSource
+            // 
+            this.lOPBindingSource.DataMember = "LOP";
+            this.lOPBindingSource.DataSource = this.dS;
+            // 
+            // lb_MALOP
+            // 
+            this.lb_MALOP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MALOP", true));
+            this.lb_MALOP.DataSource = this.lOPBindingSource;
+            this.lb_MALOP.DisplayMember = "MALOP";
+            this.lb_MALOP.FormattingEnabled = true;
+            this.lb_MALOP.Location = new System.Drawing.Point(616, 46);
+            this.lb_MALOP.Name = "lb_MALOP";
+            this.lb_MALOP.Size = new System.Drawing.Size(199, 24);
+            this.lb_MALOP.TabIndex = 25;
+            this.lb_MALOP.ValueMember = "MALOP";
             // 
             // lb_4
             // 
             this.lb_4.AutoSize = true;
             this.lb_4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_4.Location = new System.Drawing.Point(463, 102);
+            this.lb_4.Location = new System.Drawing.Point(506, 102);
             this.lb_4.Name = "lb_4";
             this.lb_4.Size = new System.Drawing.Size(103, 23);
             this.lb_4.TabIndex = 24;
             this.lb_4.Text = "TÊN LỚP:";
             // 
-            // lb_MALOP
-            // 
-            this.lb_MALOP.AutoSize = true;
-            this.lb_MALOP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MALOP.Location = new System.Drawing.Point(573, 46);
-            this.lb_MALOP.Name = "lb_MALOP";
-            this.lb_MALOP.Size = new System.Drawing.Size(60, 23);
-            this.lb_MALOP.TabIndex = 23;
-            this.lb_MALOP.Text = "label5";
-            // 
             // lb_3
             // 
             this.lb_3.AutoSize = true;
             this.lb_3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_3.Location = new System.Drawing.Point(463, 46);
+            this.lb_3.Location = new System.Drawing.Point(506, 46);
             this.lb_3.Name = "lb_3";
             this.lb_3.Size = new System.Drawing.Size(104, 23);
             this.lb_3.TabIndex = 22;
             this.lb_3.Text = "MÃ LỚP : ";
             // 
-            // lb_TENSV
-            // 
-            this.lb_TENSV.AutoSize = true;
-            this.lb_TENSV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TENSV.Location = new System.Drawing.Point(201, 102);
-            this.lb_TENSV.Name = "lb_TENSV";
-            this.lb_TENSV.Size = new System.Drawing.Size(60, 23);
-            this.lb_TENSV.TabIndex = 21;
-            this.lb_TENSV.Text = "label3";
-            // 
             // lb_2
             // 
             this.lb_2.AutoSize = true;
             this.lb_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_2.Location = new System.Drawing.Point(114, 102);
+            this.lb_2.Location = new System.Drawing.Point(109, 102);
             this.lb_2.Name = "lb_2";
             this.lb_2.Size = new System.Drawing.Size(85, 23);
             this.lb_2.TabIndex = 20;
             this.lb_2.Text = "TÊN SV:";
             // 
-            // lb_MASV
-            // 
-            this.lb_MASV.AutoSize = true;
-            this.lb_MASV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MASV.Location = new System.Drawing.Point(200, 46);
-            this.lb_MASV.Name = "lb_MASV";
-            this.lb_MASV.Size = new System.Drawing.Size(60, 23);
-            this.lb_MASV.TabIndex = 19;
-            this.lb_MASV.Text = "label2";
-            // 
             // lb_1
             // 
             this.lb_1.AutoSize = true;
             this.lb_1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_1.Location = new System.Drawing.Point(114, 46);
+            this.lb_1.Location = new System.Drawing.Point(109, 46);
             this.lb_1.Name = "lb_1";
             this.lb_1.Size = new System.Drawing.Size(77, 23);
             this.lb_1.TabIndex = 18;
@@ -408,11 +393,11 @@ namespace AppThiTracNghiem
             // 
             this.lb_SoCauThi.AutoSize = true;
             this.lb_SoCauThi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_SoCauThi.Location = new System.Drawing.Point(517, 101);
+            this.lb_SoCauThi.Location = new System.Drawing.Point(508, 102);
             this.lb_SoCauThi.Name = "lb_SoCauThi";
-            this.lb_SoCauThi.Size = new System.Drawing.Size(61, 23);
+            this.lb_SoCauThi.Size = new System.Drawing.Size(20, 23);
             this.lb_SoCauThi.TabIndex = 28;
-            this.lb_SoCauThi.Text = "< 100 ";
+            this.lb_SoCauThi.Text = "1";
             // 
             // label10
             // 
@@ -428,17 +413,17 @@ namespace AppThiTracNghiem
             // 
             this.lb_TrinhDo.AutoSize = true;
             this.lb_TrinhDo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TrinhDo.Location = new System.Drawing.Point(270, 99);
+            this.lb_TrinhDo.Location = new System.Drawing.Point(264, 102);
             this.lb_TrinhDo.Name = "lb_TrinhDo";
-            this.lb_TrinhDo.Size = new System.Drawing.Size(71, 23);
+            this.lb_TrinhDo.Size = new System.Drawing.Size(24, 23);
             this.lb_TrinhDo.TabIndex = 27;
-            this.lb_TrinhDo.Text = "A, B, C";
+            this.lb_TrinhDo.Text = "A";
             // 
             // lb_So
             // 
             this.lb_So.AutoSize = true;
             this.lb_So.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_So.Location = new System.Drawing.Point(399, 100);
+            this.lb_So.Location = new System.Drawing.Point(399, 102);
             this.lb_So.Name = "lb_So";
             this.lb_So.Size = new System.Drawing.Size(115, 23);
             this.lb_So.TabIndex = 26;
@@ -448,7 +433,7 @@ namespace AppThiTracNghiem
             // 
             this.lb.AutoSize = true;
             this.lb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb.Location = new System.Drawing.Point(176, 99);
+            this.lb.Location = new System.Drawing.Point(176, 101);
             this.lb.Name = "lb";
             this.lb.Size = new System.Drawing.Size(98, 23);
             this.lb.TabIndex = 25;
@@ -471,7 +456,7 @@ namespace AppThiTracNghiem
             0,
             0,
             0});
-            this.spin_LanThi.Location = new System.Drawing.Point(67, 99);
+            this.spin_LanThi.Location = new System.Drawing.Point(65, 99);
             this.spin_LanThi.Margin = new System.Windows.Forms.Padding(4);
             this.spin_LanThi.Name = "spin_LanThi";
             this.spin_LanThi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -488,7 +473,7 @@ namespace AppThiTracNghiem
             0,
             0,
             0});
-            this.spin_LanThi.Size = new System.Drawing.Size(78, 28);
+            this.spin_LanThi.Size = new System.Drawing.Size(42, 28);
             this.spin_LanThi.TabIndex = 23;
             // 
             // label2
@@ -513,7 +498,7 @@ namespace AppThiTracNghiem
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_NgayThi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_NgayThi.Size = new System.Drawing.Size(148, 28);
+            this.date_NgayThi.Size = new System.Drawing.Size(121, 28);
             this.date_NgayThi.TabIndex = 21;
             // 
             // cmb_MonHoc
@@ -525,7 +510,7 @@ namespace AppThiTracNghiem
             this.cmb_MonHoc.FormattingEnabled = true;
             this.cmb_MonHoc.Location = new System.Drawing.Point(102, 47);
             this.cmb_MonHoc.Name = "cmb_MonHoc";
-            this.cmb_MonHoc.Size = new System.Drawing.Size(210, 27);
+            this.cmb_MonHoc.Size = new System.Drawing.Size(223, 27);
             this.cmb_MonHoc.TabIndex = 20;
             this.cmb_MonHoc.ValueMember = "MAMH";
             // 
@@ -540,27 +525,6 @@ namespace AppThiTracNghiem
             this.label3.Size = new System.Drawing.Size(131, 21);
             this.label3.TabIndex = 18;
             this.label3.Text = "Thông tin bài thi";
-            // 
-            // btn_BatDau
-            // 
-            this.btn_BatDau.AutoSize = true;
-            this.btn_BatDau.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BatDau.Location = new System.Drawing.Point(11, 19);
-            this.btn_BatDau.Name = "btn_BatDau";
-            this.btn_BatDau.Size = new System.Drawing.Size(110, 48);
-            this.btn_BatDau.TabIndex = 29;
-            this.btn_BatDau.Text = "Bắt Đầu";
-            this.btn_BatDau.UseVisualStyleBackColor = true;
-            this.btn_BatDau.Click += new System.EventHandler(this.btn_BatDau_Click);
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.btn_BatDau);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 205);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1690, 74);
-            this.panelControl3.TabIndex = 10;
             // 
             // bar3
             // 
@@ -587,27 +551,11 @@ namespace AppThiTracNghiem
             this.gcNoiDung.Controls.Add(this.panelControl1);
             this.gcNoiDung.Controls.Add(this.rdbListQS);
             this.gcNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcNoiDung.Location = new System.Drawing.Point(0, 279);
+            this.gcNoiDung.Location = new System.Drawing.Point(0, 205);
             this.gcNoiDung.Name = "gcNoiDung";
-            this.gcNoiDung.Size = new System.Drawing.Size(1690, 523);
+            this.gcNoiDung.Size = new System.Drawing.Size(1778, 517);
             this.gcNoiDung.TabIndex = 24;
-            this.gcNoiDung.Text = "Nội dung";
-            // 
-            // rdbListQS
-            // 
-            this.rdbListQS.AllowDrop = true;
-            this.rdbListQS.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rdbListQS.Location = new System.Drawing.Point(2, 28);
-            this.rdbListQS.MenuManager = this.barManager1;
-            this.rdbListQS.Name = "rdbListQS";
-            this.rdbListQS.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.rdbListQS.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.rdbListQS.Properties.Appearance.Options.UseBackColor = true;
-            this.rdbListQS.Properties.Appearance.Options.UseFont = true;
-            this.rdbListQS.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.rdbListQS.Size = new System.Drawing.Size(90, 493);
-            this.rdbListQS.TabIndex = 2;
-            this.rdbListQS.SelectedIndexChanged += new System.EventHandler(this.rdbListQS_SelectedIndexChanged);
+            this.gcNoiDung.Text = "Câu hỏi";
             // 
             // rdbDA
             // 
@@ -620,7 +568,7 @@ namespace AppThiTracNghiem
             this.rdbDA.Properties.Appearance.Options.UseBackColor = true;
             this.rdbDA.Properties.Appearance.Options.UseFont = true;
             this.rdbDA.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.rdbDA.Size = new System.Drawing.Size(1596, 139);
+            this.rdbDA.Size = new System.Drawing.Size(1684, 139);
             this.rdbDA.TabIndex = 1;
             this.rdbDA.SelectedIndexChanged += new System.EventHandler(this.rdbDA_SelectedIndexChanged);
             // 
@@ -630,7 +578,7 @@ namespace AppThiTracNghiem
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(92, 28);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1596, 172);
+            this.panelControl1.Size = new System.Drawing.Size(1684, 172);
             this.panelControl1.TabIndex = 4;
             // 
             // lblCauHoi
@@ -645,13 +593,52 @@ namespace AppThiTracNghiem
             this.lblCauHoi.TabIndex = 1;
             this.lblCauHoi.Text = "Câu 1:";
             // 
+            // rdbListQS
+            // 
+            this.rdbListQS.AllowDrop = true;
+            this.rdbListQS.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rdbListQS.Location = new System.Drawing.Point(2, 28);
+            this.rdbListQS.MenuManager = this.barManager1;
+            this.rdbListQS.Name = "rdbListQS";
+            this.rdbListQS.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.rdbListQS.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.rdbListQS.Properties.Appearance.Options.UseBackColor = true;
+            this.rdbListQS.Properties.Appearance.Options.UseFont = true;
+            this.rdbListQS.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.rdbListQS.Size = new System.Drawing.Size(90, 487);
+            this.rdbListQS.TabIndex = 2;
+            this.rdbListQS.SelectedIndexChanged += new System.EventHandler(this.rdbListQS_SelectedIndexChanged);
+            // 
+            // lOPTableAdapter
+            // 
+            this.lOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // lb_TENLOP
+            // 
+            this.lb_TENLOP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "TENLOP", true));
+            this.lb_TENLOP.DataSource = this.lOPBindingSource;
+            this.lb_TENLOP.DisplayMember = "TENLOP";
+            this.lb_TENLOP.FormattingEnabled = true;
+            this.lb_TENLOP.Location = new System.Drawing.Point(616, 100);
+            this.lb_TENLOP.Name = "lb_TENLOP";
+            this.lb_TENLOP.Size = new System.Drawing.Size(199, 24);
+            this.lb_TENLOP.TabIndex = 28;
+            this.lb_TENLOP.ValueMember = "MALOP";
+            // 
+            // lb_TENSV
+            // 
+            this.lb_TENSV.FormattingEnabled = true;
+            this.lb_TENSV.Location = new System.Drawing.Point(192, 102);
+            this.lb_TENSV.Name = "lb_TENSV";
+            this.lb_TENSV.Size = new System.Drawing.Size(199, 24);
+            this.lb_TENSV.TabIndex = 29;
+            // 
             // FormThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1690, 802);
+            this.ClientSize = new System.Drawing.Size(1778, 722);
             this.Controls.Add(this.gcNoiDung);
-            this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -671,22 +658,20 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spin_LanThi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayThi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayThi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcNoiDung)).EndInit();
             this.gcNoiDung.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rdbListQS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdbDA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdbListQS.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -702,7 +687,6 @@ namespace AppThiTracNghiem
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem btnNopBai;
-        private DevExpress.XtraBars.BarButtonItem btnXemKQ;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -716,13 +700,9 @@ namespace AppThiTracNghiem
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraBars.Bar bar3;
-        private System.Windows.Forms.Label lb_TENLOP;
         private System.Windows.Forms.Label lb_4;
-        private System.Windows.Forms.Label lb_MALOP;
         private System.Windows.Forms.Label lb_3;
-        private System.Windows.Forms.Label lb_TENSV;
         private System.Windows.Forms.Label lb_2;
-        private System.Windows.Forms.Label lb_MASV;
         private System.Windows.Forms.Label lb_1;
         private System.Windows.Forms.Label lb;
         private System.Windows.Forms.Label label4;
@@ -735,12 +715,18 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.DateEdit date_NgayThi;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btn_BatDau;
         private DevExpress.XtraEditors.GroupControl gcNoiDung;
         private System.Windows.Forms.Label lblTime;
         private DevExpress.XtraEditors.RadioGroup rdbListQS;
         private DevExpress.XtraEditors.RadioGroup rdbDA;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label lblCauHoi;
+        private DevExpress.XtraBars.BarButtonItem btn_BatDau;
+        private System.Windows.Forms.BindingSource lOPBindingSource;
+        private DSTableAdapters.LOPTableAdapter lOPTableAdapter;
+        private System.Windows.Forms.ComboBox lb_MALOP;
+        private System.Windows.Forms.ComboBox lb_MASV;
+        private System.Windows.Forms.ComboBox lb_TENSV;
+        private System.Windows.Forms.ComboBox lb_TENLOP;
     }
 }

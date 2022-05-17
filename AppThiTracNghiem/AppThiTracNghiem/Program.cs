@@ -43,12 +43,12 @@ namespace AppThiTracNghiem
         public static string DiaChiSV;
 
         // luu thong tin thi
-        public static string MAMH;
-        public static string TD;
-        public static string soCau;
+        public static String MAMH;
+        public static String TD;
+        public static String soCau;
         public static int time;
         public static int lanThi;
-        public static string ngayThi;
+        public static String ngayThi;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static FormMain frmChinh;

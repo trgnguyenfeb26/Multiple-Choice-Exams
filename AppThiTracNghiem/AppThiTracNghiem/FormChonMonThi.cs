@@ -35,7 +35,11 @@ namespace AppThiTracNghiem
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
 
             if (Program.mGroup == "SINHVIEN")
-                bdsGV_DK.Filter = "NGAYTHI = '" + DateTime.Now.ToShortDateString() + "' AND MALOP = '" + Program.MaLopSV + "'";
+            {
+        
+                    bdsGV_DK.Filter = "NGAYTHI = '" + DateTime.Now.ToShortDateString() + "' AND MALOP = '" + Program.MaLopSV + "'";
+            }
+                
             else
                 bdsGV_DK.Filter = "NGAYTHI = '" + DateTime.Now.ToShortDateString() + "'";
             if (!gcMonThi.Focused)
@@ -67,7 +71,10 @@ namespace AppThiTracNghiem
 
         private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn thật sự muốn thoát khỏi form?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void gcMonThi_Click(object sender, EventArgs e)

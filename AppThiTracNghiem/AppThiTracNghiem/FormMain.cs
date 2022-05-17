@@ -25,7 +25,7 @@ namespace AppThiTracNghiem
             ribHeThong.Visible = true;
             btnTaoTaiKhoan.Enabled = false;
             btnDangXuat.Enabled = false;
-            ribThi.Visible = false;
+            ribThi.Visible = true;
             ribDanhMuc.Visible = false;
             ribReport.Visible = false;
             btnDMK.Enabled = false;
@@ -44,7 +44,6 @@ namespace AppThiTracNghiem
             if (Program.mGroup == "GIANGVIEN")
                 {
                 btnDangNhap.Enabled = false;
-                ribThi.Visible = false;
                 ribDanhMuc.Visible = true;
                 ribReport.Visible = true;
                 btnTaoTaiKhoan.Enabled = false;
@@ -73,7 +72,6 @@ namespace AppThiTracNghiem
             if (Program.mGroup == "COSO")
             {
                 btnDangNhap.Enabled = false;
-                ribThi.Visible = false;
                 ribDanhMuc.Visible = true;
                 ribReport.Visible = true;
                 btnDangXuat.Enabled = true;
