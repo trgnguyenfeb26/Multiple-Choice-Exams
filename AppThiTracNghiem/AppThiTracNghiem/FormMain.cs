@@ -274,5 +274,17 @@ namespace AppThiTracNghiem
                 f.Show();
             }
         }
+
+        private void btnXemBD_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormBangDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormBangDiem f = new FormBangDiem();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

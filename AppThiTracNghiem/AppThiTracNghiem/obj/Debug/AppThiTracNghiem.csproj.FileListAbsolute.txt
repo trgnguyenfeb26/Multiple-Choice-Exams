@@ -403,3 +403,5 @@ F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThi
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormTaoTK.resources
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormDoiMK.resources
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormXemKQ.resources
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormBangDiem.resources
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.ReportBangDiem.resources

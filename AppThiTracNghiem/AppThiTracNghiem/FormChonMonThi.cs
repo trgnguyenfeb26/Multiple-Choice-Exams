@@ -34,7 +34,7 @@ namespace AppThiTracNghiem
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
 
-            if (Program.mGroup == "SINHVIEN")
+            if (Program.mGroup == "SinhVien")
             {
         
                     bdsGV_DK.Filter = "NGAYTHI = '" + DateTime.Now.ToShortDateString() + "' AND MALOP = '" + Program.MaLopSV + "'";

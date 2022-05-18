@@ -34,7 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -81,6 +83,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBangDiem.Designer.cs">
+      <DependentUpon>FormBangDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBoDe.cs">
       <SubType>Form</SubType>
@@ -168,6 +176,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportBangDiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportBangDiem.Designer.cs">
+      <DependentUpon>ReportBangDiem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormBangDiem.resx">
+      <DependentUpon>FormBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBoDe.resx">
       <DependentUpon>FormBoDe.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +237,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportBangDiem.resx">
+      <DependentUpon>ReportBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DS.xsc">
       <DependentUpon>DS.xsd</DependentUpon>
     </None>

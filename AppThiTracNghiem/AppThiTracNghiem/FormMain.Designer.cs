@@ -200,6 +200,7 @@ namespace AppThiTracNghiem
             this.btnXemBD.Id = 17;
             this.btnXemBD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXemBD.ImageOptions.SvgImage")));
             this.btnXemBD.Name = "btnXemBD";
+            this.btnXemBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemBD_ItemClick);
             // 
             // btnDSDK
             // 

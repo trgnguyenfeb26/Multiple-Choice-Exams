@@ -53,8 +53,8 @@ namespace AppThiTracNghiem
             {
                 lb_MASV.Text = Program.username;
                 lb_TENSV.Text = Program.mHoten;
-                lb_MALOP.SelectedText = Program.MaLopSV;
-                lb_TENLOP.SelectedText = Program.MaLopSV;
+                lb_MALOP.Text = Program.MaLopSV;
+                lb_TENLOP.SelectedValue = Program.MaLopSV;
 
 
             }
@@ -73,6 +73,16 @@ namespace AppThiTracNghiem
             date_NgayThi.Text = Program.ngayThi;
             cmb_MonHoc.SelectedItem = Program.MAMH;
 
+            DataTable dt = Program.ExecSqlDataTable("SELECT TENLOP FROM LOP WHERE MALOP='" + Program.MaLopSV + "'");
+            lb_TENLOP.DataSource = dt;
+            lb_TENLOP.DisplayMember = "TENLOP";
+            lb_TENLOP.ValueMember = "MALOP";
+            lb_TENLOP.SelectedIndex = 0;
+            dt = Program.ExecSqlDataTable("SELECT TENMH FROM MONHOC WHERE MAMH='" + Program.MAMH + "'");
+            cmb_MonHoc.DataSource = dt;
+            cmb_MonHoc.DisplayMember = "TENMH";
+            cmb_MonHoc.ValueMember = "MAMH";
+            cmb_MonHoc.SelectedIndex = 0;
         }
         private CauHoi GetQS(int vitri)
         {
@@ -153,6 +163,8 @@ namespace AppThiTracNghiem
                                     Diem += Diem1;
                                 }
                             }
+                            if (Diem - Math.Floor(Diem) == 0) Diem = Math.Floor(Diem);
+                            else
                             if (Diem - Math.Floor(Diem) > 0.5) Diem = Math.Floor(Diem) + 1;
                             else if (Diem - Math.Floor(Diem) < 0.5) Diem = Math.Floor(Diem) + 0.5;
                             InsertTableBangDiem();
@@ -178,7 +190,8 @@ namespace AppThiTracNghiem
                                 Diem += Diem1;
                             }
                         }
-                        if (Diem - Math.Floor(Diem) > 0.5) Diem = Math.Floor(Diem) + 1;
+                        if (Diem - Math.Floor(Diem) == 0) Diem = Math.Floor(Diem);
+                        else if (Diem - Math.Floor(Diem) > 0.5) Diem = Math.Floor(Diem) + 1;
                         else if (Diem - Math.Floor(Diem) < 0.5) Diem = Math.Floor(Diem) + 0.5;
                         InsertTableBangDiem();
                         timer1.Stop();
@@ -294,7 +307,9 @@ namespace AppThiTracNghiem
                         Diem += Diem1;
                     }
                 }
-                if (Diem - Math.Floor(Diem) > 0.5) Diem = Math.Floor(Diem) + 1;
+
+                if (Diem - Math.Floor(Diem) == 0) Diem = Math.Floor(Diem);
+                else if(Diem - Math.Floor(Diem) > 0.5) Diem = Math.Floor(Diem) + 1;
                 else if (Diem - Math.Floor(Diem) < 0.5) Diem = Math.Floor(Diem) + 0.5;
                 InsertTableBangDiem();
                 hienThiTG();
