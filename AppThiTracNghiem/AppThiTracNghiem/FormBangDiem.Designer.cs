@@ -106,6 +106,7 @@ namespace AppThiTracNghiem
             // 
             // mACSLabel
             // 
+            mACSLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             mACSLabel.AutoSize = true;
             mACSLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mACSLabel.Location = new System.Drawing.Point(358, 115);
@@ -217,6 +218,7 @@ namespace AppThiTracNghiem
             this.btnThoatBDiem.Id = 1;
             this.btnThoatBDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoatBDiem.ImageOptions.SvgImage")));
             this.btnThoatBDiem.Name = "btnThoatBDiem";
+            this.btnThoatBDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatBDiem_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -335,6 +337,7 @@ namespace AppThiTracNghiem
             this.cmbCoSo.Name = "cmbCoSo";
             this.cmbCoSo.Size = new System.Drawing.Size(192, 32);
             this.cmbCoSo.TabIndex = 36;
+            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
             // 
             // FormBangDiem
             // 
