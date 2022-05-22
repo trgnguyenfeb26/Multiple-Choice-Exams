@@ -168,6 +168,12 @@
     <Compile Include="FormThi.Designer.cs">
       <DependentUpon>FormThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXemDSDKThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemDSDKThi.Designer.cs">
+      <DependentUpon>FormXemDSDKThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormXemKQ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,18 @@
     </Compile>
     <Compile Include="ReportBangDiem.Designer.cs">
       <DependentUpon>ReportBangDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDSDKThi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportDSDKThi.Designer.cs">
+      <DependentUpon>ReportDSDKThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportXemKQ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportXemKQ.Designer.cs">
+      <DependentUpon>ReportXemKQ.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormBangDiem.resx">
       <DependentUpon>FormBangDiem.cs</DependentUpon>
@@ -224,6 +242,9 @@
     <EmbeddedResource Include="FormThi.resx">
       <DependentUpon>FormThi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormXemDSDKThi.resx">
+      <DependentUpon>FormXemDSDKThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormXemKQ.resx">
       <DependentUpon>FormXemKQ.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +260,12 @@
     </Compile>
     <EmbeddedResource Include="ReportBangDiem.resx">
       <DependentUpon>ReportBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportDSDKThi.resx">
+      <DependentUpon>ReportDSDKThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportXemKQ.resx">
+      <DependentUpon>ReportXemKQ.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DS.xsc">
       <DependentUpon>DS.xsd</DependentUpon>

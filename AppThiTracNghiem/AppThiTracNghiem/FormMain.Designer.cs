@@ -107,6 +107,7 @@ namespace AppThiTracNghiem
             this.ribReport});
             this.ribbon.Size = new System.Drawing.Size(1023, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.ribbon.Click += new System.EventHandler(this.ribbon_Click_1);
             // 
             // btnDangNhap
             // 
@@ -208,6 +209,7 @@ namespace AppThiTracNghiem
             this.btnDSDK.Id = 19;
             this.btnDSDK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSDK.ImageOptions.SvgImage")));
             this.btnDSDK.Name = "btnDSDK";
+            this.btnDSDK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSDK_ItemClick);
             // 
             // btnLop
             // 

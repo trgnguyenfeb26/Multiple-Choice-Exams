@@ -405,3 +405,6 @@ F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThi
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormXemKQ.resources
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormBangDiem.resources
 F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.ReportBangDiem.resources
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.FormXemDSDKThi.resources
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.ReportDSDKThi.resources
+F:\Cơ sở dữ liệu phân tán\DoAn\AppThiTracNghiem\AppThiTracNghiem\AppThiTracNghiem\obj\Debug\AppThiTracNghiem.ReportXemKQ.resources

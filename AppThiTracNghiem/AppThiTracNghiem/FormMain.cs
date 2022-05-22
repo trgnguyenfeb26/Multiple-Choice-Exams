@@ -76,7 +76,7 @@ namespace AppThiTracNghiem
                 ribReport.Visible = true;
                 btnDangXuat.Enabled = true;
                 btnTaoTaiKhoan.Enabled = true;
-                btnXemKQ.Enabled = false;
+                btnXemKQ.Enabled = true;
                 btnDMK.Enabled = true;
             }
 
@@ -285,6 +285,23 @@ namespace AppThiTracNghiem
                 f.MdiParent = this;
                 f.Show();
             }
+        }
+
+        private void btnDSDK_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormXemDSDKThi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormXemDSDKThi f = new FormXemDSDKThi();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void ribbon_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

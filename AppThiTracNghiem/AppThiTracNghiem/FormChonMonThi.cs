@@ -58,7 +58,6 @@ namespace AppThiTracNghiem
             Program.lanThi = int.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "LAN").ToString());
 
             string sql = "EXEC SP_CheckDaThi '" + Program.username + "', '" + Program.MAMH + "', " + Program.lanThi;
-            // sp này chưa viết -- dựa trên số lần thi để kiểm tra
             if (Program.ExecSqlNonQuery(sql) == 0)
             {
                 FormThi f = new FormThi();
@@ -83,6 +82,7 @@ namespace AppThiTracNghiem
             {
                 btnStart.Enabled = true;
             }
+            if (bdsGV_DK.Count == 0) btnStart.Enabled = false;
         }
     }
 }

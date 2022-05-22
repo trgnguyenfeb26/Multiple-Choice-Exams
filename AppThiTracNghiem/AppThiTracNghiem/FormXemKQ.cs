@@ -28,6 +28,12 @@ namespace AppThiTracNghiem
 
         private void FormXemKQ_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.Get_TaoTK' table. You can move, or remove it, as needed.
+            this.get_TaoTKTableAdapter.Fill(this.dS.Get_TaoTK);
+            // TODO: This line of code loads data into the 'dS.Get_Roles' table. You can move, or remove it, as needed.
+            this.get_RolesTableAdapter.Fill(this.dS.Get_Roles);
+            // TODO: This line of code loads data into the 'dS.Get_SVDaThi' table. You can move, or remove it, as needed.
+            this.get_SVDaThiTableAdapter.Fill(this.dS.Get_SVDaThi);
             dS.EnforceConstraints = false;
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
@@ -44,6 +50,11 @@ namespace AppThiTracNghiem
         {
             //if (bdsMH.Count == 0) cmbTenMH.SelectedIndex = -1;
              cmbTenMH.SelectedValue = cmbMAMH.Text;
+        }
+
+        private void btnInDSBD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
