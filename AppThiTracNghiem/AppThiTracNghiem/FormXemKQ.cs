@@ -56,5 +56,10 @@ namespace AppThiTracNghiem
         {
 
         }
+
+        private void cmbLan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

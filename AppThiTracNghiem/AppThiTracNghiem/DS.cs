@@ -19,9 +19,12 @@ namespace AppThiTracNghiem {
     }
 }
 
-namespace AppThiTracNghiem.DSTableAdapters {
-    
-    
+namespace AppThiTracNghiem.DSTableAdapters
+{
+    partial class Get_SVDaThiTableAdapter
+    {
+    }
+
     public partial class Get_TaoTKTableAdapter {
     }
 }
