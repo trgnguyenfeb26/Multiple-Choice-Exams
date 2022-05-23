@@ -72,6 +72,8 @@ namespace AppThiTracNghiem {
         
         private global::System.Data.DataRelation relationFK_GIAOVIEN_DANGKY_MONHOC1;
         
+        private global::System.Data.DataRelation relationFK_Get_SVDaThi_LOP;
+        
         private global::System.Data.DataRelation relationFK_LOP_KHOA;
         
         private global::System.Data.DataRelation relationFK_SINHVIEN_LOP;
@@ -521,6 +523,7 @@ namespace AppThiTracNghiem {
             this.relationFK_GIAOVIEN_DANGKY_GIAOVIEN1 = this.Relations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"];
             this.relationFK_GIAOVIEN_DANGKY_LOP = this.Relations["FK_GIAOVIEN_DANGKY_LOP"];
             this.relationFK_GIAOVIEN_DANGKY_MONHOC1 = this.Relations["FK_GIAOVIEN_DANGKY_MONHOC1"];
+            this.relationFK_Get_SVDaThi_LOP = this.Relations["FK_Get_SVDaThi_LOP"];
             this.relationFK_LOP_KHOA = this.Relations["FK_LOP_KHOA"];
             this.relationFK_SINHVIEN_LOP = this.Relations["FK_SINHVIEN_LOP"];
             this.relationFK_KHOA_COSO = this.Relations["FK_KHOA_COSO"];
@@ -638,6 +641,13 @@ namespace AppThiTracNghiem {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Get_SVDaThi_LOP", new global::System.Data.DataColumn[] {
+                        this.tableGet_SVDaThi.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn});
+            this.tableLOP.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_LOP_KHOA", new global::System.Data.DataColumn[] {
                         this.tableKHOA.MAKHColumn}, new global::System.Data.DataColumn[] {
                         this.tableLOP.MAKHColumn});
@@ -696,6 +706,10 @@ namespace AppThiTracNghiem {
                         this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
                         this.tableGIAOVIEN_DANGKY.MAMHColumn}, false);
             this.Relations.Add(this.relationFK_GIAOVIEN_DANGKY_MONHOC1);
+            this.relationFK_Get_SVDaThi_LOP = new global::System.Data.DataRelation("FK_Get_SVDaThi_LOP", new global::System.Data.DataColumn[] {
+                        this.tableGet_SVDaThi.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn}, false);
+            this.Relations.Add(this.relationFK_Get_SVDaThi_LOP);
             this.relationFK_LOP_KHOA = new global::System.Data.DataRelation("FK_LOP_KHOA", new global::System.Data.DataColumn[] {
                         this.tableKHOA.MAKHColumn}, new global::System.Data.DataColumn[] {
                         this.tableLOP.MAKHColumn}, false);
@@ -3319,12 +3333,15 @@ namespace AppThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LOPRow AddLOPRow(string MALOP, string TENLOP, KHOARow parentKHOARowByFK_LOP_KHOA) {
+            public LOPRow AddLOPRow(Get_SVDaThiRow parentGet_SVDaThiRowByFK_Get_SVDaThi_LOP, string TENLOP, KHOARow parentKHOARowByFK_LOP_KHOA) {
                 LOPRow rowLOPRow = ((LOPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MALOP,
+                        null,
                         TENLOP,
                         null};
+                if ((parentGet_SVDaThiRowByFK_Get_SVDaThi_LOP != null)) {
+                    columnValuesArray[0] = parentGet_SVDaThiRowByFK_Get_SVDaThi_LOP[5];
+                }
                 if ((parentKHOARowByFK_LOP_KHOA != null)) {
                     columnValuesArray[2] = parentKHOARowByFK_LOP_KHOA[0];
                 }
@@ -4990,6 +5007,8 @@ namespace AppThiTracNghiem {
                 base.Columns.Add(this.columnMALOP);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMASV}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnMALOP}, false));
                 this.columnMASV.AllowDBNull = false;
                 this.columnMASV.Unique = true;
                 this.columnMASV.MaxLength = 8;
@@ -4999,6 +5018,7 @@ namespace AppThiTracNghiem {
                 this.columnTEN.MaxLength = 10;
                 this.columnDIACHI.MaxLength = 100;
                 this.columnMALOP.AllowDBNull = false;
+                this.columnMALOP.Unique = true;
                 this.columnMALOP.MaxLength = 15;
             }
             
@@ -6162,6 +6182,17 @@ namespace AppThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Get_SVDaThiRow Get_SVDaThiRow {
+                get {
+                    return ((Get_SVDaThiRow)(this.GetParentRow(this.Table.ParentRelations["FK_Get_SVDaThi_LOP"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Get_SVDaThi_LOP"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public KHOARow KHOARow {
                 get {
                     return ((KHOARow)(this.GetParentRow(this.Table.ParentRelations["FK_LOP_KHOA"])));
@@ -6811,6 +6842,17 @@ namespace AppThiTracNghiem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDIACHINull() {
                 this[this.tableGet_SVDaThi.DIACHIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LOPRow[] GetLOPRows() {
+                if ((this.Table.ChildRelations["FK_Get_SVDaThi_LOP"] == null)) {
+                    return new LOPRow[0];
+                }
+                else {
+                    return ((LOPRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Get_SVDaThi_LOP"])));
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

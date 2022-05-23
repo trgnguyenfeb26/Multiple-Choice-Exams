@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,12 +29,12 @@ namespace AppThiTracNghiem
 
         private void FormXemKQ_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.LOP' table. You can move, or remove it, as needed.
+            
             // TODO: This line of code loads data into the 'dS.Get_TaoTK' table. You can move, or remove it, as needed.
-            this.get_TaoTKTableAdapter.Fill(this.dS.Get_TaoTK);
-            // TODO: This line of code loads data into the 'dS.Get_Roles' table. You can move, or remove it, as needed.
-            this.get_RolesTableAdapter.Fill(this.dS.Get_Roles);
+           
             // TODO: This line of code loads data into the 'dS.Get_SVDaThi' table. You can move, or remove it, as needed.
-            this.get_SVDaThiTableAdapter.Fill(this.dS.Get_SVDaThi);
+           
             dS.EnforceConstraints = false;
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
@@ -41,25 +42,39 @@ namespace AppThiTracNghiem
             this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
             this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.bANGDIEMTableAdapter.Fill(this.dS.BANGDIEM);
+            
+            this.get_SVDaThiTableAdapter.Fill(this.dS.Get_SVDaThi);
+            // TODO: This line of code loads data into the 'dS.Get_Roles' table. You can move, or remove it, as needed.
+           
+            this.lOPTableAdapter.Fill(this.dS.LOP);
             //if (bdsMH.Count == 0) cmbTenMH.SelectedIndex = -1;
-             cmbTenMH.SelectedValue = cmbMAMH.Text;
+            cmbTenMH.SelectedValue = cmbMAMH.Text;
 
         }
 
-        private void sINHVIENGridControl_Click(object sender, EventArgs e)
+       
+
+        private void cmbMAMH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (bdsMH.Count == 0) cmbTenMH.SelectedIndex = -1;
-             cmbTenMH.SelectedValue = cmbMAMH.Text;
+            cmbTenMH.SelectedValue = cmbMAMH.Text;
+        }
+
+        private void get_SVDaThiGridControl_Click(object sender, EventArgs e)
+        {
+            cmbTenMH.SelectedValue = cmbMAMH.Text;
         }
 
         private void btnInDSBD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            ReportXemKQ rpt = new ReportXemKQ(txtMaSV.Text, cmbMAMH.Text,  Int32.Parse(cmbLan.Text.ToString()));
+            rpt.lblLop.Text = txtTenLop.Text;
+            rpt.lblHo.Text = txtHo.Text; rpt.lblTen.Text = txtTen.Text;
+            rpt.lblMon.Text = cmbTenMH.Text;
+            rpt.lblLan.Text = cmbLan.Text.ToString();
+            rpt.lblNgay.Text = txtNgay.Text;
 
-        }
-
-        private void cmbLan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            ReportPrintTool print = new ReportPrintTool(rpt);
+            print.ShowPreviewDialog();
         }
     }
 }

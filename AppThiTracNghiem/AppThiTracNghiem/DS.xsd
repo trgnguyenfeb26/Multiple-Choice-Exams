@@ -1286,8 +1286,16 @@ FROM     Get_TaoTK</CommandText>
       <xs:selector xpath=".//mstns:Get_SVDaThi" />
       <xs:field xpath="mstns:MASV" />
     </xs:unique>
+    <xs:unique name="Get_SVDaThi_Constraint2" msdata:ConstraintName="Constraint2">
+      <xs:selector xpath=".//mstns:Get_SVDaThi" />
+      <xs:field xpath="mstns:MALOP" />
+    </xs:unique>
     <xs:keyref name="FK_SINHVIEN_LOP" refer="LOP_Constraint1" msprop:rel_Generator_UserChildTable="SINHVIEN" msprop:rel_Generator_ChildPropName="GetSINHVIENRows" msprop:rel_Generator_UserRelationName="FK_SINHVIEN_LOP" msprop:rel_Generator_RelationVarName="relationFK_SINHVIEN_LOP" msprop:rel_Generator_UserParentTable="LOP" msprop:rel_Generator_ParentPropName="LOPRow" msdata:DeleteRule="None">
       <xs:selector xpath=".//mstns:SINHVIEN" />
+      <xs:field xpath="mstns:MALOP" />
+    </xs:keyref>
+    <xs:keyref name="FK_Get_SVDaThi_LOP" refer="Get_SVDaThi_Constraint2" msprop:rel_Generator_UserChildTable="LOP" msprop:rel_Generator_ChildPropName="GetLOPRows" msprop:rel_Generator_UserRelationName="FK_Get_SVDaThi_LOP" msprop:rel_Generator_RelationVarName="relationFK_Get_SVDaThi_LOP" msprop:rel_Generator_UserParentTable="Get_SVDaThi" msprop:rel_Generator_ParentPropName="Get_SVDaThiRow" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:LOP" />
       <xs:field xpath="mstns:MALOP" />
     </xs:keyref>
     <xs:keyref name="FK_LOP_KHOA" refer="KHOA_Constraint1" msprop:rel_Generator_UserChildTable="LOP" msprop:rel_Generator_ChildPropName="GetLOPRows" msprop:rel_Generator_UserRelationName="FK_LOP_KHOA" msprop:rel_Generator_ParentPropName="KHOARow" msprop:rel_Generator_RelationVarName="relationFK_LOP_KHOA" msprop:rel_Generator_UserParentTable="KHOA" msdata:DeleteRule="None">

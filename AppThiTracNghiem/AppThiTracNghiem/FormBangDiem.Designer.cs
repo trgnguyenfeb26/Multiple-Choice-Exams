@@ -131,6 +131,7 @@ namespace AppThiTracNghiem
             this.cmbMaMH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMaMH.DataSource = this.mONHOCBindingSource;
             this.cmbMaMH.DisplayMember = "TENMH";
+            this.cmbMaMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaMH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaMH.FormattingEnabled = true;
             this.cmbMaMH.Location = new System.Drawing.Point(434, 224);
@@ -154,6 +155,7 @@ namespace AppThiTracNghiem
             this.cmbTenLop.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbTenLop.DataSource = this.lOPBindingSource;
             this.cmbTenLop.DisplayMember = "TENLOP";
+            this.cmbTenLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTenLop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTenLop.FormattingEnabled = true;
             this.cmbTenLop.Location = new System.Drawing.Point(434, 165);
@@ -319,6 +321,7 @@ namespace AppThiTracNghiem
             // cmbLan
             // 
             this.cmbLan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbLan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLan.FormattingEnabled = true;
             this.cmbLan.Location = new System.Drawing.Point(434, 283);

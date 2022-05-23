@@ -33,6 +33,11 @@ namespace AppThiTracNghiem
             cmbCoSo.DisplayMember = "TENCS";
             cmbCoSo.ValueMember = "TENSERVER";
             cmbCoSo.SelectedIndex = Program.mCoso;
+            if (Program.mGroup == "TRUONG")
+            {
+                cmbCoSo.Enabled = true;
+            }
+            else cmbCoSo.Enabled = false;
 
         }
 
