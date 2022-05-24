@@ -339,9 +339,9 @@ namespace AppThiTracNghiem
 
                 dt = Program.ExecSqlDataTable(sql);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Lỗi thi \n" + ex.Message, "Lỗi", MessageBoxButtons.OK);
 
             }
             bdsDethi = new BindingSource();

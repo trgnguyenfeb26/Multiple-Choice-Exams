@@ -29,12 +29,7 @@ namespace AppThiTracNghiem
 
         private void FormXemKQ_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.LOP' table. You can move, or remove it, as needed.
-            
-            // TODO: This line of code loads data into the 'dS.Get_TaoTK' table. You can move, or remove it, as needed.
-           
-            // TODO: This line of code loads data into the 'dS.Get_SVDaThi' table. You can move, or remove it, as needed.
-           
+
             dS.EnforceConstraints = false;
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
@@ -42,10 +37,11 @@ namespace AppThiTracNghiem
             this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
             this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.bANGDIEMTableAdapter.Fill(this.dS.BANGDIEM);
-            
+            this.get_SVDaThiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.get_SVDaThiTableAdapter.Fill(this.dS.Get_SVDaThi);
-            // TODO: This line of code loads data into the 'dS.Get_Roles' table. You can move, or remove it, as needed.
-           
+            this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.dS.LOP);
             //if (bdsMH.Count == 0) cmbTenMH.SelectedIndex = -1;
             cmbTenMH.SelectedValue = cmbMAMH.Text;

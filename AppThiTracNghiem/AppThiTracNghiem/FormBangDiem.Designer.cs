@@ -365,7 +365,7 @@ namespace AppThiTracNghiem
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
             this.Name = "FormBangDiem";
-            this.Text = "FormBangDiem";
+            this.Text = "Bảng điểm";
             this.Load += new System.EventHandler(this.FormBangDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
