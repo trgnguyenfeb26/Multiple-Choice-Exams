@@ -35,13 +35,17 @@ namespace AppThiTracNghiem
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label lANLabel;
             System.Windows.Forms.Label tENLOPLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormXemKQ));
             System.Windows.Forms.Label nGAYTHILabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormXemKQ));
             this.pnSV = new DevExpress.XtraEditors.PanelControl();
+            this.cmbCoSo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbLan = new System.Windows.Forms.ComboBox();
             this.bANGDIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.get_SVDaThiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new AppThiTracNghiem.DS();
             this.cmbMAMH = new System.Windows.Forms.ComboBox();
+            this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnInDSBD = new DevExpress.XtraBars.BarButtonItem();
@@ -82,10 +86,8 @@ namespace AppThiTracNghiem
             this.lOPTableAdapter = new AppThiTracNghiem.DSTableAdapters.LOPTableAdapter();
             this.gIAOVIEN_DANGKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gIAOVIEN_DANGKYTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
-            this.cmbCoSo = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNgay = new DevExpress.XtraEditors.DateEdit();
-            this.cmbLan = new System.Windows.Forms.ComboBox();
+            this.fKGetSVDaThiBANGDIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fKGetSVDaThiBANGDIEMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
@@ -97,6 +99,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
@@ -112,8 +116,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKGetSVDaThiBANGDIEMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKGetSVDaThiBANGDIEMBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // mASVLabel
@@ -166,6 +170,16 @@ namespace AppThiTracNghiem
             tENLOPLabel.TabIndex = 28;
             tENLOPLabel.Text = "TENLOP:";
             // 
+            // nGAYTHILabel
+            // 
+            nGAYTHILabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            nGAYTHILabel.AutoSize = true;
+            nGAYTHILabel.Location = new System.Drawing.Point(844, 222);
+            nGAYTHILabel.Name = "nGAYTHILabel";
+            nGAYTHILabel.Size = new System.Drawing.Size(68, 17);
+            nGAYTHILabel.TabIndex = 29;
+            nGAYTHILabel.Text = "NGAYTHI:";
+            // 
             // pnSV
             // 
             this.pnSV.Controls.Add(this.cmbCoSo);
@@ -191,6 +205,42 @@ namespace AppThiTracNghiem
             this.pnSV.Size = new System.Drawing.Size(1262, 306);
             this.pnSV.TabIndex = 0;
             // 
+            // cmbCoSo
+            // 
+            this.cmbCoSo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCoSo.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCoSo.FormattingEnabled = true;
+            this.cmbCoSo.Location = new System.Drawing.Point(230, 107);
+            this.cmbCoSo.Name = "cmbCoSo";
+            this.cmbCoSo.Size = new System.Drawing.Size(354, 30);
+            this.cmbCoSo.TabIndex = 34;
+            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(177, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Cơ sở";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbLan
+            // 
+            this.cmbLan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbLan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGDIEMBindingSource, "LAN", true));
+            this.cmbLan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLan.FormattingEnabled = true;
+            this.cmbLan.Location = new System.Drawing.Point(716, 215);
+            this.cmbLan.Name = "cmbLan";
+            this.cmbLan.Size = new System.Drawing.Size(121, 29);
+            this.cmbLan.TabIndex = 32;
+            // 
             // bANGDIEMBindingSource
             // 
             this.bANGDIEMBindingSource.DataMember = "FK_Get_SVDaThi_BANGDIEM";
@@ -210,12 +260,34 @@ namespace AppThiTracNghiem
             // 
             this.cmbMAMH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMAMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGDIEMBindingSource, "MAMH", true));
+            this.cmbMAMH.DataSource = this.fKGetSVDaThiBANGDIEMBindingSource;
+            this.cmbMAMH.DisplayMember = "MAMH";
             this.cmbMAMH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMAMH.FormattingEnabled = true;
             this.cmbMAMH.Location = new System.Drawing.Point(716, 160);
             this.cmbMAMH.Name = "cmbMAMH";
             this.cmbMAMH.Size = new System.Drawing.Size(121, 29);
             this.cmbMAMH.TabIndex = 31;
+            this.cmbMAMH.ValueMember = "MAMH";
+            this.cmbMAMH.SelectedIndexChanged += new System.EventHandler(this.cmbMAMH_SelectedIndexChanged_1);
+            // 
+            // txtNgay
+            // 
+            this.txtNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNgay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bANGDIEMBindingSource, "NGAYTHI", true));
+            this.txtNgay.EditValue = null;
+            this.txtNgay.Enabled = false;
+            this.txtNgay.Location = new System.Drawing.Point(918, 219);
+            this.txtNgay.MenuManager = this.barManager1;
+            this.txtNgay.Name = "txtNgay";
+            this.txtNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgay.Properties.Appearance.Options.UseFont = true;
+            this.txtNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgay.Size = new System.Drawing.Size(152, 28);
+            this.txtNgay.TabIndex = 30;
             // 
             // barManager1
             // 
@@ -564,69 +636,15 @@ namespace AppThiTracNghiem
             // 
             this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbCoSo
+            // fKGetSVDaThiBANGDIEMBindingSource
             // 
-            this.cmbCoSo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCoSo.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCoSo.FormattingEnabled = true;
-            this.cmbCoSo.Location = new System.Drawing.Point(230, 107);
-            this.cmbCoSo.Name = "cmbCoSo";
-            this.cmbCoSo.Size = new System.Drawing.Size(354, 30);
-            this.cmbCoSo.TabIndex = 34;
-            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
+            this.fKGetSVDaThiBANGDIEMBindingSource.DataMember = "FK_Get_SVDaThi_BANGDIEM";
+            this.fKGetSVDaThiBANGDIEMBindingSource.DataSource = this.get_SVDaThiBindingSource1;
             // 
-            // label2
+            // fKGetSVDaThiBANGDIEMBindingSource1
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(177, 110);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Cơ sở";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtNgay
-            // 
-            this.txtNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNgay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bANGDIEMBindingSource, "NGAYTHI", true));
-            this.txtNgay.EditValue = null;
-            this.txtNgay.Enabled = false;
-            this.txtNgay.Location = new System.Drawing.Point(918, 219);
-            this.txtNgay.MenuManager = this.barManager1;
-            this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgay.Properties.Appearance.Options.UseFont = true;
-            this.txtNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgay.Size = new System.Drawing.Size(152, 28);
-            this.txtNgay.TabIndex = 30;
-            // 
-            // nGAYTHILabel
-            // 
-            nGAYTHILabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            nGAYTHILabel.AutoSize = true;
-            nGAYTHILabel.Location = new System.Drawing.Point(844, 222);
-            nGAYTHILabel.Name = "nGAYTHILabel";
-            nGAYTHILabel.Size = new System.Drawing.Size(68, 17);
-            nGAYTHILabel.TabIndex = 29;
-            nGAYTHILabel.Text = "NGAYTHI:";
-            // 
-            // cmbLan
-            // 
-            this.cmbLan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmbLan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGDIEMBindingSource, "LAN", true));
-            this.cmbLan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLan.FormattingEnabled = true;
-            this.cmbLan.Location = new System.Drawing.Point(716, 215);
-            this.cmbLan.Name = "cmbLan";
-            this.cmbLan.Size = new System.Drawing.Size(121, 29);
-            this.cmbLan.TabIndex = 32;
+            this.fKGetSVDaThiBANGDIEMBindingSource1.DataMember = "FK_Get_SVDaThi_BANGDIEM";
+            this.fKGetSVDaThiBANGDIEMBindingSource1.DataSource = this.get_SVDaThiBindingSource1;
             // 
             // FormXemKQ
             // 
@@ -648,6 +666,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
@@ -663,8 +683,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKGetSVDaThiBANGDIEMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKGetSVDaThiBANGDIEMBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -721,5 +741,7 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbLan;
         private DevExpress.XtraEditors.DateEdit txtNgay;
+        private System.Windows.Forms.BindingSource fKGetSVDaThiBANGDIEMBindingSource;
+        private System.Windows.Forms.BindingSource fKGetSVDaThiBANGDIEMBindingSource1;
     }
 }

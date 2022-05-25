@@ -76,7 +76,7 @@ namespace AppThiTracNghiem
 
         private void btnInDSBD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ReportXemKQ rpt = new ReportXemKQ(txtMaSV.Text, cmbMAMH.Text,  Int32.Parse(cmbLan.Text.ToString()));
+            ReportXemKQ rpt = new ReportXemKQ(txtMaSV.Text, cmbMAMH.SelectedValue.ToString(),  Int32.Parse(cmbLan.Text.ToString()));
             rpt.lblLop.Text = txtTenLop.Text;
             rpt.lblHo.Text = txtHo.Text; rpt.lblTen.Text = txtTen.Text;
             rpt.lblMon.Text = cmbTenMH.Text;
@@ -140,6 +140,11 @@ namespace AppThiTracNghiem
             {
                 this.Close();
             }
+        }
+
+        private void cmbMAMH_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            cmbTenMH.SelectedValue = cmbMAMH.Text;
         }
     }
 }
