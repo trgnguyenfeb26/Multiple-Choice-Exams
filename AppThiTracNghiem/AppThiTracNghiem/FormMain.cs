@@ -65,7 +65,7 @@ namespace AppThiTracNghiem
                 btnDangXuat.Enabled = true;
                 btnTaoTaiKhoan.Enabled = true;
                 btnLapLichThi.Enabled=true;
-                btnXemKQ.Enabled = false;
+                btnXemKQ.Enabled = true;
                 btnDMK.Enabled = true;
 
             }
@@ -100,7 +100,7 @@ namespace AppThiTracNghiem
                 }
                 Program.frmChinh.hienThiMenu();
                 btnDangNhap.Enabled = true;
-              
+                ribThi.Visible = false;
             }
         }
     

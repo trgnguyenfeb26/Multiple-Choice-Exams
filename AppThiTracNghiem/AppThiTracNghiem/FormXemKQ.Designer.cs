@@ -35,13 +35,13 @@ namespace AppThiTracNghiem
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label lANLabel;
             System.Windows.Forms.Label tENLOPLabel;
-            System.Windows.Forms.Label nGAYTHILabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormXemKQ));
+            System.Windows.Forms.Label nGAYTHILabel;
             this.pnSV = new DevExpress.XtraEditors.PanelControl();
-            this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.bANGDIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.get_SVDaThiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new AppThiTracNghiem.DS();
+            this.cmbMAMH = new System.Windows.Forms.ComboBox();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnInDSBD = new DevExpress.XtraBars.BarButtonItem();
@@ -82,7 +82,9 @@ namespace AppThiTracNghiem
             this.lOPTableAdapter = new AppThiTracNghiem.DSTableAdapters.LOPTableAdapter();
             this.gIAOVIEN_DANGKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gIAOVIEN_DANGKYTableAdapter = new AppThiTracNghiem.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
-            this.cmbMAMH = new System.Windows.Forms.ComboBox();
+            this.cmbCoSo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.cmbLan = new System.Windows.Forms.ComboBox();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
@@ -92,8 +94,6 @@ namespace AppThiTracNghiem
             nGAYTHILabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pnSV)).BeginInit();
             this.pnSV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
@@ -112,13 +112,15 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mASVLabel
             // 
             mASVLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             mASVLabel.AutoSize = true;
-            mASVLabel.Location = new System.Drawing.Point(397, 80);
+            mASVLabel.Location = new System.Drawing.Point(177, 164);
             mASVLabel.Name = "mASVLabel";
             mASVLabel.Size = new System.Drawing.Size(47, 17);
             mASVLabel.TabIndex = 0;
@@ -128,7 +130,7 @@ namespace AppThiTracNghiem
             // 
             hOLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(387, 153);
+            hOLabel.Location = new System.Drawing.Point(653, 107);
             hOLabel.Name = "hOLabel";
             hOLabel.Size = new System.Drawing.Size(57, 17);
             hOLabel.TabIndex = 2;
@@ -138,7 +140,7 @@ namespace AppThiTracNghiem
             // 
             mAMHLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             mAMHLabel.AutoSize = true;
-            mAMHLabel.Location = new System.Drawing.Point(394, 190);
+            mAMHLabel.Location = new System.Drawing.Point(660, 163);
             mAMHLabel.Name = "mAMHLabel";
             mAMHLabel.Size = new System.Drawing.Size(50, 17);
             mAMHLabel.TabIndex = 6;
@@ -148,7 +150,7 @@ namespace AppThiTracNghiem
             // 
             lANLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             lANLabel.AutoSize = true;
-            lANLabel.Location = new System.Drawing.Point(407, 237);
+            lANLabel.Location = new System.Drawing.Point(673, 222);
             lANLabel.Name = "lANLabel";
             lANLabel.Size = new System.Drawing.Size(37, 17);
             lANLabel.TabIndex = 8;
@@ -158,24 +160,16 @@ namespace AppThiTracNghiem
             // 
             tENLOPLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(381, 113);
+            tENLOPLabel.Location = new System.Drawing.Point(161, 219);
             tENLOPLabel.Name = "tENLOPLabel";
             tENLOPLabel.Size = new System.Drawing.Size(63, 17);
             tENLOPLabel.TabIndex = 28;
             tENLOPLabel.Text = "TENLOP:";
             // 
-            // nGAYTHILabel
-            // 
-            nGAYTHILabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            nGAYTHILabel.AutoSize = true;
-            nGAYTHILabel.Location = new System.Drawing.Point(578, 237);
-            nGAYTHILabel.Name = "nGAYTHILabel";
-            nGAYTHILabel.Size = new System.Drawing.Size(68, 17);
-            nGAYTHILabel.TabIndex = 29;
-            nGAYTHILabel.Text = "NGAYTHI:";
-            // 
             // pnSV
             // 
+            this.pnSV.Controls.Add(this.cmbCoSo);
+            this.pnSV.Controls.Add(this.label2);
             this.pnSV.Controls.Add(this.cmbLan);
             this.pnSV.Controls.Add(this.cmbMAMH);
             this.pnSV.Controls.Add(nGAYTHILabel);
@@ -197,22 +191,6 @@ namespace AppThiTracNghiem
             this.pnSV.Size = new System.Drawing.Size(1262, 306);
             this.pnSV.TabIndex = 0;
             // 
-            // txtNgay
-            // 
-            this.txtNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNgay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bANGDIEMBindingSource, "NGAYTHI", true));
-            this.txtNgay.EditValue = null;
-            this.txtNgay.Enabled = false;
-            this.txtNgay.Location = new System.Drawing.Point(652, 234);
-            this.txtNgay.MenuManager = this.barManager1;
-            this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgay.Size = new System.Drawing.Size(152, 22);
-            this.txtNgay.TabIndex = 30;
-            // 
             // bANGDIEMBindingSource
             // 
             this.bANGDIEMBindingSource.DataMember = "FK_Get_SVDaThi_BANGDIEM";
@@ -227,6 +205,17 @@ namespace AppThiTracNghiem
             // 
             this.dS.DataSetName = "DS";
             this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmbMAMH
+            // 
+            this.cmbMAMH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbMAMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGDIEMBindingSource, "MAMH", true));
+            this.cmbMAMH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMAMH.FormattingEnabled = true;
+            this.cmbMAMH.Location = new System.Drawing.Point(716, 160);
+            this.cmbMAMH.Name = "cmbMAMH";
+            this.cmbMAMH.Size = new System.Drawing.Size(121, 29);
+            this.cmbMAMH.TabIndex = 31;
             // 
             // barManager1
             // 
@@ -271,6 +260,7 @@ namespace AppThiTracNghiem
             this.btnThoatBDiem.Id = 1;
             this.btnThoatBDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoatBDiem.ImageOptions.SvgImage")));
             this.btnThoatBDiem.Name = "btnThoatBDiem";
+            this.btnThoatBDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatBDiem_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -313,10 +303,12 @@ namespace AppThiTracNghiem
             this.txtTenLop.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "TENLOP", true));
             this.txtTenLop.Enabled = false;
-            this.txtTenLop.Location = new System.Drawing.Point(450, 110);
+            this.txtTenLop.Location = new System.Drawing.Point(230, 216);
             this.txtTenLop.MenuManager = this.barManager1;
             this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(354, 22);
+            this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLop.Properties.Appearance.Options.UseFont = true;
+            this.txtTenLop.Size = new System.Drawing.Size(354, 28);
             this.txtTenLop.TabIndex = 29;
             // 
             // lOPBindingSource
@@ -329,10 +321,12 @@ namespace AppThiTracNghiem
             this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.get_SVDaThiBindingSource1, "TEN", true));
             this.txtTen.Enabled = false;
-            this.txtTen.Location = new System.Drawing.Point(664, 148);
+            this.txtTen.Location = new System.Drawing.Point(930, 102);
             this.txtTen.MenuManager = this.barManager1;
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(140, 22);
+            this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Properties.Appearance.Options.UseFont = true;
+            this.txtTen.Size = new System.Drawing.Size(140, 28);
             this.txtTen.TabIndex = 26;
             // 
             // txtHo
@@ -340,10 +334,12 @@ namespace AppThiTracNghiem
             this.txtHo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtHo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.get_SVDaThiBindingSource1, "HO", true));
             this.txtHo.Enabled = false;
-            this.txtHo.Location = new System.Drawing.Point(450, 148);
+            this.txtHo.Location = new System.Drawing.Point(716, 102);
             this.txtHo.MenuManager = this.barManager1;
             this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(208, 22);
+            this.txtHo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHo.Properties.Appearance.Options.UseFont = true;
+            this.txtHo.Size = new System.Drawing.Size(208, 28);
             this.txtHo.TabIndex = 25;
             // 
             // txtMaSV
@@ -351,10 +347,12 @@ namespace AppThiTracNghiem
             this.txtMaSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMaSV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.get_SVDaThiBindingSource1, "MASV", true));
             this.txtMaSV.Enabled = false;
-            this.txtMaSV.Location = new System.Drawing.Point(450, 77);
+            this.txtMaSV.Location = new System.Drawing.Point(230, 161);
             this.txtMaSV.MenuManager = this.barManager1;
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(354, 22);
+            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaSV.Size = new System.Drawing.Size(354, 28);
             this.txtMaSV.TabIndex = 24;
             // 
             // label8
@@ -373,10 +371,11 @@ namespace AppThiTracNghiem
             this.cmbTenMH.DataSource = this.bdsMH;
             this.cmbTenMH.DisplayMember = "TENMH";
             this.cmbTenMH.Enabled = false;
+            this.cmbTenMH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTenMH.FormattingEnabled = true;
-            this.cmbTenMH.Location = new System.Drawing.Point(577, 187);
+            this.cmbTenMH.Location = new System.Drawing.Point(843, 160);
             this.cmbTenMH.Name = "cmbTenMH";
-            this.cmbTenMH.Size = new System.Drawing.Size(227, 24);
+            this.cmbTenMH.Size = new System.Drawing.Size(227, 29);
             this.cmbTenMH.TabIndex = 10;
             this.cmbTenMH.ValueMember = "MAMH";
             // 
@@ -565,24 +564,68 @@ namespace AppThiTracNghiem
             // 
             this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbMAMH
+            // cmbCoSo
             // 
-            this.cmbMAMH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmbMAMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGDIEMBindingSource, "MAMH", true));
-            this.cmbMAMH.FormattingEnabled = true;
-            this.cmbMAMH.Location = new System.Drawing.Point(450, 187);
-            this.cmbMAMH.Name = "cmbMAMH";
-            this.cmbMAMH.Size = new System.Drawing.Size(121, 24);
-            this.cmbMAMH.TabIndex = 31;
+            this.cmbCoSo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCoSo.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCoSo.FormattingEnabled = true;
+            this.cmbCoSo.Location = new System.Drawing.Point(230, 107);
+            this.cmbCoSo.Name = "cmbCoSo";
+            this.cmbCoSo.Size = new System.Drawing.Size(354, 30);
+            this.cmbCoSo.TabIndex = 34;
+            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(177, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Cơ sở";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtNgay
+            // 
+            this.txtNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNgay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bANGDIEMBindingSource, "NGAYTHI", true));
+            this.txtNgay.EditValue = null;
+            this.txtNgay.Enabled = false;
+            this.txtNgay.Location = new System.Drawing.Point(918, 219);
+            this.txtNgay.MenuManager = this.barManager1;
+            this.txtNgay.Name = "txtNgay";
+            this.txtNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgay.Properties.Appearance.Options.UseFont = true;
+            this.txtNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgay.Size = new System.Drawing.Size(152, 28);
+            this.txtNgay.TabIndex = 30;
+            // 
+            // nGAYTHILabel
+            // 
+            nGAYTHILabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            nGAYTHILabel.AutoSize = true;
+            nGAYTHILabel.Location = new System.Drawing.Point(844, 222);
+            nGAYTHILabel.Name = "nGAYTHILabel";
+            nGAYTHILabel.Size = new System.Drawing.Size(68, 17);
+            nGAYTHILabel.TabIndex = 29;
+            nGAYTHILabel.Text = "NGAYTHI:";
             // 
             // cmbLan
             // 
             this.cmbLan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbLan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGDIEMBindingSource, "LAN", true));
+            this.cmbLan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLan.FormattingEnabled = true;
-            this.cmbLan.Location = new System.Drawing.Point(450, 230);
+            this.cmbLan.Location = new System.Drawing.Point(716, 215);
             this.cmbLan.Name = "cmbLan";
-            this.cmbLan.Size = new System.Drawing.Size(121, 24);
+            this.cmbLan.Size = new System.Drawing.Size(121, 29);
             this.cmbLan.TabIndex = 32;
             // 
             // FormXemKQ
@@ -602,8 +645,6 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.pnSV)).EndInit();
             this.pnSV.ResumeLayout(false);
             this.pnSV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
@@ -622,6 +663,8 @@ namespace AppThiTracNghiem
             ((System.ComponentModel.ISupportInitialize)(this.get_SVDaThiGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -671,10 +714,12 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.BindingSource lOPBindingSource;
         private DSTableAdapters.LOPTableAdapter lOPTableAdapter;
         private DevExpress.XtraEditors.TextEdit txtTenLop;
-        private DevExpress.XtraEditors.DateEdit txtNgay;
         private System.Windows.Forms.BindingSource gIAOVIEN_DANGKYBindingSource;
         private DSTableAdapters.GIAOVIEN_DANGKYTableAdapter gIAOVIEN_DANGKYTableAdapter;
-        private System.Windows.Forms.ComboBox cmbLan;
         private System.Windows.Forms.ComboBox cmbMAMH;
+        private System.Windows.Forms.ComboBox cmbCoSo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbLan;
+        private DevExpress.XtraEditors.DateEdit txtNgay;
     }
 }

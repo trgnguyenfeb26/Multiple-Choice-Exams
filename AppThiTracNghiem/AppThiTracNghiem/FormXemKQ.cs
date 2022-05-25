@@ -33,18 +33,32 @@ namespace AppThiTracNghiem
             dS.EnforceConstraints = false;
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+           
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
+           
             this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.bANGDIEMTableAdapter.Fill(this.dS.BANGDIEM);
+           
             this.get_SVDaThiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.get_SVDaThiTableAdapter.Fill(this.dS.Get_SVDaThi);
+           
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
+           
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.dS.LOP);
             //if (bdsMH.Count == 0) cmbTenMH.SelectedIndex = -1;
             cmbTenMH.SelectedValue = cmbMAMH.Text;
+            cmbCoSo.DataSource = Program.bds_dspm;
+            cmbCoSo.DisplayMember = "TENCS";
+            cmbCoSo.ValueMember = "TENSERVER";
+            cmbCoSo.SelectedIndex = Program.mCoso;
+            if (Program.mGroup == "TRUONG")
+            {
+                cmbCoSo.Enabled = true;
+            }
+            else cmbCoSo.Enabled = false;
 
         }
 
@@ -71,6 +85,61 @@ namespace AppThiTracNghiem
 
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();
+        }
+
+        private void cmbCoSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCoSo.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+            Program.servername = cmbCoSo.SelectedValue.ToString();
+
+            if (cmbCoSo.SelectedIndex != Program.mCoso)
+            {
+
+                Program.mlogin = Program.remoteLogin;
+                Program.password = Program.remotePassword;
+            }
+            else
+            {
+                Program.mlogin = Program.loginDN;
+                Program.password = Program.passwordDN;
+            }
+
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("Lỗi kết nối về phòng ban mới!");
+            }
+            else
+            {
+                dS.EnforceConstraints = false;
+                this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+
+                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
+
+                this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.bANGDIEMTableAdapter.Fill(this.dS.BANGDIEM);
+
+                this.get_SVDaThiTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.get_SVDaThiTableAdapter.Fill(this.dS.Get_SVDaThi);
+
+                this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
+
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTableAdapter.Fill(this.dS.LOP);
+                //if (bdsMH.Count == 0) cmbTenMH.SelectedIndex = -1;
+                cmbTenMH.SelectedValue = cmbMAMH.Text;
+            }
+        }
+
+        private void btnThoatBDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn thật sự muốn thoát khỏi form?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -164,6 +164,7 @@ namespace AppThiTracNghiem
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1262, 406);
             this.groupControl1.TabIndex = 10;
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // label8
             // 
@@ -251,6 +252,7 @@ namespace AppThiTracNghiem
             this.label2.TabIndex = 12;
             this.label2.Text = "Cơ sở";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label6
             // 

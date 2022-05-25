@@ -415,7 +415,7 @@ namespace AppThiTracNghiem
             this.gcBD.MainView = this.gridView1;
             this.gcBD.MenuManager = this.barManager2;
             this.gcBD.Name = "gcBD";
-            this.gcBD.Size = new System.Drawing.Size(1250, 343);
+            this.gcBD.Size = new System.Drawing.Size(1250, 263);
             this.gcBD.TabIndex = 10;
             this.gcBD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -573,7 +573,7 @@ namespace AppThiTracNghiem
             this.panelControl1.Controls.Add(mAGVLabel);
             this.panelControl1.Controls.Add(hotenLabel);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 373);
+            this.panelControl1.Location = new System.Drawing.Point(0, 293);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1250, 167);
             this.panelControl1.TabIndex = 22;
@@ -689,9 +689,9 @@ namespace AppThiTracNghiem
             this.panelControl2.Controls.Add(this.txtND);
             this.panelControl2.Controls.Add(aLabel1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 540);
+            this.panelControl2.Location = new System.Drawing.Point(0, 460);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1250, 240);
+            this.panelControl2.Size = new System.Drawing.Size(1250, 320);
             this.panelControl2.TabIndex = 36;
             // 
             // txtA

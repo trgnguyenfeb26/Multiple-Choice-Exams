@@ -41,7 +41,7 @@ namespace AppThiTracNghiem
             else if (Program.mGroup == "COSO")
             {
                 cmbGroup.Items.Add("COSO");
-                cmbGroup.Items.Add("GIAOVIEN");
+                cmbGroup.Items.Add("GIANGVIEN");
             }
 
             cmbGroup.SelectedIndex = 0;
@@ -73,6 +73,12 @@ namespace AppThiTracNghiem
             if (Program.ExecSqlNonQuery(sql) == 0)
             {
                 MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK);
+                dS.EnforceConstraints = false;
+                this.get_TaoTKTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.get_TaoTKTableAdapter.Fill(this.dS.Get_TaoTK);
+                txtLogin.Text = "";
+                txtPassword.Text = "";
+                txtXN.Text = "";
             }
         }
 

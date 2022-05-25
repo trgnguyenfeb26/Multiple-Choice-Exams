@@ -287,7 +287,6 @@ namespace AppThiTracNghiem
             this.colMAGV.FieldName = "MAGV";
             this.colMAGV.MinWidth = 25;
             this.colMAGV.Name = "colMAGV";
-            this.colMAGV.OptionsColumn.AllowEdit = false;
             this.colMAGV.OptionsColumn.ReadOnly = true;
             this.colMAGV.Visible = true;
             this.colMAGV.VisibleIndex = 0;
@@ -298,7 +297,6 @@ namespace AppThiTracNghiem
             this.colHO.FieldName = "HO";
             this.colHO.MinWidth = 25;
             this.colHO.Name = "colHO";
-            this.colHO.OptionsColumn.AllowEdit = false;
             this.colHO.OptionsColumn.ReadOnly = true;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
@@ -309,7 +307,6 @@ namespace AppThiTracNghiem
             this.colTEN.FieldName = "TEN";
             this.colTEN.MinWidth = 25;
             this.colTEN.Name = "colTEN";
-            this.colTEN.OptionsColumn.AllowEdit = false;
             this.colTEN.OptionsColumn.ReadOnly = true;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
@@ -320,7 +317,6 @@ namespace AppThiTracNghiem
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.MinWidth = 25;
             this.colDIACHI.Name = "colDIACHI";
-            this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.OptionsColumn.ReadOnly = true;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 3;
@@ -331,7 +327,6 @@ namespace AppThiTracNghiem
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 25;
             this.colMAKH.Name = "colMAKH";
-            this.colMAKH.OptionsColumn.AllowEdit = false;
             this.colMAKH.OptionsColumn.ReadOnly = true;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 4;
@@ -375,6 +370,10 @@ namespace AppThiTracNghiem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource bdsGV;
         private DSTableAdapters.Get_TaoTKTableAdapter get_TaoTKTableAdapter;
+        private DevExpress.XtraEditors.TextEdit txtUser;
+        private System.Windows.Forms.TextBox txtXN;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPassword;
         private DevExpress.XtraGrid.GridControl gcGV;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
@@ -382,9 +381,5 @@ namespace AppThiTracNghiem
         private DevExpress.XtraGrid.Columns.GridColumn colTEN;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
-        private DevExpress.XtraEditors.TextEdit txtUser;
-        private System.Windows.Forms.TextBox txtXN;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPassword;
     }
 }
