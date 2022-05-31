@@ -133,7 +133,7 @@ namespace AppThiTracNghiem
                 }
                 catch (Exception ex)
                 {
-                    UndoStack.Pop();
+                    //UndoStack.Pop();
                     MessageBox.Show("Lỗi xóa Lịch thi \n" + ex.Message, "", MessageBoxButtons.OK);
                     this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);

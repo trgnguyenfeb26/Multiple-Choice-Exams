@@ -40,17 +40,12 @@ namespace AppThiTracNghiem
 
             // Kiểm tra ràng buộc
             DS.EnforceConstraints = false;
-
-            // TODO: This line of code loads data into the 'DS.KHOA' table. You can move, or remove it, as needed.
             this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.KHOATableAdapter.Fill(this.DS.KHOA);
-            // TODO: This line of code loads data into the 'dS.GIAOVIEN' table. You can move, or remove it, as needed.
             this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.GIAOVIENTableAdapter.Fill(this.DS.GIAOVIEN);
-            // TODO: This line of code loads data into the 'DS.BODE' table. You can move, or remove it, as needed.
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.bODETableAdapter.Fill(this.DS.BODE);
-            // TODO: This line of code loads data into the 'DS.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.DS.GIAOVIEN_DANGKY);
 

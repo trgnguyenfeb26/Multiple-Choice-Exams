@@ -39,8 +39,7 @@ namespace AppThiTracNghiem
         public static String mMaCS = "";
 
         public static string MaLopSV;
-        public static string NgaySinhSV;
-        public static string DiaChiSV;
+
 
         // luu thong tin thi
         public static String MAMH;

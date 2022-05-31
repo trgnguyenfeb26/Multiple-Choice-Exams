@@ -22,7 +22,6 @@ namespace AppThiTracNghiem
             Program.bds_dspm.DataSource = dt;
             cbbTenCS.DataSource = Program.bds_dspm;
             cbbTenCS.DisplayMember = "TENCS"; cbbTenCS.ValueMember = "TENSERVER";
-
         }
         public string GetMD5(string chuoi)
         {
